@@ -28,7 +28,7 @@ public class Restaurant {
 	private String img;
 	private String  descrription;
 	private double rate;
-	private double pricerage;
+	private double pricerange;
 	@Embedded
 	private Adresse adresse;
 	@OneToOne
@@ -49,7 +49,7 @@ public class Restaurant {
 	}
 	
 	public Restaurant(String nom, boolean livraison, boolean emporter, boolean open, String img, String descrription,
-			double rate, double pricerage, Adresse adresse, Restaurateur restaurateur, List<TypeResto> typeRestos,
+			double rate, double pricerange, Adresse adresse, Restaurateur restaurateur, List<TypeResto> typeRestos,
 			List<Article> articles) {
 		super();
 		this.nom = nom;
@@ -59,7 +59,7 @@ public class Restaurant {
 		this.img = img;
 		this.descrription = descrription;
 		this.rate = rate;
-		this.pricerage = pricerage;
+		this.pricerange = pricerange;
 		this.adresse = adresse;
 		this.restaurateur = restaurateur;
 		this.typeRestos = typeRestos;
@@ -120,10 +120,10 @@ public class Restaurant {
 		this.rate = rate;
 	}
 	public double getPricerage() {
-		return pricerage;
+		return pricerange;
 	}
 	public void setPricerage(double pricerage) {
-		this.pricerage = pricerage;
+		this.pricerange = pricerage;
 	}
 	public Adresse getAdresse() {
 		return adresse;
