@@ -8,6 +8,12 @@ public class Views {
 	public static class ViewArticle extends ViewCommon {
 	}
 	
+	public static class ViewArticlePrixAsc extends ViewArticle {
+	}
+	
+	public static class ViewArticlePrixDesc extends ViewArticle {
+	}
+	
 	public static class ViewClient extends ViewCommon {
 	}
 	

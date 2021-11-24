@@ -16,9 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-
+import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Article;
+import ubereat.model.Views;
 import ubereat.repository.IArticle;
 
 @RestController
@@ -31,13 +32,47 @@ public class ArticleRestController {
 	private IArticle articleRepo;
 	
 	@GetMapping("")
+	@JsonView(Views.ViewArticle.class)
 	public List<Article> findAll() {
 		List<Article> articles = articleRepo.findAll();
 
 		return articles;
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/prixAsc")
+	@JsonView(Views.ViewArticlePrixAsc.class)
+	public List<Article> findAllByPrixAsc() {
+		List<Article> articles = articleRepo.findAllByPrixAsc();
+
+		return articles;
+	}
+	
+	@GetMapping("/prixDesc")
+	@JsonView(Views.ViewArticlePrixDesc.class)
+	public List<Article> findAllByPrixDesc() {
+		List<Article> articles = articleRepo.findAllByPrixDesc();
+
+		return articles;
+	}
+	
+	@GetMapping("/typePlat/{nom}")
+	@JsonView(Views.ViewArticle.class)
+	public List<Article> findByTypePlat(@PathVariable String nom) {
+		List<Article> articles = articleRepo.findByTypePlat(nom);
+
+		return articles;
+	}
+	
+	@GetMapping("/restaurantId/{id}")
+	@JsonView(Views.ViewArticle.class)
+	public List<Article> findByRestaurantId(@PathVariable Long id) {
+		List<Article> articles = articleRepo.findByRestaurantId(id);
+
+		return articles;
+	}
+	
+	@GetMapping("/{id}")
+	@JsonView(Views.ViewArticle.class)
 	public Article find(@PathVariable Long id) {
 		Optional<Article> optArticle = articleRepo.findById(id);
 
@@ -48,7 +83,20 @@ public class ArticleRestController {
 		}
 	}
 	
+	@GetMapping("/{nom}")
+	@JsonView(Views.ViewArticle.class)
+	public Article findByNom(@PathVariable String nom) {
+		Optional<Article> optArticle = articleRepo.findByNom(nom);
+
+		if (optArticle.isPresent()) {
+			return optArticle.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Article non trouvé");
+		}
+	}
+	
 	@PostMapping("")
+	@JsonView(Views.ViewArticle.class)
 	public Article create(@RequestBody Article article) {
 		article = articleRepo.save(article);
 
@@ -56,6 +104,7 @@ public class ArticleRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewArticle.class)
 	public Article update(@PathVariable Long id, @RequestBody Article article) {
 		if (!articleRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Evaluation non trouvé");
