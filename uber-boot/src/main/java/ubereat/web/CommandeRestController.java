@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import ubereat.model.Article;
 import ubereat.model.Commande;
+import ubereat.repository.IArticle;
 import ubereat.repository.ICommande;
 
 
@@ -28,6 +30,8 @@ public class CommandeRestController {
 	
 		@Autowired
 		private ICommande commandeRepo;
+		@Autowired
+		private IArticle articleRepo;
 
 		@GetMapping("")
 
@@ -36,18 +40,69 @@ public class CommandeRestController {
 
 			return commandes;
 		}
+		
+		@GetMapping("Status/{status}")
+		public List<Commande> findAllWithStatus(@PathVariable String status) {
+			List<Commande> commandes = commandeRepo.findAllWithStatus(status);
 
-		@GetMapping("{id}")
-		public Commande find(@PathVariable Long id) {
+			return commandes;
+		}
+		
+
+		@GetMapping("Add/{id,idArticle}")
+		public Commande add(@PathVariable Long id,@PathVariable Long idArticle) {
 			Optional<Commande> optCommande = commandeRepo.findById(id);
+			Optional<Article> optArticle = articleRepo.findById(idArticle);
 
 			if (optCommande.isPresent()) {
+				if (optArticle.isPresent()) {
+					List<Article> list=optCommande.get().getArticles();
+					list.add(optArticle.get());
+					optCommande.get().setArticles(list);
+				}
 				return optCommande.get();
 			} else {
-				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Commande non trouvé");
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "NOPE");
+			}
+		}
+
+		@GetMapping("Delete/{id,idArticle}")
+		public Commande delete(@PathVariable Long id,@PathVariable Long idArticle) {
+			Optional<Commande> optCommande = commandeRepo.findById(id);
+			Optional<Article> optArticle = articleRepo.findById(idArticle);
+
+			if (optCommande.isPresent()) {
+				if (optArticle.isPresent()) {
+					List<Article> list=optCommande.get().getArticles();
+					list.remove(optArticle.get());
+					optCommande.get().setArticles(list);
+				}
+				return optCommande.get();
+			} else {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "NOPE");
 			}
 		}
 		
+		@GetMapping("/livreur/{id}")
+		public List<Commande> findAllByLivreur(@PathVariable Long id) {
+			List<Commande> commandes = commandeRepo.findAllByLivreur(id);
+
+			return commandes;
+		}
+		
+		@GetMapping("/client/{id}")
+		public List<Commande> findAllByClient(@PathVariable Long id) {
+			List<Commande> commandes = commandeRepo.findAllByClient(id);
+
+			return commandes;
+		}
+		
+		@GetMapping("/restaurant/{id}")
+		public List<Commande> findAllByRestaurant(@PathVariable Long id) {
+			List<Commande> commandes = commandeRepo.findAllByRestaurant(id);
+
+			return commandes;
+		}
 
 
 		@PostMapping("")
