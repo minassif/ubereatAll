@@ -1,5 +1,7 @@
 package ubereat.model;
 
+
+
 public class Views {
 
 	public static class ViewCommon {
@@ -30,5 +32,8 @@ public class Views {
 	}
 	
 	public static class ViewUtilisateur extends ViewCommon {
+	}
+	public static class ViewRestaurantWithPrix extends ViewRestaurant{
+			
 	}
 }

@@ -13,8 +13,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
-@Entity
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
+@Entity
+@JsonView(Views.ViewCommon.class)
 public class Restaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +35,13 @@ public class Restaurant {
 	@Embedded
 	private Adresse adresse;
 	@OneToOne
+	@JsonIgnore
     private Restaurateur restaurateur;
     @OneToMany(mappedBy= "restaurant")
+	@JsonIgnore
     private List<TypeResto> typeRestos=new ArrayList<TypeResto>();
     @OneToMany(mappedBy= "restaurant")
+	@JsonIgnore
     private List<Article> articles=new ArrayList<Article>();
     
     public Restaurant() {

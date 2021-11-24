@@ -20,10 +20,11 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Restaurant;
 import ubereat.model.Views;
+import ubereat.model.Views.ViewRestaurantWithPrix;
 import ubereat.repository.IRestaurant;
 
 @RestController
-@RequestMapping("/Restaurant")
+@RequestMapping("/restaurant")
 @CrossOrigin("*")
 
 public class RestaurantRestController {
@@ -35,6 +36,30 @@ public class RestaurantRestController {
 	@JsonView(Views.ViewRestaurant.class)
 	public List<Restaurant> findAll() {
 		List<Restaurant> restaurants = restaurantRepo.findAll();
+
+		return restaurants;
+	}
+	
+	@GetMapping("pricerange/{pricerange}")
+	@JsonView(ViewRestaurantWithPrix.class)
+	public List<Restaurant> findRestaurantWithPrrix(@PathVariable Double pricerange) {
+		List<Restaurant> restaurants = restaurantRepo. findAllWithPrix(pricerange);
+
+		return restaurants;
+	}
+	
+	@GetMapping("nom/{nom}")
+	@JsonView(ViewRestaurantWithPrix.class)
+	public List<Restaurant> findRestaurantWithPrrix(@PathVariable String  nom) {
+		List<Restaurant> restaurants = restaurantRepo.findALLByNom( nom);
+
+		return restaurants;
+	}
+	
+	@GetMapping("rate/{rate}")
+	@JsonView(ViewRestaurantWithPrix.class)
+	public List<Restaurant> findAllByRate(@PathVariable Double rate) {
+		List<Restaurant> restaurants = restaurantRepo.findAllByRate(rate);
 
 		return restaurants;
 	}
