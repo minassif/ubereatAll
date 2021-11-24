@@ -55,7 +55,7 @@ public class LivreurRestController {
 
 
 	@PostMapping("")
-	@JsonView(Views.ViewEvaluation.class)
+	@JsonView(Views.ViewLivreur.class)
 	public Livreur create(@RequestBody Livreur livreur) {
 		livreur = livreurRepo.save(livreur);
 
