@@ -1,14 +1,10 @@
 package ubereat.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 @Entity
@@ -19,16 +15,16 @@ public class TypePlat {
 	@Version
 	private int version;
 	private String nom;
-	@OneToMany(mappedBy= "typePlat")
-	private List<Article> articles=new ArrayList<Article>();
+	@ManyToOne
+	private Article article;
 	
 	public TypePlat() {
 	}
 	
-	public TypePlat(String nom, List<Article> articles) {
+	public TypePlat(String nom, Article article) {
 		super();
 		this.nom = nom;
-		this.articles = articles;
+		this.article = article;
 	}
 	public Long getId() {
 		return id;
@@ -43,12 +39,12 @@ public class TypePlat {
 		this.nom = nom;
 	}
 
-	public List<Article> getArticles() {
-		return articles;
+	public Article getArticles() {
+		return article;
 	}
 
-	public void setArticles(List<Article> articles) {
-		this.articles = articles;
+	public void setArticles(Article article) {
+		this.article = article;
 	}
 
 	public int getVersion() {

@@ -1,6 +1,5 @@
 package ubereat.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -25,20 +24,20 @@ public class Article {
 	private Commande commande;
 	@ManyToOne
 	private Restaurant restaurant;
-	@ManyToOne
-	private TypePlat typePlat;
+	@OneToMany(mappedBy="article")
+	private List<TypePlat> typesPlat;
 	
 	public Article() {}
 	
 	public Article(double prix, String description, String img, Commande commande, Restaurant restaurant,
-			TypePlat typePlat) {
+			List<TypePlat> typesPlat) {
 		super();
 		this.prix = prix;
 		this.description = description;
 		this.img = img;
 		this.commande = commande;
 		this.restaurant = restaurant;
-		this.typePlat = typePlat;
+		this.typesPlat = typesPlat;
 	}
 	public Long getId() {
 		return id;
@@ -83,12 +82,12 @@ public class Article {
 		this.restaurant = restaurant;
 	}
 
-	public TypePlat getTypePlat() {
-		return typePlat;
+	public List<TypePlat> getTypePlat() {
+		return typesPlat;
 	}
 
-	public void setTypePlat(TypePlat typePlat) {
-		this.typePlat = typePlat;
+	public void setTypePlat(List<TypePlat> typesPlat) {
+		this.typesPlat = typesPlat;
 	}
 	
 	
