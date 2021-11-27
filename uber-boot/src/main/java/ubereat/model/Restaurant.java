@@ -35,13 +35,13 @@ public class Restaurant {
 	@Embedded
 	private Adresse adresse;
 	@OneToOne
-	@JsonIgnore
+	@JsonView(Views.ViewRestaurant.class)
     private Restaurateur restaurateur;
     @OneToMany(mappedBy= "restaurant")
-	@JsonIgnore
+    @JsonView(Views.ViewRestaurant.class)
     private List<TypeResto> typeRestos=new ArrayList<TypeResto>();
     @OneToMany(mappedBy= "restaurant")
-	@JsonIgnore
+    @JsonView(Views.ViewRestaurant.class)
     private List<Article> articles=new ArrayList<Article>();
     
     public Restaurant() {

@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import ubereat.model.Article;
 import ubereat.model.Commande;
+import ubereat.model.Views;
 import ubereat.repository.IArticle;
 import ubereat.repository.ICommande;
 
@@ -34,7 +37,7 @@ public class CommandeRestController {
 		private IArticle articleRepo;
 
 		@GetMapping("")
-
+		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAll() {
 			List<Commande> commandes = commandeRepo.findAll();
 
@@ -42,6 +45,7 @@ public class CommandeRestController {
 		}
 		
 		@GetMapping("Status/{status}")
+		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllWithStatus(@PathVariable String status) {
 			List<Commande> commandes = commandeRepo.findAllWithStatus(status);
 
@@ -50,6 +54,7 @@ public class CommandeRestController {
 		
 
 		@GetMapping("Add/{id,idArticle}")
+		@JsonView(Views.ViewCommandeDetail.class)
 		public Commande add(@PathVariable Long id,@PathVariable Long idArticle) {
 			Optional<Commande> optCommande = commandeRepo.findById(id);
 			Optional<Article> optArticle = articleRepo.findById(idArticle);
@@ -67,6 +72,7 @@ public class CommandeRestController {
 		}
 
 		@GetMapping("Delete/{id,idArticle}")
+		@JsonView(Views.ViewCommandeDetail.class)
 		public Commande delete(@PathVariable Long id,@PathVariable Long idArticle) {
 			Optional<Commande> optCommande = commandeRepo.findById(id);
 			Optional<Article> optArticle = articleRepo.findById(idArticle);
@@ -84,6 +90,7 @@ public class CommandeRestController {
 		}
 		
 		@GetMapping("/livreur/{id}")
+		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllByLivreur(@PathVariable Long id) {
 			List<Commande> commandes = commandeRepo.findAllByLivreur(id);
 
@@ -91,6 +98,7 @@ public class CommandeRestController {
 		}
 		
 		@GetMapping("/client/{id}")
+		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllByClient(@PathVariable Long id) {
 			List<Commande> commandes = commandeRepo.findAllByClient(id);
 
@@ -98,6 +106,7 @@ public class CommandeRestController {
 		}
 		
 		@GetMapping("/restaurant/{id}")
+		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllByRestaurant(@PathVariable Long id) {
 			List<Commande> commandes = commandeRepo.findAllByRestaurant(id);
 
@@ -106,7 +115,7 @@ public class CommandeRestController {
 
 
 		@PostMapping("")
-
+		@JsonView(Views.ViewCommandeDetail.class)
 		public Commande create(@RequestBody Commande commande) {
 			commande = commandeRepo.save(commande);
 
@@ -114,7 +123,7 @@ public class CommandeRestController {
 		}
 
 		@PutMapping("/{id}")
-
+		@JsonView(Views.ViewCommandeDetail.class)
 		public Commande update(@PathVariable Long id, @RequestBody Commande commande) {
 			if (!commandeRepo.existsById(id)) {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Commande non trouvé");

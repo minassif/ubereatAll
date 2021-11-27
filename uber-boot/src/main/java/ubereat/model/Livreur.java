@@ -8,13 +8,18 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
+
+import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 @PrimaryKeyJoinColumn(name="id_livreur")
+@JsonView(Views.ViewCommon.class)
 public class Livreur extends Utilisateur {
+	
 @Enumerated(EnumType.STRING)
 private Transport transport;
 private Double rate;
 @OneToMany(mappedBy ="livreur")
+@JsonView(Views.ViewLivreur.class)
 private List<Commande> commandes = new ArrayList<Commande>();
 
 

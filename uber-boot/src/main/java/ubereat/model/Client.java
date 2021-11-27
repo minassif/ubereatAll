@@ -7,12 +7,16 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
+
+import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 @PrimaryKeyJoinColumn(name="id_client")
+@JsonView(Views.ViewCommon.class)
 public class Client extends Utilisateur {
 	
 	private String cb;
 	@OneToMany(mappedBy="client")
+	@JsonView(Views.ViewClient.class)
 	private List<Commande> commandes =new ArrayList<Commande>();
 	@Embedded
 	private Adresse adresse;

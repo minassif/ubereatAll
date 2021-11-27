@@ -13,7 +13,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
+@JsonView(Views.ViewCommon.class)
 public class Commande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,14 +26,20 @@ public class Commande {
 	private double prix;
 	@Enumerated(EnumType.STRING)
 	private Status status;
+	@JsonView(Views.ViewCommande.class)
 	private int tempsPrep;
+	@JsonView(Views.ViewCommande.class)
 	private double rateResto;
+	@JsonView(Views.ViewCommande.class)
 	private double ratelivreur;
 	@ManyToOne
+	@JsonView(Views.ViewCommande.class)
 	private Livreur livreur;
 	@ManyToOne
+	@JsonView(Views.ViewCommande.class)
 	private Client client;
 	@OneToMany(mappedBy = "commande")
+	@JsonView(Views.ViewCommandeDetail.class)
 	private List<Article> articles =new ArrayList<Article>();
 	
 	public Commande() {

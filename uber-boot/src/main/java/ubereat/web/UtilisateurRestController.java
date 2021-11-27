@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import ubereat.model.Utilisateur;
+import ubereat.model.Views;
 import ubereat.repository.IUtilisateur;
 
 @RestController
@@ -33,7 +36,7 @@ public class UtilisateurRestController {
 		private IUtilisateur UtilisateurRepo;
 
 		@GetMapping("")
-		
+		@JsonView(Views.ViewUtilisateur.class)
 		public List<Utilisateur> findAll() {
 			List<Utilisateur> Utilisateurs = UtilisateurRepo.findAll();
 
@@ -43,6 +46,7 @@ public class UtilisateurRestController {
 		
 
 		@GetMapping("{id}")
+		@JsonView(Views.ViewUtilisateur.class)
 		public Utilisateur find(@PathVariable Long id) {
 			Optional<Utilisateur> optUtilisateur = UtilisateurRepo.findById(id);
 
@@ -54,6 +58,7 @@ public class UtilisateurRestController {
 		}
 
 		@PostMapping("")
+		@JsonView(Views.ViewUtilisateur.class)
 		public Utilisateur create(@Valid @RequestBody Utilisateur Utilisateur, BindingResult result) {
 			
 			
@@ -63,6 +68,7 @@ public class UtilisateurRestController {
 		}
 
 		@PutMapping("/{id}")
+		@JsonView(Views.ViewUtilisateur.class)
 		public Utilisateur update(@PathVariable Long id, @RequestBody Utilisateur Utilisateur) {
 			if (!UtilisateurRepo.existsById(id)) {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Utilisateur non trouvé");

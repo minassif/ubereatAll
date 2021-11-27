@@ -19,8 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import ubereat.model.TypePlat;
 import ubereat.model.TypeResto;
+import ubereat.model.Views;
 import ubereat.repository.ITypePlat;
 
 @RestController
@@ -34,7 +37,7 @@ public class TypePlatRestController {
 		private ITypePlat TypePlatRepo;
 
 		@GetMapping("")
-		
+		@JsonView(Views.ViewTypePlat.class)
 		public List<TypePlat> findAll() {
 			List<TypePlat> TypePlats = TypePlatRepo.findAll();
 
@@ -44,6 +47,7 @@ public class TypePlatRestController {
 		
 
 		@GetMapping("{id}")
+		@JsonView(Views.ViewTypePlat.class)
 		public TypePlat find(@PathVariable Long id) {
 			Optional<TypePlat> optTypePlat = TypePlatRepo.findById(id);
 
@@ -55,6 +59,7 @@ public class TypePlatRestController {
 		}
 		
 		@GetMapping("/Like{String}")
+		@JsonView(Views.ViewTypePlat.class)
 		public List<TypePlat> findByName(@PathVariable String nom) {
 			List<TypePlat> optTypeResto = TypePlatRepo.findByName(nom);
 
@@ -66,6 +71,7 @@ public class TypePlatRestController {
 		}
 
 		@PostMapping("")
+		@JsonView(Views.ViewTypePlat.class)
 		public TypePlat create(@Valid @RequestBody TypePlat TypePlat, BindingResult result) {
 			
 			
@@ -75,6 +81,7 @@ public class TypePlatRestController {
 		}
 
 		@PutMapping("/{id}")
+		@JsonView(Views.ViewTypePlat.class)
 		public TypePlat update(@PathVariable Long id, @RequestBody TypePlat TypePlat) {
 			if (!TypePlatRepo.existsById(id)) {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "TypePlat non trouvé");
