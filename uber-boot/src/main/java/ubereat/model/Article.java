@@ -10,7 +10,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+
 @Entity
+@JsonView(Views.ViewCommon.class)
 public class Article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +25,13 @@ public class Article {
 	private String description;
 	private String  img;
 	@ManyToOne
+	@JsonView(Views.ViewArticle.class)
 	private Commande commande;
 	@ManyToOne
+	@JsonView(Views.ViewArticle.class)
 	private Restaurant restaurant;
 	@OneToMany(mappedBy="article")
+	@JsonView(Views.ViewArticle.class)
 	private List<TypePlat> typesPlat;
 	
 	public Article() {}

@@ -19,7 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import ubereat.model.TypeResto;
+import ubereat.model.Views;
 import ubereat.repository.ITypeResto;
 
 @RestController
@@ -33,7 +36,7 @@ public class TypeRestoRestController {
 	private ITypeResto TypeRestoRepo;
 
 	@GetMapping("")
-
+	@JsonView(Views.ViewTypeResto.class)
 	public List<TypeResto> findAll() {
 		List<TypeResto> TypeRestos = TypeRestoRepo.findAll();
 
@@ -43,6 +46,7 @@ public class TypeRestoRestController {
 
 
 	@GetMapping("{id}")
+	@JsonView(Views.ViewTypeResto.class)
 	public TypeResto find(@PathVariable Long id) {
 		Optional<TypeResto> optTypeResto = TypeRestoRepo.findById(id);
 
@@ -54,6 +58,7 @@ public class TypeRestoRestController {
 	}
 	
 	@GetMapping("/Like{String}")
+	@JsonView(Views.ViewTypeResto.class)
 	public List<TypeResto> findByName(@PathVariable String nom) {
 		List<TypeResto> optTypeResto = TypeRestoRepo.findByName(nom);
 
@@ -65,6 +70,7 @@ public class TypeRestoRestController {
 	}
 
 	@PostMapping("")
+	@JsonView(Views.ViewTypeResto.class)
 	public TypeResto create(@Valid @RequestBody TypeResto TypeResto, BindingResult result) {
 
 
@@ -74,6 +80,7 @@ public class TypeRestoRestController {
 	}
 
 	@PutMapping("/{id}")
+	@JsonView(Views.ViewTypeResto.class)
 	public TypeResto update(@PathVariable Long id, @RequestBody TypeResto TypeResto) {
 		if (!TypeRestoRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "TypeResto non trouvé");

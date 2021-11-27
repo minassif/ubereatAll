@@ -8,7 +8,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
+@JsonView(Views.ViewCommon.class)
 public class TypeResto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +20,7 @@ public class TypeResto {
 	private int version;
 	private String nom;
 	@ManyToOne
+	@JsonView(Views.ViewTypeResto.class)
 	private Restaurant restaurant;
 
 	public TypeResto() {}

@@ -22,6 +22,7 @@ public class Views {
 	public static class ViewCommande extends ViewCommon {
 	}
 	
+	
 	public static class ViewLivreur extends ViewCommon {
 	}
 	
@@ -39,7 +40,9 @@ public class Views {
 	
 	public static class ViewUtilisateur extends ViewCommon {
 	}
-	public static class ViewRestaurantWithPrix extends ViewRestaurant{
-			
+	public static class ViewRestaurantWithPrix extends ViewRestaurant{	
+	}
+	
+	public static class ViewCommandeDetail extends ViewCommande {
 	}
 }

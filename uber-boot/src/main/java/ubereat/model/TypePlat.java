@@ -7,7 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
+@JsonView(Views.ViewCommon.class)
 public class TypePlat {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +19,7 @@ public class TypePlat {
 	private int version;
 	private String nom;
 	@ManyToOne
+	@JsonView(Views.ViewTypePlat.class)
 	private Article article;
 	
 	public TypePlat() {

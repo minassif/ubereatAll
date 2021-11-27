@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-
+import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Client;
+import ubereat.model.Views;
 import ubereat.repository.IClient;
 
 @RestController
@@ -34,6 +35,7 @@ public class ClientRestController {
 	
 
 	@GetMapping("")
+	@JsonView(Views.ViewClient.class)
 	public List<Client> findAll() {
 		List<Client> clients = clientRepo.findAll();
 		return clients;
@@ -41,6 +43,7 @@ public class ClientRestController {
 	
 	
 	@GetMapping("{id}")
+	@JsonView(Views.ViewClient.class)
 	public Client find(@PathVariable Long id) {
 		Optional<Client> optClient = clientRepo.findById(id);
 
@@ -52,7 +55,7 @@ public class ClientRestController {
 	}
 	
 	@PostMapping("")
-
+	@JsonView(Views.ViewClient.class)
 	public Client create(@RequestBody Client client) {
 		client = clientRepo.save(client);
 
@@ -61,7 +64,7 @@ public class ClientRestController {
 	
 	
 	@PutMapping("/{id}")
-
+	@JsonView(Views.ViewClient.class)
 	public Client update(@PathVariable Long id, @RequestBody Client client) {
 		if (!clientRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client non trouvé");
