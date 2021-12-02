@@ -1,11 +1,13 @@
 package ubereat.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
@@ -25,9 +27,9 @@ public class Article {
 	private double prix;
 	private String description;
 	private String  img;
-	@ManyToOne
+	@ManyToMany(mappedBy="articles")
 	@JsonView(Views.ViewArticle.class)
-	private Commande commande;
+	private List<Commande> commandes=new ArrayList<Commande>();
 	@ManyToOne
 	@JsonView(Views.ViewArticle.class)
 	private Restaurant restaurant;
@@ -37,14 +39,14 @@ public class Article {
 	
 	public Article() {}
 	
-	public Article(double prix,String nom, String description, String img, Commande commande, Restaurant restaurant,
+	public Article(double prix,String nom, String description, String img, List<Commande> commande, Restaurant restaurant,
 			List<TypePlat> typesPlat) {
 		super();
 		this.nom= nom;
 		this.prix = prix;
 		this.description = description;
 		this.img = img;
-		this.commande = commande;
+		this.commandes = commande;
 		this.restaurant = restaurant;
 		this.typesPlat = typesPlat;
 	}
@@ -95,11 +97,11 @@ public class Article {
 	public void setImg(String img) {
 		this.img = img;
 	}
-	public Commande getCommande() {
-		return commande;
+	public List<Commande> getCommande() {
+		return commandes;
 	}
-	public void setCommande(Commande commande) {
-		this.commande = commande;
+	public void setCommande(List<Commande> commandes) {
+		this.commandes = commandes;
 	}
 	public Restaurant getRestaurant() {
 		return restaurant;
