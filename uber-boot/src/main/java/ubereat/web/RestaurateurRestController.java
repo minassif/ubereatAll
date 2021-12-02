@@ -23,7 +23,7 @@ import ubereat.model.Views;
 import ubereat.repository.IRestaurateur;
 
 @RestController
-@RequestMapping("/Restaurateur")
+@RequestMapping("/restaurateur")
 @CrossOrigin("*")
 public class RestaurateurRestController {
 	@Autowired
