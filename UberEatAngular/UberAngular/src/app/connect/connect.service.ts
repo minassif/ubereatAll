@@ -17,7 +17,7 @@ export class ConnectService {
   }
 
   connexion(connect: ConnectDTO): Observable<Utilisateur> {
-    return this.http.post<Utilisateur>(this.utilisateurUrl + "connexion", connect);
+    return this.http.post<Utilisateur>(this.utilisateurUrl + "connect", connect);
   }
 
   deconnexion() {
