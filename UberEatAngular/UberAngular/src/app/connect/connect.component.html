@@ -1,1 +1,27 @@
-<p>connect works!</p>
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="login-form bg-light mt-4 p-4">
+            <form action="" method="" class="row g-3">
+                <h4>Connexion</h4>
+                <div class="col-12">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur" [(ngModel)]="connexionForm.username">
+                </div>
+                <div class="col-12">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="connexionForm.password">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success float-end" (click)="login()">Se Connecter</button>
+                </div>
+                <div class="col-12">
+                    <span class="text-danger" *ngIf="errorLogin">{{errorLogin}}</span>
+                </div>
+            </form>
+            <hr class="mt-4">
+            <div class="col-12">
+                <p class="text-center mb-0">Pas encore inscrit ? <a>Inscription</a></p>
+            </div>
+        </div>
+    </div>
+</div>
