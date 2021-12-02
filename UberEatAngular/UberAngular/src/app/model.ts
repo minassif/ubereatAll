@@ -50,8 +50,8 @@ export class Livreur extends Utilisateur {
         this.rate = rate;
     }
 }
-export class Admin extends Utilisateur{
-    constructor(){
+export class Admin extends Utilisateur {
+    constructor() {
         super();
     }
 }
@@ -97,30 +97,30 @@ export class Restaurant {
 }
 
 
-export class Commande{
+export class Commande {
     id: number;
     version: number;
-    prix: number; 
+    prix: number;
     status: string;
     tempsPrep: number;
     rateResto: number;
     ratelivreur: number;
-  
 
-    constructor(id?:number, version?:number, prix?:number, status?:string, tempsPrep?:number, rateResto?:number, ratelivreur?:number){
-        this.id=id;
-        this.version=version;
-        this.prix=prix;
-        this.status=status;
-        this.tempsPrep=tempsPrep;
-        this.rateResto=rateResto;
-        this.ratelivreur=ratelivreur;
+
+    constructor(id?: number, version?: number, prix?: number, status?: string, tempsPrep?: number, rateResto?: number, ratelivreur?: number) {
+        this.id = id;
+        this.version = version;
+        this.prix = prix;
+        this.status = status;
+        this.tempsPrep = tempsPrep;
+        this.rateResto = rateResto;
+        this.ratelivreur = ratelivreur;
     }
 
 
 }
 
-export class ConnectDTO{
+export class ConnectDTO {
     email: string;
     password: string;
 
@@ -128,5 +128,49 @@ export class ConnectDTO{
         this.email = email;
         this.password = password;
     }
+}
+
+export class TypePlat {
+    id: number;
+    version: number;
+    nom: string;
+
+    constructor(id?: number, version?: number, nom?: string) {
+        this.id = id;
+        this.version = version;
+        this.nom = nom;
+    }
+
+}
+export class TypeResto {
+    id: number;
+    version: number;
+    nom: string;
+
+    constructor(id?: number, version?: number, nom?: string) {
+        this.id = id;
+        this.version = version;
+        this.nom = nom;
+    }
+
+}
+
+export class Article {
+    id: number;
+    version: number;
+    nom: string;
+    prix: number;
+    description: string;
+    img: string;
+
+    constructor(id?: number, version?: number, nom?: string, prix?: number, description?: string, img?: string) {
+        this.id = id;
+        this.version = version;
+        this.nom = nom;
+        this.prix = prix;
+        this.description = description;
+        this.img = img;
+    }
+
 }
 

@@ -1,5 +1,6 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,16 @@ export class AppConfigService {
 
   constructor(private http: HttpClient) {}
 
-  
+
+  findAllTransport(): Observable<Array<string>> {
+    return this.http.get<Array<string>>(this.backEndUrl + "transports");
+  }
+
+  findAllStatus(): Observable<Array<string>> {
+    return this.http.get<Array<string>>(this.backEndUrl + "status");
+  }
+
+
 }
+  
+
