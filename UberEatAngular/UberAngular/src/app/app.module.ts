@@ -11,6 +11,10 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { RechercheRestoComponent } from './recherche-resto/recherche-resto.component';
 import { CarteRestoComponent } from './carte-resto/carte-resto.component';
 import { PanierComponent } from './panier/panier.component';
+import { ConnectService } from './connect/connect.service';
+import { AcceuilService } from './acceuil/acceuil.service';
+import { RechercheRestoService } from './recherche-resto/recherche-resto.service';
+import { CarteRestoService } from './carte-resto/carte-resto.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,7 @@ import { PanierComponent } from './panier/panier.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AppConfigService],
+  providers: [AppConfigService,ConnectService,AcceuilService,RechercheRestoService,CarteRestoService],
   bootstrap: [AppComponent]
 })
 
