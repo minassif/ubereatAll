@@ -4,7 +4,7 @@ export class Utilisateur {
     id: number;
     version: number;
     email: string;
-    passsord: string;
+    password: string;
     nom: string;
     prenom: string;
     tel: string;
