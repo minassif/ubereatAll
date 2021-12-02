@@ -105,13 +105,13 @@ public class CommandeRestController {
 			return commandes;
 		}
 		
-//		@GetMapping("/restaurant/{id}")
-//		@JsonView(Views.ViewCommande.class)
-//		public List<Commande> findAllByRestaurant(@PathVariable Long id) {
-//			List<Commande> commandes = commandeRepo.findAllByRestaurant(id);
-//
-//			return commandes;
-//		}
+		@GetMapping("/restaurant/{id}")
+		@JsonView(Views.ViewCommande.class)
+		public List<Commande> findAllByRestaurant(@PathVariable Long id) {
+			List<Commande> commandes = commandeRepo.findAllByRestaurant(id);
+
+			return commandes;
+		}
 
 
 		@PostMapping("")

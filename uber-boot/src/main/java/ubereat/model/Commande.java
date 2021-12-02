@@ -9,12 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.UniqueConstraint;
 import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -42,9 +38,7 @@ public class Commande {
 	@ManyToOne
 	@JsonView(Views.ViewCommande.class)
 	private Client client;
-	@ManyToMany
-	@JoinTable(name="commande_article",joinColumns = @JoinColumn(name = "commande_id"), inverseJoinColumns = @JoinColumn(name = "article_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
-			"commande_id", "article_id" }))
+	@OneToMany(mappedBy = "commande")
 	@JsonView(Views.ViewCommandeDetail.class)
 	private List<Article> articles =new ArrayList<Article>();
 	
