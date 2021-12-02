@@ -21,6 +21,7 @@ public class Article {
 	private Long id;
 	@Version
 	private int version;
+	private String  nom;
 	private double prix;
 	private String description;
 	private String  img;
@@ -36,9 +37,10 @@ public class Article {
 	
 	public Article() {}
 	
-	public Article(double prix, String description, String img, Commande commande, Restaurant restaurant,
+	public Article(double prix,String nom, String description, String img, Commande commande, Restaurant restaurant,
 			List<TypePlat> typesPlat) {
 		super();
+		this.nom= nom;
 		this.prix = prix;
 		this.description = description;
 		this.img = img;
@@ -46,6 +48,23 @@ public class Article {
 		this.restaurant = restaurant;
 		this.typesPlat = typesPlat;
 	}
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public List<TypePlat> getTypesPlat() {
+		return typesPlat;
+	}
+
+	public void setTypesPlat(List<TypePlat> typesPlat) {
+		this.typesPlat = typesPlat;
+	}
+
 	public Long getId() {
 		return id;
 	}
