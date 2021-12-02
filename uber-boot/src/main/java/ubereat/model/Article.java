@@ -1,11 +1,13 @@
 package ubereat.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
@@ -21,12 +23,13 @@ public class Article {
 	private Long id;
 	@Version
 	private int version;
+	private String nom;
 	private double prix;
 	private String description;
 	private String  img;
-	@ManyToOne
+	@ManyToMany(mappedBy="articles")
 	@JsonView(Views.ViewArticle.class)
-	private Commande commande;
+	private List<Commande> commandes=new ArrayList<Commande>();
 	@ManyToOne
 	@JsonView(Views.ViewArticle.class)
 	private Restaurant restaurant;
@@ -36,16 +39,32 @@ public class Article {
 	
 	public Article() {}
 	
-	public Article(double prix, String description, String img, Commande commande, Restaurant restaurant,
+	public Article(double prix,String nom, String description, String img, List<Commande> commande, Restaurant restaurant,
 			List<TypePlat> typesPlat) {
 		super();
 		this.prix = prix;
 		this.description = description;
 		this.img = img;
-		this.commande = commande;
+		this.commandes = commande;
 		this.restaurant = restaurant;
 		this.typesPlat = typesPlat;
 	}
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public List<TypePlat> getTypesPlat() {
+		return typesPlat;
+	}
+
+	public void setTypesPlat(List<TypePlat> typesPlat) {
+		this.typesPlat = typesPlat;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -76,11 +95,11 @@ public class Article {
 	public void setImg(String img) {
 		this.img = img;
 	}
-	public Commande getCommande() {
-		return commande;
+	public List<Commande> getCommande() {
+		return commandes;
 	}
-	public void setCommande(Commande commande) {
-		this.commande = commande;
+	public void setCommande(List<Commande> commande) {
+		this.commandes = commande;
 	}
 	public Restaurant getRestaurant() {
 		return restaurant;
