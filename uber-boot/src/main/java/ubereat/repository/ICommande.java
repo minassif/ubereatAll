@@ -19,6 +19,6 @@ public interface ICommande extends JpaRepository<Commande, Long> {
 	@Query("select distinct c from Commande c where c.client.id = :idClient")
 	List<Commande> findAllByClient(@Param("idClient") Long idClient);
 	
-//	@Query("select distinct c from Commande c where c.restaurant.id = :idRestaurant")
-//	List<Commande> findAllByRestaurant(@Param("idRestaurant") Long idRestaurant);
+	@Query("select distinct c from Commande c where c.restaurant.id = :idRestaurant")
+	List<Commande> findAllByRestaurant(@Param("idRestaurant") Long idRestaurant);
 }
