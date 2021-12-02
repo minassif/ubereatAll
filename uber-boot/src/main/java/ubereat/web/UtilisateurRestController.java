@@ -24,9 +24,10 @@ import com.fasterxml.jackson.annotation.JsonView;
 import ubereat.model.Utilisateur;
 import ubereat.model.Views;
 import ubereat.repository.IUtilisateur;
+import ubereat.web.dto.ConnectDTO;
 
 @RestController
-@RequestMapping("/Utilisateur")
+@RequestMapping("/utilisateur")
 @CrossOrigin("*")
 public class UtilisateurRestController {
 	
@@ -86,6 +87,19 @@ public class UtilisateurRestController {
 			}
 			
 			UtilisateurRepo.deleteById(id);
+		}
+		
+		@PostMapping("/connect")
+		@JsonView(Views.ViewUtilisateur.class)
+		public Utilisateur connexion(@RequestBody ConnectDTO connect) {
+			
+			Optional<Utilisateur> optUtilisateur = UtilisateurRepo.findByUsernameAndPassword(connect.getEmail(),connect.getPassword());
+
+			if (optUtilisateur.isPresent()) {
+				return optUtilisateur.get();
+			} else {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Utilisateur non trouvé");
+			}
 		}
 
 }

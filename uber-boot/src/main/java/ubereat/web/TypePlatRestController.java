@@ -27,7 +27,7 @@ import ubereat.model.Views;
 import ubereat.repository.ITypePlat;
 
 @RestController
-@RequestMapping("/TypePlat")
+@RequestMapping("/typePlat")
 @CrossOrigin("*")
 public class TypePlatRestController {
 	

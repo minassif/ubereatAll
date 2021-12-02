@@ -120,3 +120,13 @@ export class Commande{
 
 }
 
+export class ConnectDTO{
+    username: string;
+    password: string;
+
+    constructor(username?: string, password?: string) {
+        this.username = username;
+        this.password = password;
+    }
+}
+

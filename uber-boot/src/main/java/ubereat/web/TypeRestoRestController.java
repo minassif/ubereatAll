@@ -26,7 +26,7 @@ import ubereat.model.Views;
 import ubereat.repository.ITypeResto;
 
 @RestController
-@RequestMapping("/TypeResto")
+@RequestMapping("/typeResto")
 @CrossOrigin("*")
 public class TypeRestoRestController {
 
