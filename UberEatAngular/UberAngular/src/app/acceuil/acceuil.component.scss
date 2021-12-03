@@ -54,61 +54,6 @@
   
   /* Style the footer */
   
-  .footer{
-    display: flex;
-    background-color: black;
-    background-size: cover;
-    height:150px;
-    padding-top: 50px;
-    color:white;
-  }
   
-  .footer img{
-    height:50px;
-  }
-  
-  #topFoot{
-    border-bottom: solid white 3px;
-    width:100%;
-  }
-  
-  
-  
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-    background-color:#0d6efd00;
-    color:white;
-  }
-  
-  .navbartop .nav-link{
-    color:white;
-  }
-  
-  #logo{
-    display: flex;
-    align-items: flex-start;
-    height : 28px;
-    width:100%;
-    background-size: 100%;
-    background-image: url("../../assets/img/logo.png");
-  }
 
-  .transi {
-      transition: background 200ms ease;
-      transition-property: background;
-      transition-duration: 200ms;
-      transition-timing-function: ease;
-      transition-delay: 0s;
-  }
   
-  .dropdown-menu{
-    background-color: #8e8b8a;
-    border-radius: 5%;
-    width: 70%;
-  }
-  .dropdown-item{
-    color: white;
-  }
-  .dropdown:hover .dropdown-menu {
-      display: block;
-      margin-top: 0; // remove the gap so it doesn't close
-   }
