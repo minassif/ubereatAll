@@ -26,18 +26,15 @@
     border:solid #8e8b8a;
     background-color:white ;
   }
+
+  .header img{
+    height:50px;
+  }
+
   .navbartop .nav-link:hover {
       color: grey;
   }
   
-  #logo{
-    display: flex;
-    align-items: flex-start;
-    height : 65px;
-    width:100%;
-    background-size: 100%;
-    background-image: url("../assets/img/logo.png");
-  }
   .navbartop{
     height :10%;
     position:fixed;
@@ -52,8 +49,27 @@
     justify-content: center;
   }
 
+  .footer{
+    display: flex;
+    background-color: black;
+    background-size: cover;
+    height:150px;
+    padding-top: 50px;
+    color:white;
+    position: absolute fixed;
+    bottom:0;
+  }
   
   
+  #topFoot{
+    border-bottom: solid white 3px;
+    width:100%;
+  }
+  
+  #logo{
+    height: 35px;
+  }
+
   .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
     background-color:#0d6efd00;
     color:white;
