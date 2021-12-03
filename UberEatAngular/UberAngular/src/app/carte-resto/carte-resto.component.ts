@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleHttpService } from '../article-http.service';
 import { Article } from '../model';
 import { ArticleService } from '../article.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
@@ -13,7 +12,7 @@ export class CarteRestoComponent implements OnInit {
 
   article: Array<Article> = new Array<Article>();
 
-  constructor(private articleService:ArticleHttpService) { }
+  constructor(private articleService:ArticleService) { }
 
   ngOnInit(): void {
   }
