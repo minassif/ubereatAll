@@ -55,14 +55,14 @@ public class ArticleRestController {
 
 		return articles;
 	}
-	
+	/*
 	@GetMapping("/typePlat/{nom}")
 	@JsonView(Views.ViewArticle.class)
 	public List<Article> findByTypePlat(@PathVariable String nom) {
 		List<Article> articles = articleRepo.findByTypePlat(nom);
 
 		return articles;
-	}
+	}*/
 	
 	@GetMapping("/restaurantId/{id}")
 	@JsonView(Views.ViewArticle.class)
@@ -71,15 +71,15 @@ public class ArticleRestController {
 
 		return articles;
 	}
-	
+	/*
 	@GetMapping("/restaurantId/{id}/{typePlat}")
 	@JsonView(Views.ViewArticle.class)
 	public List<Article> findByRestaurantIdAndTypesPlats(@PathVariable Long id,@PathVariable TypePlat typePlat) {
 		List<Article> articles = articleRepo.findByRestaurantIdAndTypesPlats(id,typePlat);
 
 		return articles;
-	}
-	
+	}*/
+	/*
 	@GetMapping("/restaurantId/{id}/{vegetarien}")
 	@JsonView(Views.ViewArticle.class)
 	public List<Article> findVegetarienByRestaurantId(@PathVariable Long id,@PathVariable Boolean vegetarien) {
@@ -87,7 +87,7 @@ public class ArticleRestController {
 
 		return articles;
 	}
-	
+	*/
 	@GetMapping("/{id}")
 	@JsonView(Views.ViewArticle.class)
 	public Article find(@PathVariable Long id) {
