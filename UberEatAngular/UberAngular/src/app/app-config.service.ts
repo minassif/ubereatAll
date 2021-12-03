@@ -21,11 +21,11 @@ export class AppConfigService {
     return this.http.get<Array<string>>(this.backEndUrl + "status");
   }
   findAllTypesRestos(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.backEndUrl + "status");
+    return this.http.get<Array<string>>(this.backEndUrl + "typesRestos");
   }
 
   findAllTypesPlats(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.backEndUrl + "status");
+    return this.http.get<Array<string>>(this.backEndUrl + "typesPlats");
   }
 
 
