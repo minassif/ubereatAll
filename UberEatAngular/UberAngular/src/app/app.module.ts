@@ -16,6 +16,8 @@ import { AcceuilService } from './acceuil/acceuil.service';
 import { RechercheRestoService } from './recherche-resto/recherche-resto.service';
 import { CarteRestoService } from './carte-resto/carte-resto.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ArticleService } from './article.service';
+import { CommandeService } from './commande.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AppConfigService,ConnectService,AcceuilService,RechercheRestoService,CarteRestoService],
+  providers: [AppConfigService,ConnectService,AcceuilService,RechercheRestoService,CarteRestoService,ArticleService,CommandeService],
   bootstrap: [AppComponent]
 })
 

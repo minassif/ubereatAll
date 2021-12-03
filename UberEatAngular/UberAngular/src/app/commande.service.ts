@@ -7,7 +7,7 @@ import { Commande } from './model';
 @Injectable({
   providedIn: 'root'
 })
-export class CommandeHttpService {
+export class CommandeService {
 
  
   commandes : Array<Commande> = new Array<Commande>();
