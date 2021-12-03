@@ -22,8 +22,6 @@ import ubereat.repository.ICommande;
 import ubereat.repository.ILivreur;
 import ubereat.repository.IRestaurant;
 import ubereat.repository.IRestaurateur;
-import ubereat.repository.ITypePlat;
-import ubereat.repository.ITypeResto;
 import ubereat.repository.IUtilisateur;
 
 @SpringBootTest
@@ -41,10 +39,6 @@ class UberBootApplicationTests {
 	private IRestaurant restaurantRepo;
 	@Autowired
 	private IRestaurateur restaurateurRepo;
-	@Autowired
-	private ITypePlat typePlatRepo;
-	@Autowired
-	private ITypeResto typeRestoRepo;
 	@Autowired
 	private IUtilisateur utilisateurRepo;
 	
@@ -151,11 +145,7 @@ class UberBootApplicationTests {
 		kebab.setRestaurateur(andreBabke);
 		
 	
-		TypeResto pizzeriaa = new TypeResto();
-		pizzeriaa.setNom("pizzeria");
 		
-		TypeResto rapide = new TypeResto();
-		rapide.setNom("rapide");
 		
 		
 		
@@ -168,8 +158,6 @@ class UberBootApplicationTests {
 		pizzeria.setRate(4.0);
 		pizzeria.setRestaurateur(jeanPizz);
 		
-		pizzeriaa.setRestaurant(pizzeria);
-		rapide.setRestaurant(pizzeria);	
 
 		
 		Livreur benji = new Livreur();
@@ -212,8 +200,6 @@ class UberBootApplicationTests {
 		restaurateurRepo.save(andreBabke);
 		restaurantRepo.save(kebab);
 		restaurantRepo.save(pizzeria);
-		typeRestoRepo.save(rapide);
-		typeRestoRepo.save(pizzeriaa);
 		articleRepo.save(marherita);
 		articleRepo.save(coca);
 		commandeRepo.save(macommande);
