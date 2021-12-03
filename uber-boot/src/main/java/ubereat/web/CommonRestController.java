@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ubereat.model.Status;
 import ubereat.model.Transport;
-import ubereat.model.TypesPlats;
-import ubereat.model.TypesRestos;
+import ubereat.model.TypePlat;
+import ubereat.model.TypeResto;
 
 @RestController
 @CrossOrigin("*")
@@ -24,11 +24,11 @@ public class CommonRestController {
 	    }
 
 	 @GetMapping("/typesRestos")
-	 public TypesRestos[] getTypesRestos() {
-		 return TypesRestos.values();
+	 public TypeResto[] getTypesRestos() {
+		 return TypeResto.values();
 	 }
-	 @GetMapping("/typesplats")
-	 public TypesPlats[] getTypesPlats() {
-		 return TypesPlats.values();
+	 @GetMapping("/typeplat")
+	 public TypePlat[] getTypesPlats() {
+		 return TypePlat.values();
 	 }
 }
