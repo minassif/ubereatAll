@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
+import { Article } from '../model';
 
 @Component({
   selector: 'app-recherche-resto',
@@ -11,5 +13,7 @@ export class RechercheRestoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
 }

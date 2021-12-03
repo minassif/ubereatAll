@@ -83,8 +83,10 @@ export class Restaurant {
     description: string;
     rate: number;
     pricerange: number;
+    typeResto:string;
+    
 
-    constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number) {
+    constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number,typeResto?:string) {
         this.id = id;
         this.version = version;
         this.nom = nom;
@@ -95,6 +97,7 @@ export class Restaurant {
         this.description = description;
         this.rate = rate;
         this.pricerange = pricerange;
+        this.typeResto = typeResto;
     }
 }
 
@@ -132,30 +135,6 @@ export class ConnectDTO {
     }
 }
 
-export class TypePlat {
-    id: number;
-    version: number;
-    nom: string;
-
-    constructor(id?: number, version?: number, nom?: string) {
-        this.id = id;
-        this.version = version;
-        this.nom = nom;
-    }
-
-}
-export class TypeResto {
-    id: number;
-    version: number;
-    nom: string;
-
-    constructor(id?: number, version?: number, nom?: string) {
-        this.id = id;
-        this.version = version;
-        this.nom = nom;
-    }
-
-}
 
 export class Article {
     id: number;
@@ -165,8 +144,9 @@ export class Article {
     prix: number;
     description: string;
     img: string;
+    typePlat: string;
 
-    constructor(id?: number, version?: number,vegetarien?:boolean, nom?: string, prix?: number, description?: string, img?: string) {
+    constructor(id?: number, version?: number,vegetarien?:boolean, nom?: string, prix?: number, description?: string, img?: string, typePlat?:string) {
         this.id = id;
         this.version = version;
         this.vegetarien = vegetarien;
@@ -174,6 +154,7 @@ export class Article {
         this.prix = prix;
         this.description = description;
         this.img = img;
+        this.typePlat=typePlat;
     }
 
 }

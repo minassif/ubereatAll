@@ -71,19 +71,20 @@
 
 
 
-<script type="text/javascript">
-$(document).scroll(function() {
-  if($(window).scrollTop() !=0){
-    $(".navbartop").css("backgroundColor","grey");
-  }
-  else {
-    $(".navbartop").css("backgroundColor","#8e8b8a00");
-  }
-});
-</script>
+
 
 
 
 
 <router-outlet></router-outlet>
 
+<script type="text/javascript">
+  $(document).scroll(function() {
+    if($(window).scrollTop() ==0){
+      $(".navbartop").css("backgroundColor","grey");
+    }
+    else {
+      $(".navbartop").css("backgroundColor","#8e8b8a00");
+    }
+  });
+  </script>

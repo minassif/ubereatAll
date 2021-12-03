@@ -14,8 +14,6 @@ import ubereat.model.TypePlat;
 
 public interface IArticle extends JpaRepository<Article, Long> {
 
-	@Query("select distinct a from Article a left join fetch a.typesPlat t where t.nom = :nomTypePlat")
-	List<Article> findByTypePlat(@Param("nomTypePlat") String nom);
 
 	@Query("select a from Article a order by a.prix asc")
 	List<Article> findAllByPrixAsc();
@@ -28,11 +26,11 @@ public interface IArticle extends JpaRepository<Article, Long> {
 	
 	@Query("select a from Article a where a.nom = :nom")
 	Optional<Article> findByNom(@Param("nom") String nom);
-	
+	/*
 	@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.typesPlats = :typePlat")
 	List<Article> findByRestaurantIdAndTypesPlats(@Param("idRestaurant") Long id,@Param("typePlat") TypePlat typePlat);
-	
-	@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.vegetarien = :vegetarien")
+	*/
+	/*@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.vegetarien = :vegetarien")
 	List<Article> findVegetarienByRestaurantId(@Param("idRestaurant") Long id,@Param("vegetarien") Boolean vegetarien);
-	
+	*/
 }

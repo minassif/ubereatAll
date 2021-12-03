@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleHttpService } from '../article-http.service';
 import { Article } from '../model';
+import { ArticleService } from '../article.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
@@ -16,8 +17,15 @@ export class CarteRestoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  listArticleByType(type:string){
+    return this.articleService.findByType(type);
+  }
 
   list(): Array<Article> {
     return this.articleService.findAll();
+  }
+  listArticleVege(vege:boolean){
+    return this.articleService.findVegetarien(vege);
   }
 }
