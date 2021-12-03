@@ -41,7 +41,7 @@
             </div>
         </nav>
 
-        <table border="solid">
+        <table width="1000" border="solid">
             <tr>
                 <td rowspan="3"><img src="../../assets/img/superbe_soupe.jpg" width="300" height="220"></td>
                 <td colspan="2">SALADE DE SOUPE</td>
@@ -55,6 +55,29 @@
             <tr>
                 <td></td>
                 <td>1000 €       <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-info">+</button>
+                    <a class="btn btn-danger"><i>-</i></a>
+                </div></td>
+                <td>
+                    
+                </td>
+            </tr>
+        </table>
+
+        <table width="1000" border="solid" *ngFor="let article of list()">
+            <tr>
+                <td rowspan="3"><img src={{article.img}} width="300" height="220"></td>
+                <td colspan="2">{{article.nom}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>{{article.description}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>{{article.prix}} €       <div class="btn-group btn-group-sm">
                     <button type="button" class="btn btn-info">+</button>
                     <a class="btn btn-danger"><i>-</i></a>
                 </div></td>
@@ -80,15 +103,6 @@
                 </tr>
             </tbody>
         </table>
-
-        <div>
-            <ul>
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              
-            </ul>
-        </div>
 
     </div>
 </div>
