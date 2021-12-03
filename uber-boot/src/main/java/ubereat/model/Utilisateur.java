@@ -25,7 +25,7 @@ public class Utilisateur {
 	private String prenom;
 	private String tel;
 	private String iban;
-	
+	private String statut;
 	
 	public Utilisateur() {
 		super();
@@ -86,6 +86,12 @@ public class Utilisateur {
 	}
 	public void setIban(String iban) {
 		this.iban = iban;
+	}
+	public String getStatut() {
+		return statut;
+	}
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 	
 

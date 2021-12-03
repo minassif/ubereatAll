@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ConnectDTO } from '../model';
+import { Client, ConnectDTO } from '../model';
 import { ConnectService } from './connect.service';
 
 @Component({

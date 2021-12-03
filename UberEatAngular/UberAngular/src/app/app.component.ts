@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ConnectService } from './connect/connect.service';
+import { Utilisateur } from './model';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
 
   constructor(public ConnectService: ConnectService) {
   }
+
 
   deconnexion() {
     this.ConnectService.deconnexion();
