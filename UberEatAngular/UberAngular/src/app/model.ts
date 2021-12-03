@@ -9,8 +9,9 @@ export class Utilisateur {
     prenom: string;
     tel: string;
     iban: string;
+    statut: string;
 
-    constructor(id?: number, version?: number, email?: string, password?: string, nom?: string, prenom?: string, tel?: string, iban?: string) {
+    constructor(id?: number, version?: number, email?: string, password?: string, nom?: string, prenom?: string, tel?: string, iban?: string, statut?: string) {
         this.id = id;
         this.version = version;
         this.email = email;
@@ -18,6 +19,7 @@ export class Utilisateur {
         this.prenom = prenom;
         this.tel = tel;
         this.iban = iban;
+        this.statut= statut;
     }
 }
 

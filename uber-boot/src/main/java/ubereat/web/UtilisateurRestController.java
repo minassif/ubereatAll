@@ -23,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Utilisateur;
 import ubereat.model.Views;
+import ubereat.repository.IClient;
+import ubereat.repository.ILivreur;
+import ubereat.repository.IRestaurateur;
 import ubereat.repository.IUtilisateur;
 import ubereat.web.dto.ConnectDTO;
 
@@ -35,6 +38,12 @@ public class UtilisateurRestController {
 
 		@Autowired
 		private IUtilisateur UtilisateurRepo;
+		@Autowired
+		private IClient ClientRepo;
+		@Autowired
+		private IRestaurateur RestaurateurRepo;
+		@Autowired
+		private ILivreur LivreurRepo;
 
 		@GetMapping("")
 		@JsonView(Views.ViewUtilisateur.class)
@@ -95,8 +104,20 @@ public class UtilisateurRestController {
 			
 			Optional<Utilisateur> optUtilisateur = UtilisateurRepo.findByUsernameAndPassword(connect.getEmail(),connect.getPassword());
 
+			Utilisateur user;
 			if (optUtilisateur.isPresent()) {
-				return optUtilisateur.get();
+				user=optUtilisateur.get();
+				if (ClientRepo.existsById(user.getId())) {
+					user.setStatut("client");
+				}
+				if (RestaurateurRepo.existsById(user.getId())) {
+					user.setStatut("restaurateur");
+				}
+				if (LivreurRepo.existsById(user.getId())) {
+					user.setStatut("livreur");
+				}
+				
+				return user;
 			} else {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Utilisateur non trouvé");
 			}
