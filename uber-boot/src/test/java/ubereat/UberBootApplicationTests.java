@@ -155,6 +155,7 @@ class UberBootApplicationTests {
 		
 		Article coca =new Article();
 		coca.setNom("coca");
+		coca.setVegetarien(true);
 		coca.setDescription("Soda de type coca");
 		coca.setPrix(2);
 		coca.setRestaurant(pizzeria);
@@ -163,6 +164,7 @@ class UberBootApplicationTests {
 		
 		Article marherita =new Article();
 		marherita.setNom("marherita");
+		marherita.setVegetarien(true);
 		marherita.setDescription("Pizza: marherita");
 		marherita.setPrix(8);
 		marherita.setRestaurant(pizzeria);
