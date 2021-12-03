@@ -25,6 +25,7 @@ public class Article {
 	private int version;
 	private String  nom;
 	private double prix;
+	private boolean vegetarien;
 	private String description;
 	private String  img;
 	@ManyToMany(mappedBy="articles")
@@ -39,11 +40,12 @@ public class Article {
 	
 	public Article() {}
 	
-	public Article(double prix,String nom, String description, String img, List<Commande> commande, Restaurant restaurant,
+	public Article(double prix,String nom,boolean vegetarien, String description, String img, List<Commande> commande, Restaurant restaurant,
 			List<TypePlat> typesPlat) {
 		super();
 		this.nom= nom;
 		this.prix = prix;
+		this.vegetarien = vegetarien;
 		this.description = description;
 		this.img = img;
 		this.commandes = commande;
@@ -51,6 +53,16 @@ public class Article {
 		this.typesPlat = typesPlat;
 	}
 	
+	
+
+	public boolean isVegetarien() {
+		return vegetarien;
+	}
+
+	public void setVegetarien(boolean vegetarien) {
+		this.vegetarien = vegetarien;
+	}
+
 	public String getNom() {
 		return nom;
 	}

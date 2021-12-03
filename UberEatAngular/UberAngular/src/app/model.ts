@@ -158,14 +158,16 @@ export class TypeResto {
 export class Article {
     id: number;
     version: number;
+    vegetarien: boolean;
     nom: string;
     prix: number;
     description: string;
     img: string;
 
-    constructor(id?: number, version?: number, nom?: string, prix?: number, description?: string, img?: string) {
+    constructor(id?: number, version?: number,vegetarien?:boolean, nom?: string, prix?: number, description?: string, img?: string) {
         this.id = id;
         this.version = version;
+        this.vegetarien = vegetarien;
         this.nom = nom;
         this.prix = prix;
         this.description = description;
