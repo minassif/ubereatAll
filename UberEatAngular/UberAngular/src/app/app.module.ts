@@ -15,6 +15,7 @@ import { ConnectService } from './connect/connect.service';
 import { AcceuilService } from './acceuil/acceuil.service';
 import { RechercheRestoService } from './recherche-resto/recherche-resto.service';
 import { CarteRestoService } from './carte-resto/carte-resto.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CarteRestoService } from './carte-resto/carte-resto.service';
     AcceuilComponent,
     RechercheRestoComponent,
     CarteRestoComponent,
-    PanierComponent
+    PanierComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
