@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AppConfigService } from '../app-config.service';
+import { Restaurateur } from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -6,57 +10,44 @@ import { Injectable } from '@angular/core';
 export class RestaurateurService {
 
   restaurateurs : Array<Restaurateur> = new Array<Restaurateur>();
+  restaurateurUrl : string;
 
-  constructor() { }
+  constructor(private http: HttpClient, private appConfig: AppConfigService) {
+    this.restaurateurUrl  = this.appConfig.backEndUrl + "restaurateur/"
+    this.load();
 
-  findAll(): Array<Restaurateur> {
+   }
+
+
+   findAll(): Array<Restaurateur> {
     return this.restaurateurs;
   }
 
-  findById(id: number): Restaurateur {
-    for (let restaurateur of this.restaurateurs) {
-      if (restaurateur.id == id) {
-        return restaurateur;
-      }
-    }
-    return null;
+  findById(id: number): Observable<Restaurateur> {
+    return this.http.get<Restaurateur>(this.restaurateurUrl  + id);
   }
 
   create(restaurateur: Restaurateur) {
-    let max = 0;
-    for (let current of this.restaurateurs) {
-      if (max < current.id) {
-        max = current.id;
-      }
-    }
-    restaurateur.id = ++max;
-
-    this.restaurateurs.push(restaurateur);
+    this.http.post<Restaurateur>(this.restaurateurUrl , restaurateur).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
   }
 
   modify(restaurateur: Restaurateur) {
-    let find: boolean = false;
-    for (var indice = 0; indice < this.restaurateurs.length; indice++) {
-      if (this.restaurateurs[indice].id == restaurateur.id) {
-        find = true;
-        break;
-      }
-    }
-    if (find) {
-      this.restaurateurs[indice] = restaurateur;
-    }
+    this.http.put<Restaurateur>(this.restaurateurUrl  + restaurateur.id, restaurateur).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
   }
 
   deleteById(id: number) {
-    let find: boolean = false;
-    for (var indice = 0; indice < this.restaurateurs.length; indice++) {
-      if (this.restaurateurs[indice].id == id) {
-        find = true;
-        break;
-      }
-    }
-    if (find) {
-      this.restaurateurs.splice(indice, 1);
-    }
+    this.http.delete<void>(this.restaurateurUrl  + id).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
+  }
+
+  load() {
+    this.http.get<Array<Restaurateur>>(this.restaurateurUrl ).subscribe(response => {
+      this.restaurateurs = response;
+    }, error => console.log(error));
   }
 }
