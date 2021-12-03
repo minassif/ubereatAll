@@ -9,17 +9,11 @@ import { Article } from '../model';
 })
 export class RechercheRestoComponent implements OnInit {
 
-  constructor(private articleService:ArticleService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  listArticleByType(type:string){
-    return this.articleService.findByType(type);
-  }
-
-  listArticleVege(vege:boolean){
-    return this.articleService.findVegetarien(vege);
-  }
+  
 
 }

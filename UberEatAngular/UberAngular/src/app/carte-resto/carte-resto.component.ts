@@ -13,5 +13,12 @@ export class CarteRestoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  listArticleByType(type:string){
+    return this.articleService.findByType(type);
+  }
 
+  listArticleVege(vege:boolean){
+    return this.articleService.findVegetarien(vege);
+  }
 }
