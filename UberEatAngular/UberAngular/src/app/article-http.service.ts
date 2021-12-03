@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AppConfigService } from '../app-config.service';
+import { AppConfigService } from './app-config.service';
 
-import { Article } from '../model';
+import { Article } from './model';
 
 
 @Injectable({
