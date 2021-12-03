@@ -34,14 +34,12 @@ public class Article {
 	@ManyToOne
 	@JsonView(Views.ViewArticle.class)
 	private Restaurant restaurant;
-	@OneToMany(mappedBy="article")
-	@JsonView(Views.ViewArticle.class)
-	private List<TypesPlats> typesPlats;
+	private TypePlat typePlat;
 	
 	public Article() {}
 	
 	public Article(double prix,String nom,boolean vegetarien, String description, String img, List<Commande> commande, Restaurant restaurant,
-			List<TypesPlats> typesPlats) {
+			TypePlat typePlat) {
 		super();
 		this.nom= nom;
 		this.prix = prix;
@@ -50,7 +48,7 @@ public class Article {
 		this.img = img;
 		this.commandes = commande;
 		this.restaurant = restaurant;
-		this.typesPlats = typesPlats;
+		this.typePlat = typePlat;
 	}
 	
 	
@@ -71,12 +69,20 @@ public class Article {
 		this.nom = nom;
 	}
 
-	public List<TypesPlats> getTypesPlat() {
-		return typesPlats;
+	public List<Commande> getCommandes() {
+		return commandes;
 	}
 
-	public void setTypesPlat(List<TypesPlats> typesPlats) {
-		this.typesPlats = typesPlats;
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
+	public TypePlat getTypePlat() {
+		return typePlat;
+	}
+
+	public void setTypePlat(TypePlat typePlat) {
+		this.typePlat = typePlat;
 	}
 
 	public Long getId() {
@@ -109,12 +115,7 @@ public class Article {
 	public void setImg(String img) {
 		this.img = img;
 	}
-	public List<Commande> getCommande() {
-		return commandes;
-	}
-	public void setCommande(List<Commande> commandes) {
-		this.commandes = commandes;
-	}
+	
 	public Restaurant getRestaurant() {
 		return restaurant;
 	}

@@ -19,7 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Article;
-import ubereat.model.TypesPlats;
+import ubereat.model.TypePlat;
 import ubereat.model.Views;
 import ubereat.repository.IArticle;
 
@@ -72,10 +72,10 @@ public class ArticleRestController {
 		return articles;
 	}
 	
-	@GetMapping("/restaurantId/{id}/{typesPlats}")
+	@GetMapping("/restaurantId/{id}/{typePlat}")
 	@JsonView(Views.ViewArticle.class)
-	public List<Article> findByRestaurantIdAndTypesPlats(@PathVariable Long id,@PathVariable TypesPlats typesPlats) {
-		List<Article> articles = articleRepo.findByRestaurantIdAndTypesPlats(id,typesPlats);
+	public List<Article> findByRestaurantIdAndTypesPlats(@PathVariable Long id,@PathVariable TypePlat typePlat) {
+		List<Article> articles = articleRepo.findByRestaurantIdAndTypesPlats(id,typePlat);
 
 		return articles;
 	}
