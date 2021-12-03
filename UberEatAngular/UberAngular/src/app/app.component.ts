@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConnectService } from './connect/connect.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UberAngular';
+
+  constructor(public ConnectService: ConnectService) {
+  }
+
+  deconnexion() {
+    this.ConnectService.deconnexion();
+  }
 }

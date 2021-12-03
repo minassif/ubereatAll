@@ -1,0 +1,77 @@
+
+
+/* Style the header */
+.header {
+    display: flex;
+    align-items: flex-start;
+    height:100px;
+    color: white;
+    background-image: url("img/bouffe1.jpg");
+    background-size: 100%;
+    background-position: top;
+  }
+  
+  .header .bouton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    height : 50px;
+    width:70%;
+    border:solid white;
+    background-color: #8e8b8a;
+  }
+  
+  .header .bouton:hover{
+    border:solid #8e8b8a;
+    background-color:white;
+  }
+  .navbartop .nav-link:hover {
+      color: grey;
+  }
+  
+  #logo{
+    display: flex;
+    align-items: flex-start;
+    height : 65px;
+    width:100%;
+    background-size: 100%;
+    background-image: url("img/logo.png");
+  }
+  .navbartop{
+    height :10%;
+    position:fixed;
+    top: 0;
+    right: 0;
+    align-items: center;
+  }
+  
+  #elemnavbar{
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color:#0d6efd00;
+    color:white;
+  }
+  
+  .navbartop .nav-link{
+    color:white;
+  }
+  
+  
+  .dropdown-menu{
+    background-color: #8e8b8a;
+    border-radius: 5%;
+    width: 70%;
+  }
+  .dropdown-item{
+    color: white;
+  }
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0; // remove the gap so it doesn't close
+   }
