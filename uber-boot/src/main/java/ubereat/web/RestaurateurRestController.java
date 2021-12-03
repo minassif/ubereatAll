@@ -48,6 +48,8 @@ public class RestaurateurRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Evaluation non trouvé");
 		}
 	}
+	
+
 
 
 	@PostMapping("")
