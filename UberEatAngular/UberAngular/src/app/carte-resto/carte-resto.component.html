@@ -9,7 +9,7 @@
             <div class="container-fluid">
 
                 <button class="btn btn-secondary dropdown-toggle col-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Type de plat
+                    Végétarien
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -41,26 +41,52 @@
             </div>
         </nav>
 
+        <table border="solid">
+            <tr>
+                <td rowspan="3"><img src="../../assets/img/superbe_soupe.jpg" width="300" height="220"></td>
+                <td colspan="2">SALADE DE SOUPE</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Une magnifique salade aux doux arômes de soupe</td>
+                <td>Mille euros</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-info">+</button>
+                        <a class="btn btn-danger"><i>-</i></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor="let article of list()">
+                    <td>{{article.nom}}</td>
+                    <td>{{article.img}}</td>
+                    <td>{{article.description}}</td>
+                    <td>{{article.prix}}</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-info">+</button>
+                            <a class="btn btn-danger"><i>-</i></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <div>
             <ul>
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
         </div>
 
