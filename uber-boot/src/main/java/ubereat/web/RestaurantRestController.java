@@ -56,6 +56,14 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
+	@GetMapping("typeResto/{typeResto}")
+	@JsonView(Views.ViewRestaurant.class)
+	public List<Restaurant> findRestaurantWithType(@PathVariable String typeResto){
+		List<Restaurant> restaurants = restaurantRepo.findAllByType(typeResto);
+		return restaurants;
+		
+	}
+	
 	@GetMapping("rate/{rate}")
 	@JsonView(ViewRestaurantWithPrix.class)
 	public List<Restaurant> findAllByRate(@PathVariable Double rate) {

@@ -31,5 +31,8 @@ public interface IRestaurant extends JpaRepository<Restaurant, Long>{
 	
 	@Query("select e from Restaurant e where e.rate > rate")
 	List<Restaurant> findAllByRate(@Param("rate") Double rate);
+	
+	@Query("select e from Restaurant e where e.typeResto =: typeResto")
+	List<Restaurant>findAllByType(@Param("typeResto") String typeResto);
 
 }
