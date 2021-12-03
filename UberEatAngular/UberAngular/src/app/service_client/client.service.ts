@@ -1,61 +1,52 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AppConfigService } from '../app-config.service';
+import { Client } from '../model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
-  clients: Array<Client> = new Array<Client>();
+  clients : Array<Client> = new Array<Client>();
+  clientUrl : string;
 
-  constructor() { }
+  constructor(private http: HttpClient, private appConfig: AppConfigService) {
+    this.clientUrl = this.appConfig.backEndUrl + "client/"
+    this.load();
 
-  findAll(): Array<Client> {
+   }
+
+
+   findAll(): Array<Client> {
     return this.clients;
   }
 
-  findById(id: number): Client {
-    for (let client of this.clients) {
-      if (client.id == id) {
-        return client;
-      }
-    }
-    return null;
+  findById(id: number): Observable<Client> {
+    return this.http.get<Client>(this.clientUrl + id);
   }
 
-  create(client: Client) {
-    let max = 0;
-    for (let current of this.clients) {
-      if (max < current.id) {
-        max = current.id;
-      }
-    }
-    client.id = ++max;
-
-    this.clients.push(client);
+  create(client : Client) {
+    this.http.post<Client>(this.clientUrl, client).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
   }
 
   modify(client: Client) {
-    let find: boolean = false;
-    for (var indice = 0; indice < this.clients.length; indice++) {
-      if (this.clients[indice].id == client.id) {
-        find = true;
-        break;
-      }
-    }
-    if (find) {
-      this.clients[indice] = client;
-    }
+    this.http.put<Client>(this.clientUrl + client.id, client).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
   }
 
   deleteById(id: number) {
-    let find: boolean = false;
-    for (var indice = 0; indice < this.clients.length; indice++) {
-      if (this.clients[indice].id == id) {
-        find = true;
-        break;
-      }
-    }
-    if (find) {
-      this.clients.splice(indice, 1);
-    }
+    this.http.delete<void>(this.clientUrl + id).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
+  }
+
+  load() {
+    this.http.get<Array<Client>>(this.clientUrl).subscribe(response => {
+      this.clients = response;
+    }, error => console.log(error));
   }
 }

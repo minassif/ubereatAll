@@ -14,18 +14,18 @@ export class AppConfigService {
 
 
   findAllTransport(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.backEndUrl + "transports");
+    return this.http.get<Array<string>>(this.backEndUrl + "transport");
   }
 
   findAllStatus(): Observable<Array<string>> {
     return this.http.get<Array<string>>(this.backEndUrl + "status");
   }
   findAllTypesRestos(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.backEndUrl + "typesRestos");
+    return this.http.get<Array<string>>(this.backEndUrl + "typeResto");
   }
 
   findAllTypesPlats(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.backEndUrl + "typesPlats");
+    return this.http.get<Array<string>>(this.backEndUrl + "typePlat");
   }
 
 

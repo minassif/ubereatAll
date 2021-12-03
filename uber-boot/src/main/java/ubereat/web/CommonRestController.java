@@ -14,7 +14,7 @@ import ubereat.model.TypeResto;
 public class CommonRestController {
 
 	
-	 @GetMapping("/transports")
+	 @GetMapping("/transport")
 	    public Transport[] getTransport() {
 	        return Transport.values();
 	    }
@@ -23,7 +23,7 @@ public class CommonRestController {
 	        return Status.values();
 	    }
 
-	 @GetMapping("/typesRestos")
+	 @GetMapping("/typeResto")
 	 public TypeResto[] getTypesRestos() {
 		 return TypeResto.values();
 	 }
