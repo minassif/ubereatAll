@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
 })
 
 export class AppConfigService {
-  
+
   backEndUrl: string = "http://localhost:8080/";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
 
   findAllTransport(): Observable<Array<string>> {
@@ -20,8 +20,15 @@ export class AppConfigService {
   findAllStatus(): Observable<Array<string>> {
     return this.http.get<Array<string>>(this.backEndUrl + "status");
   }
+  findAllTypesRestos(): Observable<Array<string>> {
+    return this.http.get<Array<string>>(this.backEndUrl + "status");
+  }
+
+  findAllTypesPlats(): Observable<Array<string>> {
+    return this.http.get<Array<string>>(this.backEndUrl + "status");
+  }
 
 
 }
-  
+
 
