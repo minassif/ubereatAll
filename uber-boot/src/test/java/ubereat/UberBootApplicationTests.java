@@ -58,6 +58,21 @@ class UberBootApplicationTests {
 		adresseMichel.setVille("Paris");
 		adresseMichel.setVoie("4, allée des embrumes");
 		
+		Adresse adresseDaniel = new Adresse();
+		adresseMichel.setCodepostale("75000");
+		adresseMichel.setVille("Paris");
+		adresseMichel.setVoie("12, avenue de l'auto");
+		
+		Adresse adresseJustine = new Adresse();
+		adresseMichel.setCodepostale("75000");
+		adresseMichel.setVille("Paris");
+		adresseMichel.setVoie("4, allée des embrumes");
+		
+		Adresse adresseRico = new Adresse();
+		adresseMichel.setCodepostale("75000");
+		adresseMichel.setVille("Paris");
+		adresseMichel.setVoie("45, rue de l'alcool");
+		
 		Client michel = new Client();
 		michel.setEmail("michel@nassif.fr");
 		michel.setPassword("michouzizou");
@@ -67,9 +82,37 @@ class UberBootApplicationTests {
 		michel.setCb("black");
 		michel.setAdresse(adresseMichel);
 		michel.setIban("FR76PLUSDETUNES");
-		
-		
 
+		Client Daniel = new Client();
+		michel.setEmail("daniel@nassif.fr");
+		michel.setPassword("vroumvroum");
+		michel.setNom("bilal");
+		michel.setPrenom("daniel");
+		michel.setTel("0669696954");
+		michel.setCb("invisible");
+		michel.setAdresse(adresseDaniel);
+		michel.setIban("FR76PMAXDEBIF");
+		
+		Client Justine = new Client();
+		michel.setEmail("justine@nassif.fr");
+		michel.setPassword("jaimichel");
+		michel.setNom("champagne");
+		michel.setPrenom("justine");
+		michel.setTel("0669696912");
+		michel.setCb("black");
+		michel.setAdresse(adresseMichel);
+		michel.setIban("FR76PMICHELJTM");
+		
+		Client Rico = new Client();
+		michel.setEmail("rico@nassif.fr");
+		michel.setPassword("jaimelalcool");
+		michel.setNom("sanchez");
+		michel.setPrenom("rico");
+		michel.setTel("0669696988");
+		michel.setCb("black");
+		michel.setAdresse(adresseRico);
+		michel.setIban("FR76PARICILESSOUS");
+		
 		Adresse adresseKebab = new Adresse();
 		adresseKebab.setCodepostale("75000");
 		adresseKebab.setVille("Paris");
@@ -79,7 +122,6 @@ class UberBootApplicationTests {
 		adressePizza.setCodepostale("75000");
 		adressePizza.setVille("Paris");
 		adressePizza.setVoie("5, rue des Bilal");
-		
 		
 		
 		Restaurateur jeanPizz = new Restaurateur();
@@ -108,8 +150,6 @@ class UberBootApplicationTests {
 		kebab.setRate(3.4);
 		kebab.setRestaurateur(andreBabke);
 		
-		
-		
 	
 		TypeResto pizzeriaa = new TypeResto();
 		pizzeriaa.setNom("pizzeria");
@@ -129,21 +169,9 @@ class UberBootApplicationTests {
 		pizzeria.setRestaurateur(jeanPizz);
 		
 		pizzeriaa.setRestaurant(pizzeria);
-		rapide.setRestaurant(pizzeria);
+		rapide.setRestaurant(pizzeria);	
 
 		
-		TypePlat boisson=new TypePlat();
-		boisson.setNom("boisson");
-		
-
-		
-		TypePlat pizza=new TypePlat();
-		pizza.setNom("pizza");
-		
-		TypePlat plat=new TypePlat();
-		plat.setNom("plat");
-		
-				
 		Livreur benji = new Livreur();
 		benji.setEmail("benjamin@lachivier.fr");
 		benji.setPassword("ben10");
@@ -160,7 +188,6 @@ class UberBootApplicationTests {
 		coca.setPrix(2);
 		coca.setRestaurant(pizzeria);
 		
-		boisson.setArticles(coca);
 		
 		Article marherita =new Article();
 		marherita.setNom("marherita");
@@ -169,8 +196,6 @@ class UberBootApplicationTests {
 		marherita.setPrix(8);
 		marherita.setRestaurant(pizzeria);
 		
-		pizza.setArticles(marherita);
-		plat.setArticles(marherita);
 		
 		List<Article> macom= new ArrayList<Article>();
 		macom.add(marherita);
@@ -191,9 +216,6 @@ class UberBootApplicationTests {
 		typeRestoRepo.save(pizzeriaa);
 		articleRepo.save(marherita);
 		articleRepo.save(coca);
-		typePlatRepo.save(boisson);
-		typePlatRepo.save(plat);
-		typePlatRepo.save(pizza);
 		commandeRepo.save(macommande);
 		
 	}
