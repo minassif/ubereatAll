@@ -36,12 +36,12 @@ public class Article {
 	private Restaurant restaurant;
 	@OneToMany(mappedBy="article")
 	@JsonView(Views.ViewArticle.class)
-	private List<TypePlat> typesPlat;
+	private List<TypesPlats> typesPlats;
 	
 	public Article() {}
 	
 	public Article(double prix,String nom,boolean vegetarien, String description, String img, List<Commande> commande, Restaurant restaurant,
-			List<TypePlat> typesPlat) {
+			List<TypesPlats> typesPlats) {
 		super();
 		this.nom= nom;
 		this.prix = prix;
@@ -50,7 +50,7 @@ public class Article {
 		this.img = img;
 		this.commandes = commande;
 		this.restaurant = restaurant;
-		this.typesPlat = typesPlat;
+		this.typesPlats = typesPlats;
 	}
 	
 	
@@ -71,12 +71,12 @@ public class Article {
 		this.nom = nom;
 	}
 
-	public List<TypePlat> getTypesPlat() {
-		return typesPlat;
+	public List<TypesPlats> getTypesPlat() {
+		return typesPlats;
 	}
 
-	public void setTypesPlat(List<TypePlat> typesPlat) {
-		this.typesPlat = typesPlat;
+	public void setTypesPlat(List<TypesPlats> typesPlats) {
+		this.typesPlats = typesPlats;
 	}
 
 	public Long getId() {
@@ -122,13 +122,7 @@ public class Article {
 		this.restaurant = restaurant;
 	}
 
-	public List<TypePlat> getTypePlat() {
-		return typesPlat;
-	}
 
-	public void setTypePlat(List<TypePlat> typesPlat) {
-		this.typesPlat = typesPlat;
-	}
 	
 	
 	

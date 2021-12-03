@@ -39,7 +39,7 @@ public class Restaurant {
     private Restaurateur restaurateur;
     @OneToMany(mappedBy= "restaurant")
     @JsonView(Views.ViewRestaurant.class)
-    private List<TypeResto> typeRestos=new ArrayList<TypeResto>();
+    private List<TypesRestos> typeRestos=new ArrayList<TypesRestos>();
     @OneToMany(mappedBy= "restaurant")
     @JsonView(Views.ViewRestaurant.class)
     private List<Article> articles=new ArrayList<Article>();
@@ -55,7 +55,7 @@ public class Restaurant {
 	}
 	
 	public Restaurant(String nom, boolean livraison, boolean emporter, boolean open, String img, String description,
-			double rate, double pricerange, Adresse adresse, Restaurateur restaurateur, List<TypeResto> typeRestos,
+			double rate, double pricerange, Adresse adresse, Restaurateur restaurateur, List<TypesRestos> typeRestos,
 			List<Article> articles) {
 		super();
 		this.nom = nom;
@@ -143,10 +143,10 @@ public class Restaurant {
 	public void setRestaurateur(Restaurateur restaurateur) {
 		this.restaurateur = restaurateur;
 	}
-	public List<TypeResto> getTypeRestos() {
+	public List<TypesRestos> getTypeRestos() {
 		return typeRestos;
 	}
-	public void setTypeRestos(List<TypeResto> typeRestos) {
+	public void setTypeRestos(List<TypesRestos> typeRestos) {
 		this.typeRestos = typeRestos;
 	}
 	public List<Article> getArticles() {
