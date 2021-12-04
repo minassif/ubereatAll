@@ -54,5 +54,8 @@ public interface IRestaurant extends JpaRepository<Restaurant, Long>{
     @Query("select e from Restaurant e where e.open=:true and e.adresse.codepostale=:codepostale and pricerange < 45")
     List<Restaurant>findAllCpOpenCheap(@Param("codepostale") String codepostale);
     
+    @Query("select r from Restaurant r order by r.rate desc")
+    List<Restaurant>findAllOrderByRate();
+    
    
 }

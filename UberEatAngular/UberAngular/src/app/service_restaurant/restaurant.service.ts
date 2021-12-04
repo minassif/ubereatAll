@@ -9,16 +9,23 @@ import { Restaurant } from '../model';
 export class RestaurantService {
 
   restaurants: Array<Restaurant> = new Array<Restaurant>();
+  restaurantsByRate: Array<Restaurant> = new Array<Restaurant>();
   restaurantUrl: string;
 
   constructor(private http:HttpClient , private appConfig:AppConfigService ) { 
     this.restaurantUrl=this.appConfig.backEndUrl + "restaurant/"
     this.load();
+    this.loadByRate();
   }
 
   findAll(): Array<Restaurant> {
     return this.restaurants;
   }
+
+  findAllOrderByRate():Array<Restaurant>{
+    return this.restaurantsByRate;
+  }
+  
   findByType(type:string){
     this.http.get<Array<Restaurant>>(this.restaurantUrl+'/typeResto' + '/' + type).subscribe(resp =>{
       return resp;
@@ -125,10 +132,15 @@ export class RestaurantService {
   }
 
 
-load() {
+  load() {
     this.http.get<Array<Restaurant>>(this.restaurantUrl).subscribe(response => {
       this.restaurants = response;
     }, error => console.log(error));
   }
 
+  loadByRate() {
+    this.http.get<Array<Restaurant>>(this.restaurantUrl + '/orderByRate').subscribe(response => {
+      this.restaurantsByRate = response;
+    }, error => console.log(error));
+  }
 }
