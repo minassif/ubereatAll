@@ -4,14 +4,14 @@
             <form action="" method="" class="row g-3">
                 <h4>Choisir un type d'utilisateur</h4>
                 <select class="form-select" required aria-label="select example" [(ngModel)]="statut" [ngModelOptions]="{standalone: true}">
-                    <option selected value="Client">Client</option>
-                    <option value="Restaurateur">Restaurateur</option>
-                    <option value="Livreur">Livreur</option>
+                    <option selected value="client">Client</option>
+                    <option value="restaurateur">Restaurateur</option>
+                    <option value="livreur">Livreur</option>
                   </select>
                   <br>
 
                   <!-- Form Client -->
-                <div class="clients" *ngIf="statut==='Client'" >
+                <div class="clients" *ngIf="statut==='client'" >
                 <div class="col-12">
                     <label>Email</label>
                     <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="client.email" >
@@ -67,7 +67,7 @@
             </div>
             
             <!-- Form Restaurateur -->
-            <div class="restaurateurs" *ngIf="statut==='Restaurateur'" >
+            <div class="restaurateurs" *ngIf="statut==='restaurateur'" >
                 <div class="col-12">
                     <label>Email</label>
                     <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="restaurateur.email" >
@@ -100,7 +100,7 @@
                 </div>
 
                 <!-- Form Livreur -->
-                <div class="livreurs" *ngIf="statut==='Livreur'" >
+                <div class="livreurs" *ngIf="statut==='livreur'" >
                 <div class="col-12">
                     <label>Email</label>
                     <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="livreur.email" >

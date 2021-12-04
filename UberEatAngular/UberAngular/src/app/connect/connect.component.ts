@@ -24,13 +24,14 @@ export class ConnectComponent implements OnInit {
       this.connectService.utilisateur = resp;
       this.errorLogin = null;
       if(resp.statut=="client"){
-        this.router.navigate(["/rechercheResto"]);
+        this.router.navigate(["/accueil"]);
+        //this.router.navigate(["/rechercheResto"]);
       }
       else if(resp.statut=="restaurateur"){
-        this.router.navigate(["/restaurateur"]);
+        this.router.navigate(["/accueil"]);
       }
       else if(resp.statut=="livreur"){
-        this.router.navigate(["/livreur"]);
+        this.router.navigate(["/accueil"]);
       }
     }, error => {
       console.log(error);
