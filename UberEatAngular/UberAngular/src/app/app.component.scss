@@ -53,17 +53,29 @@
     display: flex;
     background-color: black;
     background-size: cover;
-    height:150px;
+    flex-direction: column;
     padding-top: 50px;
     color:white;
     position: absolute fixed;
     bottom:0;
+    clear:both;
   }
   
   
   #topFoot{
-    border-bottom: solid white 3px;
+    border-bottom: solid white 1px;
     width:100%;
+  }
+
+  #botFoot{
+    display: flex;
+    justify-content: flex-end;
+    height: 15px;
+    font-size: x-small;
+  }
+
+  #logobot{
+    height: 15px;
   }
   
   #logo{
