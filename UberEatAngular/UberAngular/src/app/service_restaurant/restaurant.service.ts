@@ -12,7 +12,8 @@ export class RestaurantService {
   restaurantUrl: string;
 
   constructor(private http:HttpClient , private appConfig:AppConfigService ) { 
-    this.restaurantUrl=this.appConfig.backEndUrl + "restaurant"
+    this.restaurantUrl=this.appConfig.backEndUrl + "restaurant/"
+    this.load();
   }
 
   findAll(): Array<Restaurant> {
@@ -31,10 +32,50 @@ export class RestaurantService {
   }
 
   findByCp(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open'+"/"+cp).subscribe(resp =>{
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/cp'+"/"+cp).subscribe(resp =>{
       return resp;
     },err => console.log(err));
   }
+
+  findOpenCp(cp:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp'+"/"+cp).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
+  }
+
+  findOpenCpExpensive(cp:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/expensive'+"/"+cp).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
+  }
+
+  findOpenCpLessExpensive(cp:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/lessexpensive'+"/"+cp).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
+  }
+  findOpenCpLessCheap(cp:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/lesscheap'+"/"+cp).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
+  }
+
+  findOpenCpCheap(cp:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/cheap'+"/"+cp).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
+  }
+
+  search(filtre: string) {
+    if (filtre) {
+      this.http.get<Array<Restaurant>>(this.restaurantUrl + "search/" + filtre).subscribe(response => {
+        this.restaurants = response;
+      }, error => console.log(error));
+    } else {
+      this.load();
+    }
+  }
+
 
   findById(id: number): Restaurant {
     for (let restaurant of this.restaurants) {
@@ -82,4 +123,12 @@ export class RestaurantService {
       this.restaurants.splice(indice, 1);
     }
   }
+
+
+load() {
+    this.http.get<Array<Restaurant>>(this.restaurantUrl).subscribe(response => {
+      this.restaurants = response;
+    }, error => console.log(error));
+  }
+
 }

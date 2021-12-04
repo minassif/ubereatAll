@@ -49,13 +49,23 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
-	@GetMapping("nom/{nom}")
+	/*@GetMapping("nom/{nom}")
 	@JsonView(ViewRestaurantWithPrix.class)
+	
 	public List<Restaurant> findRestaurantWithPrrix(@PathVariable String  nom) {
 		List<Restaurant> restaurants = restaurantRepo.findALLByNom( nom);
 
 		return restaurants;
+	}*/
+	
+	@GetMapping("/search/{nom}")
+	@JsonView(Views.ViewRestaurant.class)
+	public List<Restaurant> findAllByNom(@PathVariable String nom) {
+		List<Restaurant> matieres = restaurantRepo.findByNomContaining(nom);
+
+		return matieres;
 	}
+	
 	
 	@GetMapping("/open")
 	public List<Restaurant> findOpen(){
@@ -68,22 +78,7 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
-	/*
-	@GetMapping("/open/cp/{cp}")
-	public List<Restaurant> finfAllCpOpen(@PathVariable String cp){
-		List<Restaurant> restaurantsopen = restaurantRepo.findOpen();
-		List<Restaurant> restaurantscp =restaurantRepo.findAllByCP(cp);
-		List<Restaurant> restaurants=new ArrayList<Restaurant>();
-		for(Restaurant res1 : restaurantsopen) {
-			for(Restaurant res2 :restaurantscp){
-				if(res1 == res2)
-					restaurants.add(res1);	
-			}
-		}
-		return restaurants;
-	}
 
-*/	
 	@GetMapping("/open/cp/{cp}")
 	public List<Restaurant> findAllCpOpen(@PathVariable String cp){
 		List<Restaurant> restaurants=restaurantRepo.findAllOpenByCp(cp);
@@ -128,7 +123,23 @@ public class RestaurantRestController {
 
 		return restaurants;
 	}
+	
+	/*
+	@GetMapping("/open/cp/{cp}")
+	public List<Restaurant> finfAllCpOpen(@PathVariable String cp){
+		List<Restaurant> restaurantsopen = restaurantRepo.findOpen();
+		List<Restaurant> restaurantscp =restaurantRepo.findAllByCP(cp);
+		List<Restaurant> restaurants=new ArrayList<Restaurant>();
+		for(Restaurant res1 : restaurantsopen) {
+			for(Restaurant res2 :restaurantscp){
+				if(res1 == res2)
+					restaurants.add(res1);	
+			}
+		}
+		return restaurants;
+	}
 
+*/	
 	@GetMapping("{id}")
 	@JsonView(Views.ViewRestaurant.class)
 	public Restaurant find(@PathVariable Long id) {

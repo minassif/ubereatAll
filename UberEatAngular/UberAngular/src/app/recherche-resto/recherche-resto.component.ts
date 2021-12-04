@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../article.service';
-import { Article } from '../model';
+import { Article, Restaurant } from '../model';
 import { RestaurantService } from '../service_restaurant/restaurant.service';
 
 @Component({
@@ -11,24 +11,51 @@ import { RestaurantService } from '../service_restaurant/restaurant.service';
 export class RechercheRestoComponent implements OnInit {
 
 
+  filtre: string;
 
-  constructor(private restoService : RestaurantService) { }
- 
+  constructor(private restoService: RestaurantService) { }
+
 
   ngOnInit(): void {
   }
-  
-  listRestoByType(type:string){
+
+  search($event: any) {
+    this.filtre = $event;
+    this.restoService.search(this.filtre);
+  }
+
+  listRestoByType(type: string) {
     return this.restoService.findByType(type);
   }
-  
-  listOpen(){
+
+  listOpen() {
     return this.restoService.findOpen();
   }
 
-  listByCp(cp:string){
+  listByCp(cp: string) {
     return this.restoService.findByCp(cp);
 
+  }
+
+  listOpenCp(cp: string) {
+    return this.restoService.findOpenCp(cp);
+  }
+
+
+  listOpenCpExpensive(cp: string) {
+    return this.restoService.findOpenCpExpensive(cp);
+  }
+
+  listOpenCpLessExpensive(cp: string) {
+    return this.restoService.findOpenCpLessExpensive(cp);
+  }
+
+
+  listOpenCpLessCheap(cp: string) {
+    return this.restoService.findOpenCpLessCheap(cp);
+  }
+  listOpenCpCheap(cp: string) {
+    return this.restoService.findOpenCpCheap(cp);
   }
 
 }
