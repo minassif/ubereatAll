@@ -10,10 +10,11 @@
                   </select>
                   <br>
 
-                <div class="clients" *ngIf="statut==='Client'" (click)="initClient()">
+                  <!-- Form Client -->
+                <div class="clients" *ngIf="statut==='Client'" >
                 <div class="col-12">
                     <label>Email</label>
-                    <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="client.email">
+                    <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="client.email" >
                 </div>
                 <div class="col-12">
                     <label>Mot de passe</label>
@@ -27,15 +28,115 @@
                     <label>Prenom</label>
                     <input type="text" name="prenom" class="form-control" placeholder="Prenom" [(ngModel)]="client.prenom">
                 </div>
+                <div class="col-12">
+                    <label>Numéro de Téléphone</label>
+                    <input type="text" name="tel" class="form-control" placeholder="Numéro de Téléphone" [(ngModel)]="client.tel">
+                </div>
+                <div class="col-12">
+                    <label>IBAN</label>
+                    <input type="text" name="iban" class="form-control" placeholder="IBAN" [(ngModel)]="client.iban">
+                </div>
+                <div class="col-12">
+                    <label>Carte Bancaire</label>
+                    <input type="text" name="cb" class="form-control" placeholder="CB" [(ngModel)]="client.cb">
+                </div>
+                <h3>Adresse:</h3>
+                <div class="col-12">
+                    <label>voie</label>
+                    <input type="text" name="voie" class="form-control" placeholder="voie" [(ngModel)]="client.adresse.voie">
+                </div>
+                <div class="col-12">
+                    <label>Complement</label>
+                    <input type="text" name="complement" class="form-control" placeholder="Complement" [(ngModel)]="client.adresse.complement">
+                </div>
+                <div class="row">
+                <div class="col-5">
+                    <label>CodePostal</label>
+                    <input type="text" name="codePostal" class="form-control" placeholder="CodePostal" [(ngModel)]="client.adresse.codePostal">
+                </div>
+                <div class="col-7">
+                    <label>Ville</label>
+                    <input type="text" name="ville" class="form-control" placeholder="Ville" [(ngModel)]="client.adresse.ville">
+                </div>
+                </div>
                 
-                
+                <br>
                 <div class="col-12">
                     <button type="submit" class="btn btn-success float-end" (click)="saveClient()">Valider</button>
                 </div>
-            
-                
             </div>
             
+            <!-- Form Restaurateur -->
+            <div class="restaurateurs" *ngIf="statut==='Restaurateur'" >
+                <div class="col-12">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="restaurateur.email" >
+                </div>
+                <div class="col-12">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="restaurateur.password">
+                </div>
+                <div class="col-12">
+                    <label>Nom</label>
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="restaurateur.nom">
+                </div>
+                <div class="col-12">
+                    <label>Prenom</label>
+                    <input type="text" name="prenom" class="form-control" placeholder="Prenom" [(ngModel)]="restaurateur.prenom">
+                </div>
+                <div class="col-12">
+                    <label>Numéro de Téléphone</label>
+                    <input type="text" name="tel" class="form-control" placeholder="Numéro de Téléphone" [(ngModel)]="restaurateur.tel">
+                </div>
+                <div class="col-12">
+                    <label>IBAN</label>
+                    <input type="text" name="iban" class="form-control" placeholder="IBAN" [(ngModel)]="restaurateur.iban">
+                </div>
+                
+                <br>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success float-end" (click)="saveRestaurateur()">Valider</button>
+                </div>
+                </div>
+
+                <!-- Form Livreur -->
+                <div class="livreurs" *ngIf="statut==='Livreur'" >
+                <div class="col-12">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="livreur.email" >
+                </div>
+                <div class="col-12">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="livreur.password">
+                </div>
+                <div class="col-12">
+                    <label>Nom</label>
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="livreur.nom">
+                </div>
+                <div class="col-12">
+                    <label>Prenom</label>
+                    <input type="text" name="prenom" class="form-control" placeholder="Prenom" [(ngModel)]="livreur.prenom">
+                </div>
+                <div class="col-12">
+                    <label>Numéro de Téléphone</label>
+                    <input type="text" name="tel" class="form-control" placeholder="Numéro de Téléphone" [(ngModel)]="livreur.tel">
+                </div>
+                <div class="col-12">
+                    <label>IBAN</label>
+                    <input type="text" name="iban" class="form-control" placeholder="IBAN" [(ngModel)]="livreur.iban">
+                </div>
+                <select class="form-select" required aria-label="select example" [(ngModel)]="livreur.transport" [ngModelOptions]="{standalone: true}">
+                    <option selected value="velo">Velo</option>
+                    <option value="voiture">Voiture</option>
+                    <option value="moto">Moto</option>
+                  </select>
+                
+                <br>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success float-end" (click)="saveLivreur()">Valider</button>
+                </div>
+                </div>
+
             </form>
         
         </div>

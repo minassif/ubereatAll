@@ -15,6 +15,7 @@ export class Utilisateur {
         this.id = id;
         this.version = version;
         this.email = email;
+        this.password=password;
         this.nom = nom;
         this.prenom = prenom;
         this.tel = tel;
