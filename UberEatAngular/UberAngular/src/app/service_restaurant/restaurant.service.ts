@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
 import { Restaurant } from '../model';
 
@@ -9,45 +8,78 @@ import { Restaurant } from '../model';
 })
 export class RestaurantService {
 
-  restaurants : Array<Restaurant> = new Array<Restaurant>();
-  restaurantUrl : string;
+  restaurants: Array<Restaurant> = new Array<Restaurant>();
+  restaurantUrl: string;
 
-  constructor(private http: HttpClient, private appConfig: AppConfigService) {
-    this.restaurantUrl = this.appConfig.backEndUrl + "restaurant/"
-    this.load();
-
-   }
-
-
-   findAll(): Array<Restaurant> {
-    return this.restaurants ;
+  constructor(private http:HttpClient , private appConfig:AppConfigService ) { 
+    this.restaurantUrl=this.appConfig.backEndUrl + "restaurant"
   }
 
-  findById(id: number): Observable<Restaurant> {
-    return this.http.get<Restaurant>(this.restaurantUrl + id);
+  findAll(): Array<Restaurant> {
+    return this.restaurants;
+  }
+  findByType(type:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/typeResto' + '/' + type).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
   }
 
-  create(retaurant : Restaurant) {
-    this.http.post<Restaurant>(this.restaurantUrl, retaurant).subscribe(resp => {
-      this.load();
-    }, error => console.log(error));
+  findOpen(){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open').subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
   }
 
-  modify(retaurant: Restaurant) {
-    this.http.put<Restaurant>(this.restaurantUrl + retaurant.id, retaurant).subscribe(resp => {
-      this.load();
-    }, error => console.log(error));
+  findByCp(cp:string){
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open'+"/"+cp).subscribe(resp =>{
+      return resp;
+    },err => console.log(err));
+  }
+
+  findById(id: number): Restaurant {
+    for (let restaurant of this.restaurants) {
+      if (restaurant.id == id) {
+        return restaurant;
+      }
+    }
+    return null;
+  }
+
+  create(restaurant: Restaurant) {
+    let max = 0;
+    for (let current of this.restaurants) {
+      if (max < current.id) {
+        max = current.id;
+      }
+    }
+    restaurant.id = ++max;
+
+    this.restaurants.push(restaurant);
+  }
+
+  modify(restaurant: Restaurant) {
+    let find: boolean = false;
+    for (var indice = 0; indice < this.restaurants.length; indice++) {
+      if (this.restaurants[indice].id == restaurant.id) {
+        find = true;
+        break;
+      }
+    }
+    if (find) {
+      this.restaurants[indice] = restaurant;
+    }
   }
 
   deleteById(id: number) {
-    this.http.delete<void>(this.restaurantUrl + id).subscribe(resp => {
-      this.load();
-    }, error => console.log(error));
-  }
-
-  load() {
-    this.http.get<Array<Restaurant>>(this.restaurantUrl).subscribe(response => {
-      this.restaurants = response;
-    }, error => console.log(error));
+    let find: boolean = false;
+    for (var indice = 0; indice < this.restaurants.length; indice++) {
+      if (this.restaurants[indice].id == id) {
+        find = true;
+        break;
+      }
+    }
+    if (find) {
+      this.restaurants.splice(indice, 1);
+    }
   }
 }
