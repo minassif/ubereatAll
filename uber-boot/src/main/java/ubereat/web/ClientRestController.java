@@ -53,6 +53,17 @@ public class ClientRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client non trouvé");
 		}
 	}
+	@GetMapping("/adresse/{id}")
+	@JsonView(Views.ViewClient.class)
+	public Client findWithAdress(@PathVariable Long id) {
+		Optional<Client> optClient = clientRepo.findWithAdress(id);
+
+		if (optClient.isPresent()) {
+			return optClient.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client non trouvé");
+		}
+	}
 	
 	@PostMapping("")
 	@JsonView(Views.ViewClient.class)
