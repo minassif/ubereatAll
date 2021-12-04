@@ -55,7 +55,7 @@
         <li class="dropdown col-2">
           <!--<button class="btn btn-secondary dropdown-toggle" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
             Menu déroulant</button>-->
-          <a class="nav-link bouton" [routerLink]="['/connect']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">S'inscire</a>
+          <a class="nav-link bouton" [routerLink]="['/infos']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">S'inscire</a>
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="ConnectService.utilisateur">>Mon Compte</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="ConnectService.utilisateur">
             <li><a class="dropdown-item" href="#">Mes infos</a></li>
