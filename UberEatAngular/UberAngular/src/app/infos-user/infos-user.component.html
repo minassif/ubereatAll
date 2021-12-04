@@ -125,6 +125,7 @@
                     <label>IBAN</label>
                     <input type="text" name="iban" class="form-control" placeholder="IBAN" [(ngModel)]="livreur.iban">
                 </div>
+                <label>Moyen de transport</label>
                 <select class="form-select" required aria-label="select example" [(ngModel)]="livreur.transport" [ngModelOptions]="{standalone: true}">
                     <option selected value="velo">Velo</option>
                     <option value="voiture">Voiture</option>
