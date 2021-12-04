@@ -53,19 +53,19 @@ class UberBootApplicationTests {
 		adresseMichel.setVoie("4, allée des embrumes");
 		
 		Adresse adresseDaniel = new Adresse();
-		adresseMichel.setCodepostale("75000");
-		adresseMichel.setVille("Paris");
-		adresseMichel.setVoie("12, avenue de l'auto");
+		adresseDaniel.setCodepostale("75000");
+		adresseDaniel.setVille("Paris");
+		adresseDaniel.setVoie("12, avenue de l'auto");
 		
 		Adresse adresseJustine = new Adresse();
-		adresseMichel.setCodepostale("75000");
-		adresseMichel.setVille("Paris");
-		adresseMichel.setVoie("4, allée des embrumes");
+		adresseJustine.setCodepostale("75000");
+		adresseJustine.setVille("Paris");
+		adresseJustine.setVoie("4, allée des embrumes");
 		
 		Adresse adresseRico = new Adresse();
-		adresseMichel.setCodepostale("75000");
-		adresseMichel.setVille("Paris");
-		adresseMichel.setVoie("45, rue de l'alcool");
+		adresseRico.setCodepostale("75000");
+		adresseRico.setVille("Paris");
+		adresseRico.setVoie("45, rue de l'alcool");
 		
 		Client michel = new Client();
 		michel.setEmail("michel@nassif.fr");
@@ -76,36 +76,40 @@ class UberBootApplicationTests {
 		michel.setCb("black");
 		michel.setAdresse(adresseMichel);
 		michel.setIban("FR76PLUSDETUNES");
+		michel.setStatut("client");
 
-		Client Daniel = new Client();
-		michel.setEmail("daniel@nassif.fr");
-		michel.setPassword("vroumvroum");
-		michel.setNom("bilal");
-		michel.setPrenom("daniel");
-		michel.setTel("0669696954");
-		michel.setCb("invisible");
-		michel.setAdresse(adresseDaniel);
-		michel.setIban("FR76PMAXDEBIF");
+		Client daniel = new Client();
+		daniel.setEmail("daniel@nassif.fr");
+		daniel.setPassword("vroumvroum");
+		daniel.setNom("bilal");
+		daniel.setPrenom("daniel");
+		daniel.setTel("0669696954");
+		daniel.setCb("invisible");
+		daniel.setAdresse(adresseDaniel);
+		daniel.setIban("FR76PMAXDEBIF");
+		daniel.setStatut("client");
 		
-		Client Justine = new Client();
-		michel.setEmail("justine@nassif.fr");
-		michel.setPassword("jaimichel");
-		michel.setNom("champagne");
-		michel.setPrenom("justine");
-		michel.setTel("0669696912");
-		michel.setCb("black");
-		michel.setAdresse(adresseMichel);
-		michel.setIban("FR76PMICHELJTM");
+		Client justine = new Client();
+		justine.setEmail("justine@nassif.fr");
+		justine.setPassword("jaimichel");
+		justine.setNom("champagne");
+		justine.setPrenom("justine");
+		justine.setTel("0669696912");
+		justine.setCb("black");
+		justine.setAdresse(adresseJustine);
+		justine.setIban("FR76PMICHELJTM");
+		justine.setStatut("client");
 		
-		Client Rico = new Client();
-		michel.setEmail("rico@nassif.fr");
-		michel.setPassword("jaimelalcool");
-		michel.setNom("sanchez");
-		michel.setPrenom("rico");
-		michel.setTel("0669696988");
-		michel.setCb("black");
-		michel.setAdresse(adresseRico);
-		michel.setIban("FR76PARICILESSOUS");
+		Client rico = new Client();
+		rico.setEmail("rico@nassif.fr");
+		rico.setPassword("jaimelalcool");
+		rico.setNom("sanchez");
+		rico.setPrenom("rico");
+		rico.setTel("0669696988");
+		rico.setCb("black");
+		rico.setAdresse(adresseRico);
+		rico.setIban("FR76PARICILESSOUS");
+		rico.setStatut("client");
 		
 		Adresse adresseKebab = new Adresse();
 		adresseKebab.setCodepostale("75000");
@@ -126,6 +130,7 @@ class UberBootApplicationTests {
 		jeanPizz.setIban("FR76PLEINSDETUNES");
 		jeanPizz.setTel("Double117");
 		jeanPizz.setRestaurant(null);
+		jeanPizz.setStatut("restaurateur");	
 		
 		Restaurateur andreBabke = new Restaurateur();
 		andreBabke.setEmail("andre@kebaboui.fr");
@@ -134,6 +139,7 @@ class UberBootApplicationTests {
 		andreBabke.setPrenom("andre");
 		andreBabke.setIban("FR76LEMBROCHEUR");
 		andreBabke.setTel("KEBABKEBAB");
+		andreBabke.setStatut("restaurateur");
 		
 		Restaurant kebab = new Restaurant();
 		kebab.setNom("kebab andre");
@@ -167,7 +173,7 @@ class UberBootApplicationTests {
 		benji.setPrenom("benjamin");
 		benji.setTel("06000000");
 		benji.setIban("FR00MASSETUNES");
-		
+		benji.setStatut("livreur");
 		
 		Article coca =new Article();
 		coca.setNom("coca");
@@ -195,6 +201,9 @@ class UberBootApplicationTests {
 		macommande.setLivreur(benji);
 		
 		clientRepo.save(michel);
+		clientRepo.save(daniel);
+		clientRepo.save(justine);
+		clientRepo.save(rico);
 		livreurRepo.save(benji);
 		restaurateurRepo.save(jeanPizz);
 		restaurateurRepo.save(andreBabke);

@@ -7,11 +7,12 @@ import { PanierComponent } from './panier/panier.component';
 import { RechercheRestoComponent } from './recherche-resto/recherche-resto.component';
 
 const routes: Routes = [
-  { path: "acceuil", component: AcceuilComponent },
+  { path: "accueil", component: AcceuilComponent },
   { path: "carteResto", component: CarteRestoComponent },
   { path: "rechercheResto", component: RechercheRestoComponent },
   { path: "connect", component: ConnectComponent },
-  { path: "panier", component: PanierComponent }
+  { path: "panier", component: PanierComponent },
+  { path: "", redirectTo: '/accueil', pathMatch: 'full' }
 ];
 
 @NgModule({

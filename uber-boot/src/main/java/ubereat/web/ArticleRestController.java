@@ -124,7 +124,7 @@ public class ArticleRestController {
 	@JsonView(Views.ViewArticle.class)
 	public Article update(@PathVariable Long id, @RequestBody Article article) {
 		if (!articleRepo.existsById(id)) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Evaluation non trouvé");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Article non trouvé");
 		}
 
 		article = articleRepo.save(article);
@@ -135,7 +135,7 @@ public class ArticleRestController {
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
 		if (!articleRepo.existsById(id)) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Evaluation non trouvé");
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Article non trouvé");
 		}
 		
 		articleRepo.deleteById(id);
