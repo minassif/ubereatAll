@@ -41,6 +41,14 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
+	@GetMapping("/orderByRate")
+	@JsonView(Views.ViewRestaurant.class)
+	public List<Restaurant> findAllOrderByRate() {
+		List<Restaurant> restaurants = restaurantRepo.findAllOrderByRate();
+
+		return restaurants;
+	}
+	
 	@GetMapping("pricerange/{pricerange}")
 	@JsonView(ViewRestaurantWithPrix.class)
 	public List<Restaurant> findRestaurantWithPrrix(@PathVariable Double pricerange) {
@@ -72,6 +80,7 @@ public class RestaurantRestController {
 		List<Restaurant> restaurants = restaurantRepo.findOpen();
 		return restaurants;
 	}
+	
 	@GetMapping("/cp/{cp}")
 	public List<Restaurant> findAllByCp(@PathVariable String cp){
 		List<Restaurant> restaurants =restaurantRepo.findAllByCP(cp);
