@@ -18,6 +18,7 @@ import { CarteRestoService } from './carte-resto/carte-resto.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArticleService } from './article.service';
 import { CommandeService } from './commande.service';
+import { InfosUserComponent } from './infos-user/infos-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CommandeService } from './commande.service';
     RechercheRestoComponent,
     CarteRestoComponent,
     PanierComponent,
-    SidebarComponent
+    SidebarComponent,
+    InfosUserComponent
   ],
   imports: [
     BrowserModule,

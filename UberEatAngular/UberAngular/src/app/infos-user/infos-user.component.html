@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="login-form bg-light mt-4 p-4">
+            <form action="" method="" class="row g-3">
+                <h4>Choisir un type d'utilisateur</h4>
+                <select class="form-select" required aria-label="select example" [(ngModel)]="statut" [ngModelOptions]="{standalone: true}">
+                    <option selected value="Client">Client</option>
+                    <option value="Restaurateur">Restaurateur</option>
+                    <option value="Livreur">Livreur</option>
+                  </select>
+                  <br>
+
+                <div class="clients" *ngIf="statut==='Client'" (click)="initClient()">
+                <div class="col-12">
+                    <label>Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="client.email">
+                </div>
+                <div class="col-12">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="client.password">
+                </div>
+                <div class="col-12">
+                    <label>Nom</label>
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="client.nom">
+                </div>
+                <div class="col-12">
+                    <label>Prenom</label>
+                    <input type="text" name="prenom" class="form-control" placeholder="Prenom" [(ngModel)]="client.prenom">
+                </div>
+                
+                
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success float-end" (click)="saveClient()">Valider</button>
+                </div>
+            
+                
+            </div>
+            
+            </form>
+        
+        </div>
+    </div>
+</div>
