@@ -12,6 +12,7 @@ export class RechercheRestoComponent implements OnInit {
 
 
   filtre: string;
+  ouvert: boolean=true;
 
   constructor(private restoService: RestaurantService) { }
 
@@ -20,6 +21,15 @@ export class RechercheRestoComponent implements OnInit {
   }
 
   list(): Array<Restaurant> {
+    if(this.ouvert){
+      return this.restoService.findOpen();
+    }
+    else{
+    return this.restoService.findAll();
+    }
+  }
+
+  listFiltre(): Array<Restaurant> {
     return this.restoService.findAll();
   }
 
@@ -58,6 +68,7 @@ export class RechercheRestoComponent implements OnInit {
   listOpenCpLessCheap(cp: string) {
     return this.restoService.findOpenCpLessCheap(cp);
   }
+
   listOpenCpCheap(cp: string) {
     return this.restoService.findOpenCpCheap(cp);
   }

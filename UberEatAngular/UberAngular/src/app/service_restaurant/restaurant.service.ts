@@ -27,15 +27,20 @@ export class RestaurantService {
   }
   
   findByType(type:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/typeResto' + '/' + type).subscribe(resp =>{
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/typeResto/' + type).subscribe(resp =>{
       return resp;
     },err => console.log(err));
   }
 
-  findOpen(){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open').subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
+  findByTypeV2(type:string){
+    let lien:string='/typeResto/'+type;
+    this.loadFiltre(lien);
+  }
+
+  findOpen():Array<Restaurant>{
+    let lien:string='/open';
+    this.loadFiltre(lien);
+    return this.restaurants;
   }
 
   findByCp(cp:string){
@@ -141,6 +146,12 @@ export class RestaurantService {
   loadByRate() {
     this.http.get<Array<Restaurant>>(this.restaurantUrl + '/orderByRate').subscribe(response => {
       this.restaurantsByRate = response;
+    }, error => console.log(error));
+  }
+
+  loadFiltre(lien:string) {
+    this.http.get<Array<Restaurant>>(this.restaurantUrl+lien).subscribe(response => {
+      this.restaurants = response;
     }, error => console.log(error));
   }
 }

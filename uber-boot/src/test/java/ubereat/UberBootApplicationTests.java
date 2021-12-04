@@ -149,7 +149,7 @@ class UberBootApplicationTests {
 		kebab.setPricerange(5);
 		kebab.setRate(3.4);
 		kebab.setRestaurateur(andreBabke);
-		
+		kebab.setOpen(true);
 	
 		
 		
@@ -163,6 +163,7 @@ class UberBootApplicationTests {
 		pizzeria.setPricerange(9);
 		pizzeria.setRate(4.0);
 		pizzeria.setRestaurateur(jeanPizz);
+		pizzeria.setOpen(false);
 		
 
 		
