@@ -74,7 +74,7 @@ public class ClientRestController {
 	}
 	
 	
-	@PutMapping("/{id}")
+	@PutMapping("{id}")
 	@JsonView(Views.ViewClient.class)
 	public Client update(@PathVariable Long id, @RequestBody Client client) {
 		if (!clientRepo.existsById(id)) {

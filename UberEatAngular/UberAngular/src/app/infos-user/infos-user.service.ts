@@ -28,16 +28,16 @@ export class InfosUserService {
   }
 
   findLivreur(id: number): Observable<Livreur>{
-    return this.http.get<Livreur>(this.userUrl + "livreur"+id)
+    return this.http.get<Livreur>(this.userUrl + "livreur/"+id)
   }
 
   findRestaurateur(id: number): Observable<Restaurateur>{
-    return this.http.get<Restaurateur>(this.userUrl + "restaurateur"+id)
+    return this.http.get<Restaurateur>(this.userUrl + "restaurateur/"+id)
   }
 
   createClient(client:Client) {
     if (this.connectService.utilisateur){
-      this.http.put<Client>(this.userUrl + "client/"+this.id, client).subscribe(resp => {
+      this.http.put<Client>(this.userUrl + "client/"+client.id, client).subscribe(resp => {
         this.router.navigate(["/rechercheResto"]);},
         err => console.log(err));
     }
@@ -49,7 +49,7 @@ export class InfosUserService {
 
   createRestaurateur(restaurateur:Restaurateur) {
     if (this.connectService.utilisateur){
-      this.http.put<Restaurateur>(this.userUrl + "restaurateur/"+this.id, restaurateur).subscribe(resp => {
+      this.http.put<Restaurateur>(this.userUrl + "restaurateur/"+restaurateur.id, restaurateur).subscribe(resp => {
         this.router.navigate(["/"]);},
         err => console.log(err));
     }
@@ -61,7 +61,7 @@ export class InfosUserService {
 
   createLivreur(livreur:Livreur) {
     if (this.connectService.utilisateur){
-      this.http.put<Livreur>(this.userUrl + "livreur/"+this.id, livreur).subscribe(resp => {
+      this.http.put<Livreur>(this.userUrl + "livreur/"+livreur.id, livreur).subscribe(resp => {
         this.router.navigate(["/"]);},
         err => console.log(err));
     }
