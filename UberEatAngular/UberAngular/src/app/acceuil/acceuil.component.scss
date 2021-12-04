@@ -2,9 +2,14 @@
     display: flex;
     background-color: #f4ebeb;
     background-size: 100%;
-    height:700px;
+    padding-top:300px;
+    padding-bottom: 80px;
     justify-content: center;
     align-items: center;
+    background-image: url("../../assets/img/panier_garni.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position-x: center;
   }
   
   .container-fluid{
@@ -12,54 +17,9 @@
     height: 100%;
   }
 
-  .choix{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    border-radius: 5%;
-    height : 500px;
-    margin-left: -20px;
-    margin-right: -20px;
-    
-    box-shadow: 4px 4px 0px black;
+  #restoPopulaires:hover{
+    opacity: 0,5;
   }
-  .choix:hover{
-    height : 530px;
-  }
-  
-  #gauche{
-    background-image: url("../../assets/img/Image_Restaurant.jfif");
-    background-size: contain;
-  }
-  
-  #milieu{
-    background-image: url("../../assets/img/Commande.jpg");
-    background-size: contain;
-  }
-  
-  #droiteHaut{
-    background-image: url("../../assets/img/livreur.jpg");
-    background-size: contain;
-  }
-
-  
-  #droiteBas{
-    background-image: url("../../assets/img/Inscription.jpg");
-    background-size: contain;
-  }
-  
-  .droite{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45%;
-    width:100%;
-    border:solid lightgrey;
-    background-color: green;
-  }
-  
-  /* Style the footer */
   
   
 

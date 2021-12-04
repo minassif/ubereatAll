@@ -4,19 +4,39 @@
       <img src="../../assets/img/Image_Restaurant.jfif" class="card-img-top" alt="...">
     
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Les restaurants près de chez vous</h5>
+        <p class="card-text">Trouver votre prochains repas dans l'un de nos nombreux restaurants partenaires</p>
+        <a class="btn btn-primary" [routerLink]="['/rechercheResto']" routerLinkActive="active">Trouver un Restaurant</a>
       </div>
     </div>
 
     <div class="card col-3">
-      <img src="../../assets/img/Commande.jpg" class="card-img-top" alt="...">
+      <div id="restoPopulaires" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" id="bleh">
+            <img src="../../assets/img/Image_Restaurant.jfif" class="d-block w-100" alt="..." [routerLink]="['/carteResto']" routerLinkActive="active">
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/livreur.jpg" class="d-block w-100" alt="..." [routerLink]="['/carteResto']" routerLinkActive="active">
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/img/livreur.jpg" class="d-block w-100" alt="..." [routerLink]="['/carteResto']" routerLinkActive="active">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#restoPopulaires" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#restoPopulaires" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Nos restaurants à succès</h5>
+        <p class="card-text">Choisissez parmis nos restaurants partenaires les mieux notés</p>
+        <a class="btn btn-primary" [routerLink]="['/acceuil']" routerLinkActive="active">Voir les restaurants</a>
       </div>
     </div>
 
@@ -24,9 +44,10 @@
       <img src="../../assets/img/livreur.jpg" class="card-img-top" alt="...">
     
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Rejoindre la FeedMe Family</h5>
+        <p class="card-text">Rejoignez-nous en inscrivant votre restaurant ou en devenant livreur</p>
+        <a class="btn btn-primary" [routerLink]="['/inscriptionResto']" routerLinkActive="active">Restaurateur</a>&nbsp;&nbsp;
+        <a class="btn btn-primary" [routerLink]="['/inscriptionLivreur']" routerLinkActive="active">Livreur</a>
       </div>
     </div>
   </div> 
