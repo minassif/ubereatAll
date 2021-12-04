@@ -19,6 +19,10 @@ export class RechercheRestoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  list(): Array<Restaurant> {
+    return this.restoService.findAll();
+  }
+
   search($event: any) {
     this.filtre = $event;
     this.restoService.search(this.filtre);
