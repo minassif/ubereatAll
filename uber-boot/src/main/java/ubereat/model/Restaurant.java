@@ -123,12 +123,14 @@ public class Restaurant {
 	public void setRate(double rate) {
 		this.rate = rate;
 	}
-	public double getPricerange() {
+	public double getPricerange() {		
 		return pricerange;
 	}
 	public void setPricerange(double pricerage) {
 		this.pricerange = pricerage;
 	}
+	
+	
 	public Adresse getAdresse() {
 		return adresse;
 	}

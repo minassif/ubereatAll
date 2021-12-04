@@ -25,9 +25,10 @@ public interface IRestaurant extends JpaRepository<Restaurant, Long>{
 	List<Restaurant> findAllByCP(@Param("codepostale") String codepostale);
 
 	
-	@Query("select e from Restaurant e where e.nom like nom")
+	/*@Query("select e from Restaurant e where e.nom like nom")
 	List<Restaurant>findALLByNom(@Param("nom") String nom);
-	
+	*/
+	List<Restaurant> findByNomContaining(String nom);
 	
 	@Query("select e from Restaurant e where e.rate > rate")
 	List<Restaurant> findAllByRate(@Param("rate") Double rate);

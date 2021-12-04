@@ -126,7 +126,8 @@ public class ArticleRestController {
 		if (!articleRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Article non trouvé");
 		}
-
+		
+		
 		article = articleRepo.save(article);
 
 		return article;
