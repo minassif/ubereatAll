@@ -1,5 +1,6 @@
 package ubereat.web;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,7 +57,63 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
-	@GetMapping("typeResto/{typeResto}")
+	@GetMapping("/open")
+	public List<Restaurant> findOpen(){
+		List<Restaurant> restaurants = restaurantRepo.findOpen();
+		return restaurants;
+	}
+	@GetMapping("/cp/{cp}")
+	public List<Restaurant> findAllByCp(@PathVariable String cp){
+		List<Restaurant> restaurants =restaurantRepo.findAllByCP(cp);
+		return restaurants;
+	}
+	
+	/*
+	@GetMapping("/open/cp/{cp}")
+	public List<Restaurant> finfAllCpOpen(@PathVariable String cp){
+		List<Restaurant> restaurantsopen = restaurantRepo.findOpen();
+		List<Restaurant> restaurantscp =restaurantRepo.findAllByCP(cp);
+		List<Restaurant> restaurants=new ArrayList<Restaurant>();
+		for(Restaurant res1 : restaurantsopen) {
+			for(Restaurant res2 :restaurantscp){
+				if(res1 == res2)
+					restaurants.add(res1);	
+			}
+		}
+		return restaurants;
+	}
+
+*/	
+	@GetMapping("/open/cp/{cp}")
+	public List<Restaurant> findAllCpOpen(@PathVariable String cp){
+		List<Restaurant> restaurants=restaurantRepo.findAllOpenByCp(cp);
+		return restaurants;
+		
+	}
+	
+	@GetMapping("/open/cp/expensive/{cp}")
+	public List<Restaurant> findAllCpOpenExpensive(@PathVariable String cp){
+		List<Restaurant> restaurants=restaurantRepo.findAllCpOpenExpensive(cp);
+		return restaurants;
+	}
+	@GetMapping("/open/cp/lessexpensive/{cp}")
+	public List<Restaurant> findAllCpOpenLessExpensive(@PathVariable String cp){
+		List<Restaurant> restaurants=restaurantRepo.findAllCpOpenLessExpensive(cp);
+		return restaurants;
+	}
+	@GetMapping("/open/cp/lesscheap/{cp}")
+	public List<Restaurant> findAllCpOpenLessCheap(@PathVariable String cp){
+		List<Restaurant> restaurants=restaurantRepo.findAllCpOpenLessCheap(cp);
+		return restaurants;
+	}
+	@GetMapping("/open/cp/cheap/{cp}")
+	public List<Restaurant> findAllCpOpenCheap(@PathVariable String cp){
+		List<Restaurant> restaurants=restaurantRepo.findAllCpOpenCheap(cp);
+		return restaurants;
+	}
+	
+	
+	@GetMapping("/typeResto/{typeResto}")
 	@JsonView(Views.ViewRestaurant.class)
 	public List<Restaurant> findRestaurantWithType(@PathVariable String typeResto){
 		List<Restaurant> restaurants = restaurantRepo.findAllByType(typeResto);

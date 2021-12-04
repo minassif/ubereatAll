@@ -34,5 +34,24 @@ public interface IRestaurant extends JpaRepository<Restaurant, Long>{
 	
 	@Query("select e from Restaurant e where e.typeResto =: typeResto")
 	List<Restaurant>findAllByType(@Param("typeResto") String typeResto);
-
+	
+	@Query("select e from Restaurant e where e.open =: true")
+	List<Restaurant>findOpen();
+	
+	@Query("select e from Restaurant e where e.open=:true and e.adresse.codepostale=:codepostale")
+	List<Restaurant> findAllOpenByCp(@Param("codepostale") String codepostale);
+	
+    @Query("select e from Restaurant e where e.open=:true and e.adresse.codepostale=:codepostale and pricerange > 100")
+    List<Restaurant>findAllCpOpenExpensive(@Param("codepostale") String codepostale);
+    
+    @Query("select e from Restaurant e where e.open=:true and e.adresse.codepostale=:codepostale and pricerange < 100 and pricerange >75 ")
+    List<Restaurant>findAllCpOpenLessExpensive(@Param("codepostale") String codepostale);
+    
+    @Query("select e from Restaurant e where e.open=:true and e.adresse.codepostale=:codepostale and pricerange < 75 and pricerange > 45")
+    List<Restaurant>findAllCpOpenLessCheap(@Param("codepostale") String codepostale);
+    
+    @Query("select e from Restaurant e where e.open=:true and e.adresse.codepostale=:codepostale and pricerange < 45")
+    List<Restaurant>findAllCpOpenCheap(@Param("codepostale") String codepostale);
+    
+   
 }
