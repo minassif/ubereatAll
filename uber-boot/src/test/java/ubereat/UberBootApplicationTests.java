@@ -150,7 +150,7 @@ class UberBootApplicationTests {
 		kebab.setRate(3.4);
 		kebab.setRestaurateur(andreBabke);
 		kebab.setOpen(true);
-	
+		kebab.setImg("../../assets/img/Restaurants/kebab/kebab.jpg");
 		
 		
 		
@@ -164,6 +164,7 @@ class UberBootApplicationTests {
 		pizzeria.setRate(4.0);
 		pizzeria.setRestaurateur(jeanPizz);
 		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
 		
 
 		

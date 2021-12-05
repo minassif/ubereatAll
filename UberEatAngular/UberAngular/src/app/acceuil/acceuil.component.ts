@@ -15,11 +15,12 @@ export class AcceuilComponent implements OnInit {
   }
 
 
-  listBestRates(){
+  listBestRates():Array<Restaurant>{
     let bestRates:Array<Restaurant> = new Array<Restaurant>();
-    for(let i=0; i=2;i++){
+    for(let i=0; i=1;i++){
       bestRates.push(this.restaurantService.findAllOrderByRate()[i])
     }
+    return bestRates;
   }
 
 }
