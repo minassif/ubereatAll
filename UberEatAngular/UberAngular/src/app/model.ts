@@ -27,10 +27,13 @@ export class Utilisateur {
 export class Client extends Utilisateur {
     cb: string;
     adresse: Adresse;
-    constructor(cb?: string, adresse?: Adresse) {
+    commandeEnCours: Commande;
+    commandes: Array<Commande>;
+    constructor(cb?: string, adresse?: Adresse, commandes?:Array<Commande>) {
         super();
         this.cb = cb;
         this.adresse = adresse;
+        this.commandes=commandes;
 
     }
 }

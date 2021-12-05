@@ -11,9 +11,9 @@
     </div>
 
     <div class="card col-3">
-      <div id="restoPopulaires" class="carousel slide carousel-fade" data-bs-ride="carousel" *ngFor="let resto of listBestRates()">
+      <div id="restoPopulaires" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner" >
-          <div class="carousel-item active" >
+          <div class="carousel-item active"  *ngFor="let resto of slides">
               <img src="{{resto.img}}" class="d-block w-100" alt="..." [routerLink]="['/carteResto']" routerLinkActive="active">
               <span class="rate">{{resto.nom}}&nbsp;{{resto.rate}}</span>
           </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectService } from '../connect/connect.service';
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
-  constructor() { }
+  constructor(private connectService:ConnectService) { }
 
   ngOnInit(): void {
   }
+
+  
 
 }
