@@ -85,9 +85,10 @@ export class Restaurant {
     rate: number;
     pricerange: number;
     typeResto:string;
+    adresse: Adresse;
     
 
-    constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number,typeResto?:string) {
+    constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number,typeResto?:string, adresse?: Adresse) {
         this.id = id;
         this.version = version;
         this.nom = nom;
@@ -99,6 +100,7 @@ export class Restaurant {
         this.rate = rate;
         this.pricerange = pricerange;
         this.typeResto = typeResto;
+        this.adresse = adresse;
     }
 }
 
