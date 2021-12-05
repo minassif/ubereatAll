@@ -160,6 +160,18 @@ public class RestaurantRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Evaluation non trouvé");
 		}
 	}
+	
+	@GetMapping("/monResto/{id}")
+	@JsonView(Views.ViewRestaurant.class)
+	public Restaurant findByRestaurateur(@PathVariable Long id) {
+		Optional<Restaurant> optRestaurant = restaurantRepo.findByRestaurateur(id);
+
+		if (optRestaurant.isPresent()) {
+			return optRestaurant.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Evaluation non trouvé");
+		}
+	}
 
 
 	@PostMapping("")

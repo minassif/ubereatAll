@@ -2,7 +2,11 @@ package ubereat.model;
 
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+
 @Embeddable
+@JsonView(Views.ViewCommon.class)
 public class Adresse {
 	
 	private String voie;

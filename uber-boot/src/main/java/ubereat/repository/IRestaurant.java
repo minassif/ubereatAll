@@ -1,11 +1,13 @@
 package ubereat.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import ubereat.model.Client;
 import ubereat.model.Restaurant;
 
 
@@ -56,6 +58,10 @@ public interface IRestaurant extends JpaRepository<Restaurant, Long>{
     
     @Query("select r from Restaurant r order by r.rate desc")
     List<Restaurant>findAllOrderByRate();
+    
+    @Query("select distinct r from Restaurant r left join fetch r.restaurateur re where re.id=:id")
+	Optional <Restaurant> findByRestaurateur(@Param("id") Long id);
+    
     
    
 }

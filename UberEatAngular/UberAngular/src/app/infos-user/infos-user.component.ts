@@ -20,17 +20,16 @@ export class InfosUserComponent implements OnInit {
       if (connectService.utilisateur.statut=='client'){
       this.statut=connectService.utilisateur.statut ;
       this.editClient(connectService.utilisateur.id);
-    }
+      }
     if (connectService.utilisateur.statut=='restaurateur'){
       this.statut=connectService.utilisateur.statut ;
       this.editRestaurateur(connectService.utilisateur.id);
-    }
+      }
     if (connectService.utilisateur.statut=='livreur'){
       this.statut=connectService.utilisateur.statut ;
       this.editLivreur(connectService.utilisateur.id);
-    }
+      }
   }
-
   else{
       this.client=new Client();
       this.client.adresse=new Adresse();

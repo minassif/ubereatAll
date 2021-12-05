@@ -1,12 +1,83 @@
 <div class="row">
-    <div row g-1></div>
-    <div class=bg-light  row g-10>
-        <h2>Mon Restaurant </h2>
+    <div class="col"></div>
+    <div class=col-10>
+        <div class="login-form bg-light mt-4 p-4">
+            <form action="" method="" class="row g-3">
+                <h2>Infos Restaurant:</h2>
+                <div class="col-2">
+                    <label>Nom</label>
+                    <input type="text" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="restaurant.nom">
+                </div>
+                <div class="col-10"></div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Description" id="floatingTextarea2" [(ngModel)]="restaurant.description" [ngModelOptions]="{standalone: true}"  style="height: 100px"></textarea>
+                    <label for="Description" >Comments</label>
+                </div>
+                
+                <label>Type de restaurant</label>
+                <div class="col-2">
+                    <select class="form-select" required aria-label="select example" [(ngModel)]="restaurant.typeResto" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let t of type" [value]="t">{{t}}</option>
+                    </select>
+                </div>
+                <div class="col-10"></div>
 
+                <div class="row" style="height:200px;">
+                <div class="mb-3 col-4">
+                    <label for="formFile" class="form-label">Image</label>
+                    <input class="form-control" type="text" id="formFile" [(ngModel)]="restaurant.img" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-4"><img src="{{restaurant.img}}" ></div>
+                
+                </div>
 
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="restaurant.livraison" [ngModelOptions]="{standalone: true}">
+                    <label class="form-check-label" for="livraison">
+                        Livraison
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="restaurant.emporter" [ngModelOptions]="{standalone: true}">
+                    <label class="form-check-label" for="emporter">
+                        Emporter
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="restaurant.open" [ngModelOptions]="{standalone: true}">
+                    <label class="form-check-label" for="open">
+                        Open
+                    </label>
+                </div>
 
+                <br>
 
+                <h3>Adresse:</h3>
+                <div class="col-12">
+                    <label>Voie</label>
+                    <input type="text" name="voie" class="form-control" placeholder="voie" [(ngModel)]="restaurant.adresse.voie">
+                </div>
+                <div class="col-12">
+                    <label>Complement</label>
+                    <input type="text" name="complement" class="form-control" placeholder="Complement" [(ngModel)]="restaurant.adresse.complement">
+                </div>
+                <div class="row">
+                <div class="col-5">
+                    <label>CodePostal</label>
+                    <input type="text" name="codePostal" class="form-control" placeholder="CodePostal" [(ngModel)]="restaurant.adresse.codePostal">
+                </div>
+                <div class="col-7">
+                    <label>Ville</label>
+                    <input type="text" name="ville" class="form-control" placeholder="Ville" [(ngModel)]="restaurant.adresse.ville">
+                </div>
+                </div>
 
-
+                
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success float-end" (click)="saveResto()">Valider</button>
+                </div>
+             </form>
+        </div>
     </div>
+    <div class="col"></div>
 </div>
