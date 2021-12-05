@@ -19,6 +19,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArticleService } from './article.service';
 import { CommandeService } from './commande.service';
 import { InfosUserComponent } from './infos-user/infos-user.component';
+import { InfosRestoComponent } from './infos-resto/infos-resto.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InfosUserComponent } from './infos-user/infos-user.component';
     CarteRestoComponent,
     PanierComponent,
     SidebarComponent,
-    InfosUserComponent
+    InfosUserComponent,
+    InfosRestoComponent
   ],
   imports: [
     BrowserModule,
