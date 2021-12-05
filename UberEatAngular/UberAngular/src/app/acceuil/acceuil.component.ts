@@ -9,6 +9,11 @@ import { RestaurantService } from '../service_restaurant/restaurant.service';
 })
 export class AcceuilComponent implements OnInit {
 
+  
+
+
+
+
   constructor(private restaurantService:RestaurantService) { }
 
   ngOnInit(): void {
@@ -16,11 +21,9 @@ export class AcceuilComponent implements OnInit {
 
 
   listBestRates():Array<Restaurant>{
-    let bestRates:Array<Restaurant> = new Array<Restaurant>();
-    for(let i=0; i=1;i++){
-      bestRates.push(this.restaurantService.findAllOrderByRate()[i])
-    }
-    return bestRates;
+    this.restaurantService.findAllOrderByRate().splice(2,(this.restaurantService.findAllOrderByRate().length-1));
+    return this.restaurantService.findAllOrderByRate()
   }
 
+  
 }

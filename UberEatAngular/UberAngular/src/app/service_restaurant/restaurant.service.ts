@@ -144,7 +144,7 @@ export class RestaurantService {
   }
 
   loadByRate() {
-    this.http.get<Array<Restaurant>>(this.restaurantUrl + '/orderByRate').subscribe(response => {
+    this.http.get<Array<Restaurant>>(this.restaurantUrl + 'orderByRate').subscribe(response => {
       this.restaurantsByRate = response;
     }, error => console.log(error));
   }
