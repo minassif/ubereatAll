@@ -15,7 +15,7 @@ export class InfosUserComponent implements OnInit {
   client: Client;
   restaurateur: Restaurateur;
   livreur: Livreur;
-  constructor(private infosUserService:InfosUserService, private router:Router, private connectService:ConnectService) {
+  constructor(private infosUserService:InfosUserService, private router:Router, public connectService:ConnectService) {
     if (connectService.utilisateur){
       if (connectService.utilisateur.statut=='client'){
       this.statut=connectService.utilisateur.statut ;
