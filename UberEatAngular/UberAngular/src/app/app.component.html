@@ -59,10 +59,10 @@
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="ConnectService.utilisateur">>Mon Compte</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="ConnectService.utilisateur">
             <li><a class="dropdown-item" [routerLink]="['/infos']" routerLinkActive="active">Mes infos</a></li>
-            <li><a class="dropdown-item" href="#" *ngIf="ConnectService.utilisateur.statut ==='client'" >Mon Panier </a></li>
-            <li><a class="dropdown-item" href="#" *ngIf="ConnectService.utilisateur.statut ==='restaurateur'" >Mon Restaurant </a></li>
-            <li><a class="dropdown-item" href="#">Mes commandes</a></li>
-            <li><a class="dropdown-item" href="#">J'ai plus d'inspi</a></li>
+            <li><a class="dropdown-item"  *ngIf="ConnectService.utilisateur.statut ==='client'" >Mon Panier </a></li>
+            <li><a class="dropdown-item" [routerLink]="['/monResto']" routerLinkActive="active" *ngIf="ConnectService.utilisateur.statut ==='restaurateur'" >Mon Restaurant </a></li>
+            <li><a class="dropdown-item" >Mes commandes</a></li>
+            <li><a class="dropdown-item" >J'ai plus d'inspi</a></li>
           </ul>
         </li>
       </ul>
