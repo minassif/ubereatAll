@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col"></div>
     <div class=col-10>
@@ -11,7 +12,7 @@
                 <div class="col-10"></div>
                 <div class="form-floating">
                     <textarea class="form-control" placeholder="Description" id="floatingTextarea2" [(ngModel)]="restaurant.description" [ngModelOptions]="{standalone: true}"  style="height: 100px"></textarea>
-                    <label for="Description" >Comments</label>
+                    <label for="Description" >Description</label>
                 </div>
                 
                 <label>Type de restaurant</label>
@@ -22,7 +23,7 @@
                 </div>
                 <div class="col-10"></div>
 
-                <div class="row" style="height:200px;">
+                <div class="row" style="height:150px;">
                 <div class="mb-3 col-4">
                     <label for="formFile" class="form-label">Image</label>
                     <input class="form-control" type="text" id="formFile" [(ngModel)]="restaurant.img" [ngModelOptions]="{standalone: true}">
@@ -71,13 +72,131 @@
                     <input type="text" name="ville" class="form-control" placeholder="Ville" [(ngModel)]="restaurant.adresse.ville">
                 </div>
                 </div>
+                <br>
+                <!-- -->
 
-                
-                <div class="col-12">
-                    <button type="submit" class="btn btn-success float-end" (click)="saveResto()">Valider</button>
+                <h3>Articles:</h3>
+
+                <table  width="1000" border="solid" *ngFor="let article of list()">
+                    <div id="article">
+                    <tr>
+                        <td rowspan="3"><img src={{article.img}} width="300" height="220"></td>
+                        <td rowspan="1" width="10"></td>
+                        <td rowcol="2">
+                            <div class="row">
+                                <div class="col-1">Nom:</div>
+                                <div class="col-11">
+                                    <input type="text" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="article.nom" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <br>
+                                <div class="col-1">Prix:</div>
+                                <div class="col-11">
+                                    <input type="text" name="prix" class="form-control" placeholder="Prix" [(ngModel)]="article.prix" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="col-1">Description:</div>
+                                <div class="col-11">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Description" id="floatingTextarea2" [(ngModel)]="article.description" [ngModelOptions]="{standalone: true}"  style="height: 100px"></textarea>
+                                        <label for="Description" >Description</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-1">Image:</div>
+                                <div class="col-11">
+                                    <input class="form-control" type="text" id="formFile" [(ngModel)]="article.img" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <br>
+                                <div class="col-1">Type de Plat:</div>
+                                <div class="col-11">
+                                    <select class="form-select" required aria-label="select example" [(ngModel)]="article.typePlat" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let t of typePlat" [value]="t">{{t}}</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="col-1">Vegetarien:</div>
+                                <div class="col-11">
+                                    <input class="form-check-input" type="checkbox" [(ngModel)]="article.vegetarien" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td rowspan="1"></td>
+                    </tr>
                 </div>
+                    
+                </table>
+
+
+
+
+
+                <h3>Ajouter un article:</h3>
+
+                <table  width="1000" border="solid" >
+                    <div id="article">
+                    <tr>
+                        <td rowspan="3"><img src={{newArticle.img}} width="300" height="220"></td>
+                        <td rowspan="1"></td>
+                        <td rowcol="2">
+                            <div class="row">
+                                <div class="col-1">Nom:</div>
+                                <div class="col-11">
+                                    <input type="text" name="nom" class="form-control" placeholder="Nom" [(ngModel)]="newArticle.nom" [ngModelOptions]="{standalone: true}"> 
+                                </div>
+                                <br>
+                                <div class="col-1">Prix:</div>
+                                <div class="col-11">
+                                    <input type="text" name="prix" class="form-control" placeholder="Prix" [(ngModel)]="newArticle.prix" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="col-1">Description:</div>
+                                <div class="col-11">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Description" id="floatingTextarea2" [(ngModel)]="newArticle.description" [ngModelOptions]="{standalone: true}"  style="height: 100px"></textarea>
+                                        <label for="Description" >Description</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-1">Image:</div>
+                                <div class="col-11">
+                                    <input class="form-control" type="text" id="formFile" [(ngModel)]="newArticle.img" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <br>
+                                <div class="col-1">Type de Plat:</div>
+                                <div class="col-11">
+                                    <select class="form-select" required aria-label="select example" [(ngModel)]="newArticle.typePlat" [ngModelOptions]="{standalone: true}">
+                                        <option *ngFor="let t of typePlat" [value]="t">{{t}}</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="col-1">Vegetarien:</div>
+                                <div class="col-11">
+                                    <input class="form-check-input" type="checkbox" [(ngModel)]="newArticle.vegetarien" [ngModelOptions]="{standalone: true}">
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td rowspan="1"></td>
+                    </tr>
+                </div>
+                <button type="submit" (click)="addProduit()" class="btn btn-info btn-xl">
+                    <i class="bi bi-plus-square"></i>
+                </button>
+            </table>
+
+
+                <br>
+                <br>
+                
+                <div class="col-12" >
+                    <button type="submit" id="valider" class="btn btn-success float-end" (click)="saveResto()">Valider</button>
+                </div>
+
+
+
              </form>
         </div>
     </div>
-    <div class="col"></div>
+    <div class="col"><i class="bi bi-arrow-down-circle" (click)="goToBottom()"></i></div>
 </div>
+
+
