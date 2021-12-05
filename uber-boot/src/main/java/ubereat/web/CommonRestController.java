@@ -27,7 +27,7 @@ public class CommonRestController {
 	 public TypeResto[] getTypesRestos() {
 		 return TypeResto.values();
 	 }
-	 @GetMapping("/typeplat")
+	 @GetMapping("/typePlat")
 	 public TypePlat[] getTypesPlats() {
 		 return TypePlat.values();
 	 }

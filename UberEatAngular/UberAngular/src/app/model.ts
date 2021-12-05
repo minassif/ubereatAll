@@ -89,9 +89,10 @@ export class Restaurant {
     pricerange: number;
     typeResto:string;
     adresse: Adresse;
+    articles: Array<Article> = new Array<Article>();
     
 
-    constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number,typeResto?:string, adresse?: Adresse) {
+    constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number,typeResto?:string, adresse?: Adresse, articles?: Array<Article>) {
         this.id = id;
         this.version = version;
         this.nom = nom;
@@ -104,6 +105,7 @@ export class Restaurant {
         this.pricerange = pricerange;
         this.typeResto = typeResto;
         this.adresse = adresse;
+        this.articles=articles;
     }
 }
 
