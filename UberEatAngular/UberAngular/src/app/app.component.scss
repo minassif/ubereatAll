@@ -29,6 +29,7 @@
 
   .header img{
     height:50px;
+
   }
 
   .navbartop .nav-link:hover {
@@ -42,6 +43,7 @@
     right: 0;
     align-items: center;
     //background-image: url("img/bouffe1.jpg");
+    z-index: 1;
   }
   
   #elemnavbar{
