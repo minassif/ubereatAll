@@ -57,15 +57,15 @@
     
     <div class="content">
         <h3>Mon panier :</h3>
-        <div class="card text-dark bg-light" >
+        <div class="card text-dark bg-light" *ngFor="let article of showPanier()">
             <div class="row g-0">
               <div class="col-md-3">
-                <img src="../../assets/img/BOLDEVOMI.png" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                <img src="{{article.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
               </div>
               <div class="col-md-9">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="card-title">{{article.nom}}</h5>
+                  <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 <div class="row">
                     <div class="col-1">2</div>
