@@ -27,7 +27,6 @@ export class Utilisateur {
 export class Client extends Utilisateur {
     cb: string;
     adresse: Adresse;
-    commandeEnCours: Commande;
     commandes: Array<Commande>;
     constructor(cb?: string, adresse?: Adresse, commandes?:Array<Commande>) {
         super();
@@ -153,6 +152,7 @@ export class Article {
     description: string;
     img: string;
     typePlat: string;
+    restaurant: Restaurant;
 
     constructor(id?: number, version?: number,vegetarien?:boolean, nom?: string, prix?: number, description?: string, img?: string, typePlat?:string) {
         this.id = id;

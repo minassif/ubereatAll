@@ -15,7 +15,6 @@ import { ConnectService } from './connect/connect.service';
 import { AcceuilService } from './acceuil/acceuil.service';
 import { RechercheRestoService } from './recherche-resto/recherche-resto.service';
 import { CarteRestoService } from './carte-resto/carte-resto.service';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { ArticleService } from './article.service';
 import { CommandeService } from './commande.service';
 import { InfosUserComponent } from './infos-user/infos-user.component';
@@ -29,7 +28,6 @@ import { InfosRestoComponent } from './infos-resto/infos-resto.component';
     RechercheRestoComponent,
     CarteRestoComponent,
     PanierComponent,
-    SidebarComponent,
     InfosUserComponent,
     InfosRestoComponent
   ],
