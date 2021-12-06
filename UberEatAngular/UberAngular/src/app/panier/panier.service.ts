@@ -11,6 +11,10 @@ export class PanierService {
 
   constructor(private http: HttpClient) { }
 
+  show():Array<Article>{
+    return this.panier
+  }
+
   add(article:Article){
     this.panier.push(article)
   }

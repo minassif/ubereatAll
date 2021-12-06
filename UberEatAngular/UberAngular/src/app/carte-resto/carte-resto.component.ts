@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from '../model';
 import { ArticleService } from '../article.service';
 import { PanierService } from '../panier/panier.service';
-import { RechercheRestoService } from '../recherche-resto/recherche-resto.service';
 
 @Component({
   selector: 'app-carte-resto',
@@ -13,19 +12,16 @@ export class CarteRestoComponent implements OnInit {
 
   articles: Array<Article> = new Array<Article>();
 
-  constructor(private articleService:ArticleService,private panierService:PanierService,private rechercheResto:RechercheRestoService) {
-    this.articleService.loadArticle(this.rechercheResto.idRestoVisible);
-   }
+  constructor(private articleService:ArticleService,private panierService:PanierService) { }
 
   ngOnInit(): void {
   }
   
-   listArticleByType(type:string){
-     return this.articleService.findByType(type);
-   }
+  listArticleByType(type:string){
+    return this.articleService.findByType(type);
+  }
 
-
-  list(){
+  list(): Array<Article> {
     return this.articleService.findAll();
   }
 
@@ -34,9 +30,9 @@ export class CarteRestoComponent implements OnInit {
     return this.articleService.findVegetarien(vege);
   }
 
-   listPanier():Array<Article>{
-     return this.panierService.panier
-   }
+  listPanier():Array<Article>{
+    return this.panierService.show()
+  }
 
   addPanier(article:Article){
     this.panierService.add(article);
@@ -53,5 +49,4 @@ export class CarteRestoComponent implements OnInit {
     if (find) {
       this.panierService.panier.splice(indice, 1);
   }}
-
 }
