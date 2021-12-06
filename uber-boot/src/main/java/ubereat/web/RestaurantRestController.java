@@ -1,6 +1,5 @@
 package ubereat.web;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Restaurant;
+import ubereat.model.TypeResto;
 import ubereat.model.Views;
 import ubereat.model.Views.ViewRestaurantWithPrix;
 import ubereat.repository.IRestaurant;
@@ -29,6 +29,9 @@ import ubereat.repository.IRestaurant;
 @CrossOrigin("*")
 
 public class RestaurantRestController {
+	
+
+	private TypeResto[]  typesRestos = TypeResto.values();
 	
 	@Autowired
 	private IRestaurant restaurantRepo;
@@ -81,6 +84,18 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
+	@GetMapping("/livraisongratuite")
+	public List<Restaurant> findLivraisonGratuite(){
+		List<Restaurant> restaurants = restaurantRepo.findLivraisonGratuite();
+		return restaurants;
+	}
+	
+	@GetMapping("/livraisongratuite/open")
+	public List<Restaurant> findLivraisonGratuiteOpen(){
+		List<Restaurant> restaurants = restaurantRepo.findLivraisonGratuiteOpen();
+		return restaurants;
+	}
+	
 	@GetMapping("/cp/{cp}")
 	public List<Restaurant> findAllByCp(@PathVariable String cp){
 		List<Restaurant> restaurants =restaurantRepo.findAllByCP(cp);
@@ -125,6 +140,49 @@ public class RestaurantRestController {
 		
 	}
 	
+	@GetMapping("/typeResto/1")
+	public List<Restaurant>findAllByTypeFastFood(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeFastFood();
+	return restaurants;
+	}
+	
+	@GetMapping("/typeResto/2")
+	public List<Restaurant>findAllByTypeItal(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeItal();
+	return restaurants;
+	}
+	
+	@GetMapping("/typeResto/3")
+	public List<Restaurant>findAllByTypeAsia(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeAsia();
+	return restaurants;
+	}
+	
+	@GetMapping("/typeResto/4")
+	public List<Restaurant>findAllByTypeLat(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeLat();
+	return restaurants;
+	}
+	
+	@GetMapping("/typeResto/5")
+	public List<Restaurant>findAllByTypeHal(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeHal();
+	return restaurants;
+	}
+	
+	@GetMapping("/typeResto/6")
+	public List<Restaurant>findAllByTypeVeg(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeVeg();
+	return restaurants;
+	}
+	
+	@GetMapping("/typeResto/7")
+	public List<Restaurant>findAllByTypeFr(){
+	List<Restaurant> restaurants = restaurantRepo.findAllByTypeFr();
+	return restaurants;
+	}
+	
+	
 	@GetMapping("rate/{rate}")
 	@JsonView(ViewRestaurantWithPrix.class)
 	public List<Restaurant> findAllByRate(@PathVariable Double rate) {
@@ -133,6 +191,30 @@ public class RestaurantRestController {
 		return restaurants;
 	}
 	
+	@GetMapping("{open}/{livraison}/{emporter}/{stars}")
+	@JsonView(Views.ViewRestaurant.class)
+	public List<Restaurant> findAllOpenLivraison(@PathVariable boolean open ,@PathVariable boolean livraison,@PathVariable boolean emporter,@PathVariable double stars) {
+		List<Restaurant> restaurants = restaurantRepo.findAllOpenLiv(open,livraison,emporter,stars);
+		return restaurants;
+	}
+
+	
+	@GetMapping("{open}/{livraison}/{emporter}/{stars}/{type}")
+	@JsonView(Views.ViewRestaurant.class)
+	public List<Restaurant> findAllWithTypes(@PathVariable boolean open ,@PathVariable boolean livraison,@PathVariable boolean emporter,@PathVariable double stars,@PathVariable int type) {
+		List<Restaurant> restaurants = restaurantRepo.findAllWithTypes(open,livraison,emporter,stars,this.typesRestos[type]);
+		return restaurants;
+	}
+	
+	/*
+	@GetMapping("{open}/{livraison}/{emporter}/{stars}/{type}}")
+	@JsonView(Views.ViewRestaurant.class)
+	public List<Restaurant> findAllWithTypesSt(@PathVariable boolean open ,@PathVariable boolean livraison,@PathVariable boolean emporter,@PathVariable double stars,@PathVariable String type) {
+		List<Restaurant> restaurants = restaurantRepo.findAllWithTypesSt(open,livraison,emporter,stars,type);
+		return restaurants;
+	}
+	
+	*/
 	/*
 	@GetMapping("/open/cp/{cp}")
 	public List<Restaurant> finfAllCpOpen(@PathVariable String cp){

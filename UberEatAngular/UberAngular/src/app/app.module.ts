@@ -20,6 +20,7 @@ import { ArticleService } from './article.service';
 import { CommandeService } from './commande.service';
 import { InfosUserComponent } from './infos-user/infos-user.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,7 @@ import { InfosUserComponent } from './infos-user/infos-user.component';
     CarteRestoComponent,
     PanierComponent,
     SidebarComponent,
-    InfosUserComponent
+    InfosUserComponent,
   ],
   imports: [
     BrowserModule,

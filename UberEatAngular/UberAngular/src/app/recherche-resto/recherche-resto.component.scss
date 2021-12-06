@@ -15,6 +15,14 @@ main{
     width:100%;
     background-color: white;
 }
+/*
+.middelmain{
+  height: auto;
+  width:100%;
+  background-color: gray;
+
+
+}*/
 
 .lowermain{
     display: flex ;
@@ -32,3 +40,134 @@ main{
     height: 100%;
     width:80%;
 }
+
+.button1 {border-radius:50%;
+
+    height: 80px;
+    width: 80px;
+    color: green;
+    //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+}
+.button:hover{
+    background-size: 110% 110%;
+}
+
+.button2 {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+   //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  
+  .button3 {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+  //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  
+  .button4 {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+   //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  
+  .button5 {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  
+  .button6 {
+    border-radius: 50%;
+  
+    height: 80px;
+    width: 80px;
+  //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  .button7 {
+    border-radius: 50%;
+  
+    height: 80px;
+    width: 80px;
+  //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  .button8 {
+    border-radius: 50%;
+  
+    height: 80px;
+    width: 80px;
+  //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+  .button9 {
+    border-radius: 50%;
+  
+    height: 80px;
+    width: 80px;
+  //background-image: url("Capture.JPG");
+   // background-repeat: no-repeat;
+   // background-size: 100% 100%;
+  }
+
+
+
+  // Stars
+  /*
+  *{
+    margin: 0;
+    padding: 0;
+  }*/
+  .rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+  }
+  .rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+  }
+  .rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+  }
+  .rate:not(:checked) > label:before {
+    content: '★ ';
+  }
+  .rate > input:checked ~ label {
+    color: #ffc700;
+  }
+  .rate:not(:checked) > label:hover,
+  .rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+  }
+  .rate > input:checked + label:hover,
+  .rate > input:checked + label:hover ~ label,
+  .rate > input:checked ~ label:hover,
+  .rate > input:checked ~ label:hover ~ label,
+  .rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+  }
+  

@@ -159,3 +159,7 @@ export class Article {
 
 }
 
+export enum TypeResto{
+    FastFood, Italienne, Asiatique, Latino, Halal, Vegetarien,Francais
+}
+
