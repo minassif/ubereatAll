@@ -20,9 +20,9 @@ export class CarteRestoComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  // listArticleByType(type:string){
-  //   return this.articleService.findByType(type);
-  // }
+   listArticleByType(type:string){
+     return this.articleService.findByType(type);
+   }
 
 
   list(){
@@ -34,12 +34,24 @@ export class CarteRestoComponent implements OnInit {
     return this.articleService.findVegetarien(vege);
   }
 
-  // listPanier():Array<Article>{
-  //   return this.panierService.panier
-  // }
+   listPanier():Array<Article>{
+     return this.panierService.panier
+   }
 
-//   addPanier(article:Article){
-//     this.panierService.add(article);
-//   }
-// 
+  addPanier(article:Article){
+    this.panierService.add(article);
+  }
+
+  removePanier(article:Article){
+    let find: boolean = false;
+    for (var indice = 0; indice < this.panierService.panier.length; indice++) {
+      if (this.panierService.panier[indice].id == article.id) {
+        find = true;
+        break;
+      }
+    }
+    if (find) {
+      this.panierService.panier.splice(indice, 1);
+  }}
+
 }
