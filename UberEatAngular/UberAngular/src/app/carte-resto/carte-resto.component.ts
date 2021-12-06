@@ -13,7 +13,9 @@ export class CarteRestoComponent implements OnInit {
 
   articles: Array<Article> = new Array<Article>();
 
-  constructor(private articleService:ArticleService,private panierService:PanierService,private rechercheResto:RechercheRestoService) { }
+  constructor(private articleService:ArticleService,private panierService:PanierService,private rechercheResto:RechercheRestoService) {
+    this.articleService.loadArticle(this.rechercheResto.idRestoVisible);
+   }
 
   ngOnInit(): void {
   }
@@ -24,12 +26,7 @@ export class CarteRestoComponent implements OnInit {
 
 
   list(){
-    this.articleService.loadArticle(this.rechercheResto.idRestoVisible).subscribe(resp =>{
-      resp.forEach(article => {
-        this.articles.push(article);
-      });;},
-      err => console.log(err));
-      return this.articles
+    return this.articleService.findAll();
   }
 
 
