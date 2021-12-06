@@ -28,8 +28,10 @@ export class ArticleService {
     return this.articles ;
   }
 
-  loadArticle(id:number):Observable<Array<Article>>{
-  return this.http.get<Array<Article>>(this.appConfig.backEndUrl +"article/restaurantId/" + id)
+  loadArticle(id:number){
+  this.http.get<Array<Article>>(this.appConfig.backEndUrl +"article/restaurantId/" + id).subscribe(resp => {
+    this.articles=resp;
+  }, error => console.log(error));
   }
 
 
