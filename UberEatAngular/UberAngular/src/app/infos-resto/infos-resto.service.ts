@@ -53,4 +53,10 @@ export class InfosRestoService {
     }
     
   }
+
+  deleteArticle(id:number){
+    this.http.delete<Article>(this.appConfig.backEndUrl +"article/" + id).subscribe(resp => {
+      console.log("article supprimé");},
+      err => console.log(err));
+  }
 }

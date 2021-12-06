@@ -75,6 +75,23 @@ export class InfosRestoComponent implements OnInit {
     this.newArticle=new Article();
   }
 
+  supProduit(id:number){
+    let find: boolean = false;
+    this.infosRestoService.deleteArticle(id);
+    for (var indice = 0; indice < this.articles.length; indice++) {
+      if (this.articles[indice].id == id) {
+        find = true;
+        break;
+      }
+    }
+    if (find) {
+      this.articles.splice(indice, 1);
+    }
+    
+
+  }
+  
+
 
   goToBottom(){
     window.scrollTo(0,document.body.scrollHeight);
