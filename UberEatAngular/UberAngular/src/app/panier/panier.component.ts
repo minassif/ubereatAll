@@ -11,16 +11,16 @@ import { PanierService } from './panier.service';
 })
 export class PanierComponent implements OnInit {
 
-
+  panier:Array<Article>=new Array<Article>();
 
   constructor(private connectService:ConnectService,private articleService:ArticleService,private panierService: PanierService) { }
 
   ngOnInit(): void {
   }
 
-  showPanier():Array<Article>{
-    return this.panierService.panier
-  }
+  // showPanier():Array<Article>{
+  //   return this.panierService.panier
+  // }
 
   
 }

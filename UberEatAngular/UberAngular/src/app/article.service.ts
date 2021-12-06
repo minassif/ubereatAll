@@ -24,10 +24,14 @@ export class ArticleService {
 
    }
 
-
-  findAll(): Array<Article> {
+   findAll(): Array<Article> {
     return this.articles ;
   }
+
+  loadArticle(id:number):Observable<Array<Article>>{
+  return this.http.get<Array<Article>>(this.appConfig.backEndUrl +"article/restaurantId/" + id)
+  }
+
 
   findByType(type:string){
     this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/' + type).subscribe(resp =>{
@@ -64,7 +68,7 @@ export class ArticleService {
   }
 
   load() {
-    this.http.get<Array<Article>>(this.articleUrl +'restaurantId/'+ this.rechercheRestoService.idRestoVisible).subscribe(response => {
+    this.http.get<Array<Article>>(this.articleUrl).subscribe(response => {
       this.articles = response;
     }, error => console.log(error));
   }
