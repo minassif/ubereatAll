@@ -14,4 +14,12 @@ export class PanierService {
   add(article:Article){
     this.panier.push(article)
   }
+
+  delete(index:number){
+    this.panier.splice(index,1);
+  }
+
+  validerCommande(panier:Array<Article>){
+    
+  }
 }
