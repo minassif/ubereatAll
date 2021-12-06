@@ -8,7 +8,7 @@ import { RestaurantService } from '../service_restaurant/restaurant.service';
 })
 export class RechercheRestoService {
 
-  idRestoVisible:number;
+  idRestoVisible:number = 2;
   
   constructor() { }
 
