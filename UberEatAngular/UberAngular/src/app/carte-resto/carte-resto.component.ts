@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../model';
 import { ArticleService } from '../article.service';
-import { SidebarComponent } from '../sidebar/sidebar.component';
 import { PanierService } from '../panier/panier.service';
 
 @Component({
@@ -27,6 +26,10 @@ export class CarteRestoComponent implements OnInit {
   }
   listArticleVege(vege:boolean){
     return this.articleService.findVegetarien(vege);
+  }
+
+  listPanier():Array<Article>{
+    return this.panierService.panier
   }
 
   addPanier(article:Article){
