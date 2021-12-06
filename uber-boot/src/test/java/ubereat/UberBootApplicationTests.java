@@ -217,6 +217,4 @@ class UberBootApplicationTests {
 		
 	}
 	
-	 
-
 }
