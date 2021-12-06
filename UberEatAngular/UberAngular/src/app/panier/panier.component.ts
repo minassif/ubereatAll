@@ -18,9 +18,9 @@ export class PanierComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // showPanier():Array<Article>{
-  //   return this.panierService.panier
-  // }
+   showPanier():Array<Article>{
+     return this.panierService.panier
+   }
 
   validerCommande(){
     
