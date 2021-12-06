@@ -56,12 +56,18 @@
     background-color: black;
     background-size: cover;
     flex-direction: column;
-    padding-top: 50px;
     color:white;
-    position: absolute fixed;
+    position: absolute;
     bottom:0;
+    width: 100%;
   }
   
+  footer{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+  }
   
   #topFoot{
     border-bottom: solid white 1px;
