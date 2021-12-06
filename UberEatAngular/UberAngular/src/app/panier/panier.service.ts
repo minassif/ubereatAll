@@ -7,7 +7,7 @@ import { Article } from '../model';
 })
 export class PanierService {
 
-  panier:Array<Article>=null;
+  panier:Array<Article>=new Array<Article>();
 
   constructor(private http: HttpClient) { }
 
