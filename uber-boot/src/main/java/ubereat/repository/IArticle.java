@@ -26,11 +26,11 @@ public interface IArticle extends JpaRepository<Article, Long> {
 	
 	@Query("select a from Article a where a.nom = :nom")
 	Optional<Article> findByNom(@Param("nom") String nom);
-/*
-	@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.typesPlats = :typePlat")
-	List<Article> findByRestaurantIdAndTypesPlats(@Param("idRestaurant") Long id,@Param("typePlat") TypePlat typePlat);*/
-/*
-	@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.vegetarien = :vegetarien")
-	List<Article> findVegetarienByRestaurantId(@Param("idRestaurant") Long id,@Param("vegetarien") Boolean vegetarien);
-*/	
+
+//	@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.typesPlats = :typePlat")
+//	List<Article> findByRestaurantIdAndTypesPlats(@Param("idRestaurant") Long id,@Param("typePlat") TypePlat typePlat);
+//
+//	@Query("select a from Article a where a.restaurant.id = :idRestaurant and a.restaurant.vegetarien = :vegetarien")
+//	List<Article> findVegetarienByRestaurantId(@Param("idRestaurant") Long id,@Param("vegetarien") Boolean vegetarien);
+	
 }

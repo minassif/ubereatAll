@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from '../model';
 import { ArticleService } from '../article.service';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { PanierService } from '../panier/panier.service';
 
 @Component({
   selector: 'app-carte-resto',
@@ -10,9 +11,9 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class CarteRestoComponent implements OnInit {
 
-  article: Array<Article> = new Array<Article>();
+  articles: Array<Article> = new Array<Article>();
 
-  constructor(private articleService:ArticleService) { }
+  constructor(private articleService:ArticleService,private panierService:PanierService) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +27,9 @@ export class CarteRestoComponent implements OnInit {
   }
   listArticleVege(vege:boolean){
     return this.articleService.findVegetarien(vege);
+  }
+
+  addPanier(article:Article){
+    this.panierService.add(article);
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
 import { ConnectService } from '../connect/connect.service';
+import { Article } from '../model';
+import { PanierService } from './panier.service';
 
 @Component({
   selector: 'app-panier',
@@ -8,11 +11,16 @@ import { ConnectService } from '../connect/connect.service';
 })
 export class PanierComponent implements OnInit {
 
-  constructor(private connectService:ConnectService) { }
+
+
+  constructor(private connectService:ConnectService,private articleService:ArticleService,private panierService: PanierService) { }
 
   ngOnInit(): void {
   }
 
-  
+  showPanier():Array<Article>{
+    return this.panierService.panier
+  }
 
+  
 }
