@@ -25,7 +25,7 @@ export class ArticleService {
    }
 
 
-   findAll(): Array<Article> {
+  findAll(): Array<Article> {
     return this.articles ;
   }
 
@@ -64,7 +64,7 @@ export class ArticleService {
   }
 
   load() {
-    this.http.get<Array<Article>>(this.articleUrl).subscribe(response => {
+    this.http.get<Array<Article>>(this.articleUrl +'restaurantId/'+ this.rechercheRestoService.idRestoVisible).subscribe(response => {
       this.articles = response;
     }, error => console.log(error));
   }
