@@ -94,8 +94,8 @@
             <tr>
                 <td></td>
                 <td>{{article.prix}} €       <div class="btn-group btn-group-sm">
-                    <a class="btn btn-primary"><i>+</i></a>
-                    <a class="btn btn-danger"><i>-</i></a>
+                    <a class="btn btn-primary" (click)="addPanier(article)"><i>+</i></a>
+                    <a class="btn btn-danger" (click)="removePanier(article)"><i>-</i></a>
                 </div></td>
                 <td>
                     
