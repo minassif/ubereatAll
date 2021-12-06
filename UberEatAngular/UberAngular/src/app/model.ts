@@ -153,6 +153,7 @@ export class Article {
     description: string;
     img: string;
     typePlat: string;
+    restaurant: Restaurant;
 
     constructor(id?: number, version?: number,vegetarien?:boolean, nom?: string, prix?: number, description?: string, img?: string, typePlat?:string) {
         this.id = id;
