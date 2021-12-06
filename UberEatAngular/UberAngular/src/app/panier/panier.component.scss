@@ -1,7 +1,12 @@
+/*
+    DEMO STYLE
+*/
+
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    position: relative;
 }
 
 p {
@@ -59,8 +64,6 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
     height: 100%;
-    position: fixed;
-    z-index: -1;
 }
 
 #sidebar.active {
@@ -149,6 +152,9 @@ a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    position:relative;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* ---------------------------------------------------
