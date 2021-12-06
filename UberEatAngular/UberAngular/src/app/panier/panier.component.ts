@@ -22,6 +22,10 @@ export class PanierComponent implements OnInit {
      return this.panierService.panier
    }
 
+   delete(index:number){
+    this.panierService.delete(index);
+  }
+
   validerCommande(){
     
   }
