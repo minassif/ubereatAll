@@ -10,14 +10,13 @@ import { RestaurantService } from '../service_restaurant/restaurant.service';
 export class AcceuilComponent implements OnInit {
 
   
-  slides:any=[[]];
+ 
 
 
 
   constructor(private restaurantService:RestaurantService) { }
 
   ngOnInit(): void {
-    this.slides=this.chunk(this.listBestRates());
   }
 
 
@@ -26,12 +25,6 @@ export class AcceuilComponent implements OnInit {
     return this.restaurantService.findAllOrderByRate()
   }
 
-chunk(arr:Array<Restaurant>) {
-  let R= [];
-  for (let i=0, len=arr.length; i<len; i+=3) {
-    R.push(arr.slice(i, i+3));
-  }
-  return R;
-}
+
 
 }

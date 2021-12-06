@@ -20,6 +20,14 @@
   #restoPopulaires:hover{
     opacity: 0,5;
   }
+  .conteneur{
+    position: relative;
+  } 
+  .rate{
+    margin-bottom: -20px;
+    z-index: 1;
+    position:absolute;
+  }
   
   
 
