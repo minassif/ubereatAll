@@ -24,6 +24,7 @@ export class InfosRestoComponent implements OnInit {
     this.loadTypePlat();
     this.editRestaurant(connectService.utilisateur.id);
     
+    
   }
 
   ngOnInit(): void {
@@ -54,12 +55,18 @@ export class InfosRestoComponent implements OnInit {
       if (!this.restaurant.articles) {
         this.restaurant.articles = new Array<Article>();
       }
+      this.infosRestoService.loadArticle(this.restaurant);
   
     }, err => console.log(err));
   }
 
   saveResto(){
-    this.restaurant.articles=this.articles;
+    this.restaurant.articles=new Array<Article>();
+    this.articles.forEach(article => {
+      article.restaurant=new Restaurant(this.restaurant.id);
+      this.infosRestoService.saveArticle(article);
+      this.restaurant.articles.push(new Article(article.id));
+    });
     this.infosRestoService.saveResto(this.restaurant);
   }
 

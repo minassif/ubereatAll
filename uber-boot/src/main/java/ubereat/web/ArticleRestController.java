@@ -120,7 +120,7 @@ public class ArticleRestController {
 		return article;
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("{id}")
 	@JsonView(Views.ViewArticle.class)
 	public Article update(@PathVariable Long id, @RequestBody Article article) {
 		if (!articleRepo.existsById(id)) {
