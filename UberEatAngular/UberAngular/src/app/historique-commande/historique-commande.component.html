@@ -1,6 +1,6 @@
 <div class="content" *ngIf="statut ==='client'">
     <h3>Mes commandes :</h3>
-    <div class="card text-dark bg-light" *ngFor="let commande of list();">
+    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
         <div class="row g-0">
           <div class="col-md-3">
             <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
@@ -51,7 +51,7 @@
 
 <div class="content" *ngIf="statut ==='livreur'">
     <h3>Mes commandes :</h3>
-    <div class="card text-dark bg-light" *ngFor="let commande of list();">
+    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
         <div class="row g-0">
           <div class="col-md-3">
             <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
@@ -105,7 +105,7 @@
 
 <div class="content" *ngIf="statut ==='restaurateur'">
     <h3>Mes commandes :</h3>
-    <div class="card text-dark bg-light" *ngFor="let commande of list();">
+    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
         <div class="row g-0">
           
           <div class="col-md-9">

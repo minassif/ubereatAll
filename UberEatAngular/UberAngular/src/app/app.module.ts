@@ -20,6 +20,7 @@ import { CommandeService } from './commande.service';
 import { InfosUserComponent } from './infos-user/infos-user.component';
 import { InfosRestoComponent } from './infos-resto/infos-resto.component';
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
+import { NgPipesModule } from 'ng-pipes';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HistoriqueCommandeComponent } from './historique-commande/historique-co
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    NgPipesModule,
     HttpClientModule
   ],
   providers: [AppConfigService,ConnectService,AcceuilService,RechercheRestoService,CarteRestoService,ArticleService,CommandeService],
