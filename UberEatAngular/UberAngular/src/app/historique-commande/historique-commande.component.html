@@ -67,6 +67,8 @@
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
+              <button (click)="setLivraison(commande)" *ngIf="commande.status=='Preparation'"> Envoyer au fourneau </button>
+              <button (click)="setLivree(commande)" *ngIf="commande.status=='Livraison'"> Envoyer au fourneau </button>
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
@@ -123,6 +125,7 @@
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
+              <button (click)="setEnPrep(commande)" *ngIf="commande.status=='Enregistre'"> Envoyer au fourneau </button>
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">

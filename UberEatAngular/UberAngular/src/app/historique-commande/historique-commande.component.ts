@@ -46,6 +46,17 @@ export class HistoriqueCommandeComponent implements OnInit {
     return this.historiqueCommandeService.commandes;
   }
 
+  setEnPrep(commande:Commande){
+    commande.status='Preparation'
+  }
+
+  setLivraison(commande:Commande){
+    commande.status='Livraison'
+  }
+
+  setLivree(commande:Commande){
+    commande.status='livree'
+  }
   //loadArticleCommande(i:number){
     //this.historiqueCommandeService.loadArticle(i) ;
     //this.articles=this.historiqueCommandeService.articles;
