@@ -17,7 +17,7 @@ export class CommandesALivrerService {
 
   constructor(private appConfig:AppConfigService, private http:HttpClient, private connectService:ConnectService,private router:Router) { 
     this.commandesUrl=this.appConfig.backEndUrl + 'commande/aLivrer';
-    this.livreurUrl=this.appConfig.backEndUrl + 'livreur';
+    this.livreurUrl=this.appConfig.backEndUrl + 'livreur/';
     this.load();
     this.loadLivreur();
   }
@@ -49,7 +49,7 @@ export class CommandesALivrerService {
   }
 
   saveCommande(commande : Commande) {
-    this.http.put<Commande>(this.appConfig.backEndUrl+'commande'+commande.id, commande).subscribe(resp => {
+    this.http.put<Commande>(this.appConfig.backEndUrl+'commande/'+commande.id, commande).subscribe(resp => {
       this.load();
     }, error => console.log(error));
   }
