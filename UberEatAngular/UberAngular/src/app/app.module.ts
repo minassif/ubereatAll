@@ -19,6 +19,7 @@ import { ArticleService } from './article.service';
 import { CommandeService } from './commande.service';
 import { InfosUserComponent } from './infos-user/infos-user.component';
 import { InfosRestoComponent } from './infos-resto/infos-resto.component';
+import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InfosRestoComponent } from './infos-resto/infos-resto.component';
     CarteRestoComponent,
     PanierComponent,
     InfosUserComponent,
-    InfosRestoComponent
+    InfosRestoComponent,
+    HistoriqueCommandeComponent
   ],
   imports: [
     BrowserModule,

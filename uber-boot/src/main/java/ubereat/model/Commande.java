@@ -42,6 +42,9 @@ public class Commande {
 	@ManyToOne
 	@JsonView(Views.ViewCommande.class)
 	private Client client;
+	@ManyToOne
+	@JsonView(Views.ViewCommande.class)
+	private Restaurant restaurant;
 	@ManyToMany
 	@JoinTable(name = "commande_article", joinColumns = @JoinColumn(name = "commande_id"), inverseJoinColumns = @JoinColumn(name = "article_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
 			"commande_id", "article_id" }))
@@ -162,6 +165,14 @@ public class Commande {
 
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 	

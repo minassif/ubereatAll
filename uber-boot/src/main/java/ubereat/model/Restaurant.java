@@ -10,11 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
+
+
 
 @Entity
 @JsonView(Views.ViewCommon.class)
@@ -41,8 +42,13 @@ public class Restaurant {
     @OneToMany(mappedBy= "restaurant")
     @JsonView(Views.ViewRestaurant.class)
     private List<Article> articles=new ArrayList<Article>();
-    
-    public Restaurant() {
+    //@OneToMany(mappedBy= "restaurant")
+    //@JsonIgnore
+	//@JsonView(Views.ViewRestaurantWithCommande.class)
+	//private  List<Commande> commandes =new ArrayList<Commande>();
+   
+
+	public Restaurant() {
     }
     
 	public Restaurant(String nom, String img, String descrription) {
@@ -157,5 +163,12 @@ public class Restaurant {
 	}
 	
 
+	// public List<Commande> getCommande() {
+			//return commandes;
+//		}
+
+		//public void setCommande(List<Commande> commande) {
+			//this.commandes = commande;
+		//}
 
 }

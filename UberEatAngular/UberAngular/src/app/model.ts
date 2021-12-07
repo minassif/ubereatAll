@@ -89,6 +89,7 @@ export class Restaurant {
     typeResto:string;
     adresse: Adresse;
     articles: Array<Article> = new Array<Article>();
+    commandes: Array<Commande> = new Array<Commande>();
     
 
     constructor(id?: number, version?: number, nom?: string, livraison?: boolean, emporter?: boolean, open?: boolean, img?: string, description?: string, rate?: number, pricerange?: number,typeResto?:string, adresse?: Adresse, articles?: Array<Article>) {
@@ -117,6 +118,10 @@ export class Commande {
     tempsPrep: number;
     rateResto: number;
     ratelivreur: number;
+    restaurant: Restaurant;
+    client:Client;
+    livreur:Livreur;
+    articles:Array<Article>;
 
 
     constructor(id?: number, version?: number, prix?: number, status?: string, tempsPrep?: number, rateResto?: number, ratelivreur?: number) {
