@@ -49,7 +49,7 @@ export class PanierService {
   }
 
   saveCommande(commande : Commande) {
-    this.http.post<Commande>(this.appConfig.backEndUrl+'commande', commande).subscribe(resp => {
+    this.http.put<Commande>(this.appConfig.backEndUrl+'commande/'+commande.id, commande).subscribe(resp => {
       this.router.navigate(['/mesCommandes']);
     }, error => console.log(error));
   }
