@@ -1,5 +1,5 @@
 package ubereat.model;
 
 public enum Status {
-EnCours, Enregistre, Preparation, Livraison,livree;
+Enregistre, Preparation, Livraison,livree;
 }
