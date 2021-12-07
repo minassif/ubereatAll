@@ -1,92 +1,74 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
-import { Restaurant } from '../model';
+import { Restaurant} from '../model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
 
+  //types:Array<TypeResto>=[TypeResto.FastFood,TypeResto.Italienne,TypeResto.Asiatique,TypeResto.Latino,TypeResto.Halal,TypeResto.Vegetarien,TypeResto.Francais];
+
+  types: Array<string> = new Array<string>();
   restaurants: Array<Restaurant> = new Array<Restaurant>();
+  restaurantsOpen: Array<Restaurant> = new Array<Restaurant>();
+  restaurantslivraisonGratuite: Array<Restaurant> = new Array<Restaurant>();
+  restaurantslivraisonGratuiteOpen: Array<Restaurant> = new Array<Restaurant>();
   restaurantsByRate: Array<Restaurant> = new Array<Restaurant>();
   restaurantUrl: string;
+  restaurantByTypeFastFood: Array<Restaurant> = new Array<Restaurant>();
+  restaurantByTypeItl: Array<Restaurant> = new Array<Restaurant>();
+  restaurantByTypeAsia: Array<Restaurant> = new Array<Restaurant>();
+  restaurantByTypeLat: Array<Restaurant> = new Array<Restaurant>();
+  restaurantByTypeHal: Array<Restaurant> = new Array<Restaurant>();
+  restaurantByTypeVeg: Array<Restaurant> = new Array<Restaurant>();
+  restaurantByTypeFr: Array<Restaurant> = new Array<Restaurant>();
+  retsurantByboolean: Array<Restaurant> = new Array<Restaurant>();
 
-  constructor(private http:HttpClient , private appConfig:AppConfigService ) { 
-    this.restaurantUrl=this.appConfig.backEndUrl + "restaurant/"
+  constructor(private http: HttpClient, private appConfig: AppConfigService) {
+    this.restaurantUrl = this.appConfig.backEndUrl + "restaurant/"
     this.load();
-    this.loadByRate();
+    this.loadTypes();
+
   }
 
   findAll(): Array<Restaurant> {
     return this.restaurants;
   }
 
-  findAllOrderByRate():Array<Restaurant>{
+  findAllType(): Array<string> {
+    return this.types;
+  }
+
+  loadTypes() {
+    this.appConfig.findAllTypesRestos().subscribe(resp => {
+      this.types = resp
+    }, err => console.log(err))
+  }
+
+
+  
+  loadAllByTypes(open: boolean, livraison: boolean, emporter: boolean, stars: number, type: string,prixmin:number,prixmax:number) {
+    this.http.get<Array<Restaurant>>(this.restaurantUrl + open + '/' + livraison + '/' + emporter + '/' + stars + '/' + type+'/'+prixmin+'/'+prixmax).subscribe(response => {
+      this.restaurants = response;
+    }, error => console.log(error));
+
+  }
+ 
+
+
+  loadAll(open: boolean, livraison: boolean, emporter: boolean, stars: number,prixmin:number,prixmax: number) {
+    this.http.get<Array<Restaurant>>(this.restaurantUrl + open + '/' + livraison + '/' + emporter + '/' + stars +'/'+prixmin+'/'+prixmax).subscribe(response => {
+      this.restaurants = response;
+    }, error => console.log(error));
+  }
+
+
+  findAllOrderByRate(): Array<Restaurant> {
     return this.restaurantsByRate;
   }
-  
-  findByType(type:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/typeResto/' + type).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
 
-  findByTypeV2(type:string){
-    let lien:string='/typeResto/'+type;
-    this.loadFiltre(lien);
-  }
-
-  findOpen():Array<Restaurant>{
-    let lien:string='/open';
-    this.loadFiltre(lien);
-    return this.restaurants;
-  }
-
-  findByCp(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/cp'+"/"+cp).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
-
-  findOpenCp(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp'+"/"+cp).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
-
-  findOpenCpExpensive(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/expensive'+"/"+cp).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
-
-  findOpenCpLessExpensive(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/lessexpensive'+"/"+cp).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
-  findOpenCpLessCheap(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/lesscheap'+"/"+cp).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
-
-  findOpenCpCheap(cp:string){
-    this.http.get<Array<Restaurant>>(this.restaurantUrl+'/open/cp/cheap'+"/"+cp).subscribe(resp =>{
-      return resp;
-    },err => console.log(err));
-  }
-
-  search(filtre: string) {
-    if (filtre) {
-      this.http.get<Array<Restaurant>>(this.restaurantUrl + "search/" + filtre).subscribe(response => {
-        this.restaurants = response;
-      }, error => console.log(error));
-    } else {
-      this.load();
-    }
-  }
 
 
   findById(id: number): Restaurant {
@@ -155,3 +137,5 @@ export class RestaurantService {
     }, error => console.log(error));
   }
 }
+
+

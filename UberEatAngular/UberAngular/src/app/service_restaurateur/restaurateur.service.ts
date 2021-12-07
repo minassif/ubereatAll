@@ -19,7 +19,7 @@ export class RestaurateurService {
    }
 
 
-   findAll(): Array<Restaurateur> {
+  findAll(): Array<Restaurateur> {
     return this.restaurateurs;
   }
 
