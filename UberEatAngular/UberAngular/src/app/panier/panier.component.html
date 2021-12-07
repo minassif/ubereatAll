@@ -54,26 +54,28 @@
             </li>
         </ul>
     </nav>   
-    
+
+    <div>
     <div class="content">
         <h3>Mon panier :</h3>
         <div class="card text-dark bg-light" *ngFor="let article of showPanier(); let i =index">
             <div class="row g-0">
               <div class="col-md-3">
-                <img src="{{article.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                <img src="{{article.img}}" width="320" height="224">
               </div>
               <div class="col-md-9">
                 <div class="card-body">
                   <h5 class="card-title">{{article.nom}}</h5>
-                  <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                  <p class="card-text">{{article.prix}} €</p>
                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 <div class="row">
-                    <div class="col-1">2</div>
                     <a class="btn btn-warning col-1" ><i class="bi bi-dash-square" (click)='delete(i)'></i></a>
                 </div>
               </div>
             </div>
         </div>
+    </div>
+    <br>
     </div>
     
 </div>
