@@ -17,7 +17,7 @@ export class PanierService {
   client:Client=new Client();
 
   constructor(private http: HttpClient,private appConfig:AppConfigService, private router:Router,private connectService:ConnectService,private clientService:ClientService) { 
-    this.loadClient();
+    
   }
 
   show():Array<Article>{
@@ -51,6 +51,10 @@ export class PanierService {
   }
 
   saveCommande(commande : Commande) {
+    if (!this.connectService.utilisateur){
+      this.router.navigate(['/connect']);
+    }
+    this.loadClient();
     this.http.put<Commande>(this.appConfig.backEndUrl+'commande/'+commande.id, commande).subscribe(resp => {
       this.router.navigate(['/mesCommandes']);
     }, error => console.log(error));

@@ -67,4 +67,14 @@ export class HistoriqueCommandeComponent implements OnInit {
     //this.articles=this.historiqueCommandeService.articles;
     //return this.articles;
  // }
+
+ detail(i:number){
+  var div = document.getElementById(i.toString());
+  if (div.style.display !== 'block') {
+      div.style.display = 'block';
+  }
+  else {
+      div.style.display = 'none';
+ }
+}
 }
