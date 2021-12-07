@@ -25,13 +25,16 @@
       <button type="button" class="btn btn-outline-success">Vegetarien</button>
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href="#fat">Entrées</a>
+          <a class="nav-link" href="#ref_entrees">Entrées</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#mdo">Plats</a>
+          <a class="nav-link" href="#ref_plats">Plats</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#mdo">Desserts</a>
+          <a class="nav-link" href="#ref_desserts">Desserts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ref_boissons">Boissons</a>
         </li>
       </ul>
     </nav>
@@ -83,7 +86,8 @@
       </div>
       
       <div>
-        <h3>Entrees</h3>
+        <span id="#ref_entrees">
+        <h3>Entrees</h3></span>
         <div class="content" *ngFor="let article of listEntrees()">
           <div class="card text-dark bg-light">
             <div class="row g-0">
@@ -108,7 +112,8 @@
         
         
         <div>
-          <h3>Plats</h3>
+          <span id="#ref_entrees">
+          <h3 id="ref_plats">Plats</h3>
           <div class="content" *ngFor="let article of listPlats()">
             <div class="card text-dark bg-light">
               <div class="row g-0">
@@ -132,7 +137,8 @@
           </div>
           
           <div>
-            <h3>Desserts</h3>
+            <span id="#ref_entrees">
+            <h3 id="ref_desserts">Desserts</h3></span>
             <div class="content" *ngFor="let article of listDesserts()">
               <div class="card text-dark bg-light">
                 <div class="row g-0">
@@ -156,7 +162,8 @@
             </div>
             
             <div>
-              <h3>Boissons</h3>
+              <span id="#ref_entrees">
+              <h3 id="ref_desserts">Boissons</h3></span>
               <div class="content" *ngFor="let article of listBoissons()">
                 <div class="card text-dark bg-light">
                   <div class="row g-0">
