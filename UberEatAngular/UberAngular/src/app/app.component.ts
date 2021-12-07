@@ -19,7 +19,7 @@ export class AppComponent {
     if (number <20 ) {
       this.navbartopColor="#8e8b8a00";
     } else  {
-      this.navbartopColor="#bda8a8";
+      this.navbartopColor="#bda8a8cf";
     }}
 
   constructor(public ConnectService: ConnectService) {
