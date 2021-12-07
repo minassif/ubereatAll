@@ -15,7 +15,7 @@
         <div class="carousel-inner" >
           <div class="carousel-item active"  *ngFor="let resto of listBestRates(); let i=index" [ngClass]="{'active':i==0}">
             <div class="conteneur"> 
-              <img src="{{resto.img}}" class="d-block w-100" alt="..." [routerLink]="['/carteResto']">
+              <img src="{{resto.img}}" class="d-block w-100" alt="..." [routerLink]="['/carteResto']" routerLinkActive="active">
               <div class="rate">{{resto.nom}}&nbsp;{{resto.rate}}</div>
             </div>
           </div>
