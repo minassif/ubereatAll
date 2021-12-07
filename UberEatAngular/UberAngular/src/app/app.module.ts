@@ -23,6 +23,7 @@ import { HistoriqueCommandeComponent } from './historique-commande/historique-co
 import { NgPipesModule } from 'ng-pipes';
 import { CommandesALivrerComponent } from './commandes-alivrer/commandes-alivrer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

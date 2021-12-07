@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +17,7 @@ import javax.persistence.Version;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
-
+import ubereat.model.Views.ViewRestaurantWithRestaurateur;
 
 @Entity
 @JsonView(Views.ViewCommon.class)
@@ -36,11 +38,12 @@ public class Restaurant {
 	@Embedded
 	private Adresse adresse;
 	@OneToOne
-	@JsonView(Views.ViewRestaurant.class)
+	@JsonView(Views.ViewRestaurantWithRestaurateur.class)
     private Restaurateur restaurateur;
+	@Enumerated(EnumType.STRING)
     private TypeResto typeResto;
     @OneToMany(mappedBy= "restaurant")
-    @JsonView(Views.ViewRestaurant.class)
+    @JsonView(Views.ViewRestaurantWithArticle.class)
     private List<Article> articles=new ArrayList<Article>();
     //@OneToMany(mappedBy= "restaurant")
     //@JsonIgnore
@@ -149,12 +152,15 @@ public class Restaurant {
 	public void setRestaurateur(Restaurateur restaurateur) {
 		this.restaurateur = restaurateur;
 	}
+
 	public TypeResto getTypeResto() {
 		return typeResto;
 	}
-	public void setTypeRestos(TypeResto typeResto) {
+
+	public void setTypeResto(TypeResto typeResto) {
 		this.typeResto = typeResto;
 	}
+
 	public List<Article> getArticles() {
 		return articles;
 	}

@@ -59,19 +59,28 @@
       <li class="nav-item col-2" id="elemnavbar">
         <a class="nav-link active" [routerLink]="['/accueil']" routerLinkActive="active"><img src="../assets/img/logo.png"></a>
       </li>
-      <li class="nav-link disabled col-6" id="elemnavbar"></li>
-      <li class="nav-item col-2">
+      <li class="nav-link disabled col-8" *ngIf="!ConnectService.utilisateur" id="elemnavbar"></li>
+      <div *ngIf="ConnectService.utilisateur" class="col-8">
+      <li class="nav-link disabled " *ngIf="ConnectService.utilisateur.statut ==='restaurateur'" id="elemnavbar"></li>
+      <li class="nav-link disabled " *ngIf="ConnectService.utilisateur.statut ==='livreur'" id="elemnavbar"></li>
+      <div *ngIf="ConnectService.utilisateur.statut ==='client'" class="row">
+        <li class="nav-link disabled col-11" id="elemnavbar"></li>
+      
+        <div class="col-1" [routerLink]="['/panier']" routerLinkActive="active" style="height: 50px;"><h2 class="bi bi-cart4 "></h2></div>
+      </div>
+    </div>
+      <li class="nav-item col-1">
         <a class="nav-link bouton" [routerLink]="['/connect']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">Se connecter</a>
         <a class="nav-link bouton" (click)="deconnexion()" [routerLink]="['']" routerLinkActive="active" *ngIf="ConnectService.utilisateur">Se déconnecter</a>
       </li>
-      <li class="dropdown col-2">
+      <li class="dropdown col-1">
         <!--<button class="btn btn-secondary dropdown-toggle" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
           Menu déroulant</button>-->
           <a class="nav-link bouton" [routerLink]="['/infos']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">S'inscire</a>
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="ConnectService.utilisateur">>Mon Compte</a>
+          <a class="nav-link dropdown-toggle bouton" data-bs-toggle="dropdown" *ngIf="ConnectService.utilisateur">Mon Compte</a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="ConnectService.utilisateur">
             <li><a class="dropdown-item" [routerLink]="['/infos']" routerLinkActive="active">Mes infos</a></li>
-            <li><a class="dropdown-item"  *ngIf="ConnectService.utilisateur.statut ==='client'" >Mon Panier </a></li>
+            <li><a class="dropdown-item" [routerLink]="['/panier']" routerLinkActive="active" *ngIf="ConnectService.utilisateur.statut ==='client'" >Mon Panier </a></li>
             <li><a class="dropdown-item" [routerLink]="['/monResto']" routerLinkActive="active" *ngIf="ConnectService.utilisateur.statut ==='restaurateur'" >Mon Restaurant </a></li>
             <li><a class="dropdown-item" [routerLink]="['/aLivrer']" routerLinkActive="active" *ngIf="ConnectService.utilisateur.statut ==='livreur'" >Livrer</a></li>
             <li><a class="dropdown-item"  [routerLink]="['/mesCommandes']" routerLinkActive="active">Mes commandes</a></li>

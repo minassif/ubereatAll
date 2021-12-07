@@ -132,6 +132,16 @@ class UberBootApplicationTests {
 		jeanPizz.setRestaurant(null);
 		jeanPizz.setStatut("restaurateur");	
 		
+		Restaurateur MichMuchPizz = new Restaurateur();
+		jeanPizz.setEmail("michmuch@pizzaBON.fr");
+		jeanPizz.setPassword("pizzalolo");
+		jeanPizz.setNom("Pizza");
+		jeanPizz.setPrenom("michmuch");
+		jeanPizz.setIban("FR76PLEINSDETUNES");
+		jeanPizz.setTel("Double118");
+		jeanPizz.setRestaurant(null);
+		jeanPizz.setStatut("restaurateur");	
+		
 		Restaurateur andreBabke = new Restaurateur();
 		andreBabke.setEmail("andre@kebaboui.fr");
 		andreBabke.setPassword("jadorkebAB");
@@ -141,8 +151,73 @@ class UberBootApplicationTests {
 		andreBabke.setTel("KEBABKEBAB");
 		andreBabke.setStatut("restaurateur");
 		
+		Restaurateur JeanKebs = new Restaurateur();
+		andreBabke.setEmail("Jean@kebaboui.fr");
+		andreBabke.setPassword("jadorkebs");
+		andreBabke.setNom("Kebabier");
+		andreBabke.setPrenom("Jean");
+		andreBabke.setIban("FR76LEMBROCHEUR");
+		andreBabke.setTel("KEBABKEBAB");
+		andreBabke.setStatut("restaurateur");
+		
+		Restaurateur WagonLit = new Restaurateur();
+		andreBabke.setEmail("wagon@lit.fr");
+		andreBabke.setPassword("debeauxdraps");
+		andreBabke.setNom("lit");
+		andreBabke.setPrenom("wagon");
+		andreBabke.setIban("FR76VROUM");
+		andreBabke.setTel("KEBABKEBAB");
+		andreBabke.setStatut("restaurateur");
+		
+		Restaurateur MarlonBrando = new Restaurateur();
+		andreBabke.setEmail("Marlon@lit.fr");
+		andreBabke.setPassword("Brando");
+		andreBabke.setNom("Brando");
+		andreBabke.setPrenom("Marlon");
+		andreBabke.setIban("FR76VUCHE");
+		andreBabke.setTel("OUI");
+		andreBabke.setStatut("restaurateur");
+		
+		Restaurateur JeanBurger = new Restaurateur();
+		andreBabke.setEmail("Jean@Burger.fr");
+		andreBabke.setPassword("legrascestbon");
+		andreBabke.setNom("Burger");
+		andreBabke.setPrenom("Jean");
+		andreBabke.setIban("FR76BIGMAC");
+		andreBabke.setTel("OUI");
+		andreBabke.setStatut("restaurateur");
+		
+		Restaurateur MonsieurCroc = new Restaurateur();
+		andreBabke.setEmail("Croc@monsieru.fr");
+		andreBabke.setPassword("ouilejambon");
+		andreBabke.setNom("Monsieur");
+		andreBabke.setPrenom("Croc");
+		andreBabke.setIban("FR76BECHAMEL");
+		andreBabke.setTel("OUI");
+		andreBabke.setStatut("restaurateur");
+		
+		Restaurateur Christina = new Restaurateur();
+		andreBabke.setEmail("Croc@monsieru.fr");
+		andreBabke.setPassword("ouilejambon");
+		andreBabke.setNom("Monsieur");
+		andreBabke.setPrenom("Croc");
+		andreBabke.setIban("FR76BECHAMEL");
+		andreBabke.setTel("OUI");
+		andreBabke.setStatut("restaurateur");
+		
+		Restaurateur Christino = new Restaurateur();
+		andreBabke.setEmail("Croc@monsieru.fr");
+		andreBabke.setPassword("ouilejambon");
+		andreBabke.setNom("Monsieur");
+		andreBabke.setPrenom("Croc");
+		andreBabke.setIban("FR76BECHAMEL");
+		andreBabke.setTel("OUI");
+		andreBabke.setStatut("restaurateur");
+		
+		
+		
 		Restaurant kebab = new Restaurant();
-		kebab.setNom("kebab andre");
+		kebab.setNom("kebab andré");
 		kebab.setDescription("Des bons kebabs");
 		kebab.setEmporter(true);
 		kebab.setLivraison(true);
@@ -152,8 +227,16 @@ class UberBootApplicationTests {
 		kebab.setOpen(true);
 		kebab.setImg("../../assets/img/Restaurants/kebab/kebab.jpg");
 		
-		
-		
+		Restaurant kebaba = new Restaurant();
+		kebab.setNom("kebab ouche");
+		kebab.setDescription("Des kebabs meilleurs que chez andré");
+		kebab.setEmporter(true);
+		kebab.setLivraison(true);
+		kebab.setPricerange(5);
+		kebab.setRate(3.5);
+		kebab.setRestaurateur(JeanKebs);
+		kebab.setOpen(true);
+		kebab.setImg("../../assets/img/Restaurants/kebab/kebab.jpg");
 		
 		Restaurant pizzeria = new Restaurant();
 		pizzeria.setNom("pizzos deliros");
@@ -166,7 +249,84 @@ class UberBootApplicationTests {
 		pizzeria.setOpen(false);
 		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
 		
-
+		Restaurant pizzeriaa = new Restaurant();
+		pizzeria.setNom("MichMuch Pizza");
+		pizzeria.setDescription("La pizza aaaaaaah !");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(4.2);
+		pizzeria.setRestaurateur(MichMuchPizz);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		Restaurant asiatique = new Restaurant();
+		pizzeria.setNom("Chez monsieut lit");
+		pizzeria.setDescription("Pour ne pas être dans de beaux draps");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(4.8);
+		pizzeria.setRestaurateur(WagonLit);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		Restaurant asiatiquea = new Restaurant();
+		pizzeria.setNom("A pieds par la Chine");
+		pizzeria.setDescription("En vous laissant le choix dans la date");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(2.9);
+		pizzeria.setRestaurateur(MarlonBrando);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		Restaurant Burger = new Restaurant();
+		pizzeria.setNom("Chez Jean Burger");
+		pizzeria.setDescription("Pour ceux qui n'ont pas peur du cholestérol");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(3.9);
+		pizzeria.setRestaurateur(JeanBurger);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		Restaurant Burgera = new Restaurant();
+		pizzeria.setNom("Michel Burger");
+		pizzeria.setDescription("Des sandwichs pour ceux qui sont loin de chez eux");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(0.9);
+		pizzeria.setRestaurateur(MonsieurCroc);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		Restaurant Espana = new Restaurant();
+		pizzeria.setNom("La andalousia");
+		pizzeria.setDescription("Ici on ne vend pas que de la sauce");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(2.4);
+		pizzeria.setRestaurateur(Christina);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		Restaurant Espannaa = new Restaurant();
+		pizzeria.setNom("El peru");
+		pizzeria.setDescription("Si vous vous demandez c'est peru, c'est par ici");
+		pizzeria.setEmporter(true);
+		pizzeria.setLivraison(true);
+		pizzeria.setPricerange(9);
+		pizzeria.setRate(1.9);
+		pizzeria.setRestaurateur(Christino);
+		pizzeria.setOpen(false);
+		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		
+		
 		
 		Livreur benji = new Livreur();
 		benji.setEmail("benjamin@lachivier.fr");
@@ -176,6 +336,9 @@ class UberBootApplicationTests {
 		benji.setTel("06000000");
 		benji.setIban("FR00MASSETUNES");
 		benji.setStatut("livreur");
+		
+		
+		
 		
 		Article coca =new Article();
 		coca.setNom("coca");
@@ -239,6 +402,34 @@ class UberBootApplicationTests {
 		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
 		calzone.setTypePlat(TypePlat.Plat);
 		
+		Article tiramisu =new Article();
+		calzone.setNom("tiramisu");
+		calzone.setVegetarien(false);
+		calzone.setDescription("Une petite douceur à la crême et au café");
+		calzone.setPrix(5);
+		calzone.setRestaurant(pizzeria);
+		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setTypePlat(TypePlat.Dessert);
+		
+		Article fondant =new Article();
+		calzone.setNom("fondant");
+		calzone.setVegetarien(false);
+		calzone.setDescription("Un gateau au chocolat avec son coeur fondant");
+		calzone.setPrix(6);
+		calzone.setRestaurant(pizzeria);
+		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setTypePlat(TypePlat.Dessert);
+		
+		Article cookie =new Article();
+		calzone.setNom("cookie");
+		calzone.setVegetarien(false);
+		calzone.setDescription("Bah c'est un cookie quoi");
+		calzone.setPrix(4);
+		calzone.setRestaurant(pizzeria);
+		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setTypePlat(TypePlat.Dessert);
+		
+		
 		
 		
 		List<Article> macom= new ArrayList<Article>();
@@ -257,14 +448,33 @@ class UberBootApplicationTests {
 		livreurRepo.save(benji);
 		restaurateurRepo.save(jeanPizz);
 		restaurateurRepo.save(andreBabke);
+		restaurateurRepo.save(MichMuchPizz);
+		restaurateurRepo.save(JeanKebs);
+		restaurateurRepo.save(WagonLit);
+		restaurateurRepo.save(MarlonBrando);
+		restaurateurRepo.save(MonsieurCroc);
+		restaurateurRepo.save(JeanBurger);
+		restaurateurRepo.save(Christina);
+		restaurateurRepo.save(Christino);
 		restaurantRepo.save(kebab);
 		restaurantRepo.save(pizzeria);
+		restaurantRepo.save(pizzeriaa);
+		restaurantRepo.save(kebaba);
+		restaurantRepo.save(asiatique);
+		restaurantRepo.save(asiatiquea);
+		restaurantRepo.save(Burger);
+		restaurantRepo.save(Burgera);
+		restaurantRepo.save(Espana);
+		restaurantRepo.save(Espannaa);
 		articleRepo.save(marherita);
 		articleRepo.save(regina);
 		articleRepo.save(calzone);
 		articleRepo.save(gressin);
 		articleRepo.save(burata);
 		articleRepo.save(pancontomate);
+		articleRepo.save(tiramisu);
+		articleRepo.save(fondant);
+		articleRepo.save(cookie);
 		articleRepo.save(coca);
 		commandeRepo.save(macommande);
 		
