@@ -25,6 +25,21 @@ export class CarteRestoComponent implements OnInit {
     return this.articleService.findAll();
   }
 
+  listentree(): Array<Article> {
+    return this.articleService.findAll();
+  }
+
+  // listplat(): Array<Article> {
+  //   return this.articleService.findAll();
+  // }
+
+  // listdessert(): Array<Article> {
+  //   return this.articleService.findAll();
+  // }
+
+  // listboisson(): Array<Article> {
+  //   return this.articleService.findAll();
+  // }
 
   listArticleVege(vege:boolean){
     return this.articleService.findVegetarien(vege);

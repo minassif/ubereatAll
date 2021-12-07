@@ -83,7 +83,7 @@
         </div>
 
         <div>
-        <div class="content" *ngFor="let article of list()">
+        <div class="content" *ngFor="let article of listentree()">
             <div class="card text-dark bg-light">
                 <div class="row g-0">
                   <div class="col-md-3">
@@ -105,28 +105,73 @@
         <br>
         </div>
 
-        <!-- <table *ngFor="let article of list()">
-            <tr>
-                <td rowspan="3"><img src={{article.img}} width="300" height="220"></td>
-                <td colspan="2">{{article.nom}}</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>{{article.description}}</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>{{article.prix}} €       <div class="btn-group btn-group-sm">
-                    <a class="btn btn-primary" (click)="addPanier(article)"><i>+</i></a>
-                    <a class="btn btn-danger" (click)="removePanier(article)"><i>-</i></a>
-                </div></td>
-                <td>
-                    
-                </td>
-            </tr>
-        </table> -->
+        <!-- <div>
+            <div class="content" *ngFor="let article of listplat()">
+                <div class="card text-dark bg-light">
+                    <div class="row g-0">
+                      <div class="col-md-3">
+                        <img src={{article.img}} width="300" height="224">
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">{{article.nom}}</h5>
+                          <p class="card-text">{{article.description}}</p>
+                          <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
+                        <div class="row">
+                            <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                            <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <br>
 
+            </div>
+            <div>
+                <div class="content" *ngFor="let article of listdessert()">
+                    <div class="card text-dark bg-light">
+                        <div class="row g-0">
+                          <div class="col-md-3">
+                            <img src={{article.img}} width="300" height="224">
+                          </div>
+                          <div class="col-md-9">
+                            <div class="card-body">
+                              <h5 class="card-title">{{article.nom}}</h5>
+                              <p class="card-text">{{article.description}}</p>
+                              <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
+                            <div class="row">
+                                <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                                <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                </div>
+
+                <div>
+                    <div class="content" *ngFor="let article of listboisson()">
+                        <div class="card text-dark bg-light">
+                            <div class="row g-0">
+                              <div class="col-md-3">
+                                <img src={{article.img}} width="300" height="224">
+                              </div>
+                              <div class="col-md-9">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{article.nom}}</h5>
+                                  <p class="card-text">{{article.description}}</p>
+                                  <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
+                                <div class="row">
+                                    <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                                    <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    </div> -->
     </div>
 </div>
