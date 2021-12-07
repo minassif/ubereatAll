@@ -46,10 +46,12 @@ export class PanierService {
     this.commande.status='Enregistre';
     this.saveCommande(this.commande);
     this.commande=null;
+    this.panier=null;
+    this.prixPanier=0;
   }
 
   saveCommande(commande : Commande) {
-    this.http.put<Commande>(this.appConfig.backEndUrl+'commande/'+commande.id, commande).subscribe(resp => {
+    this.http.post<Commande>(this.appConfig.backEndUrl+'commande/', commande).subscribe(resp => {
       this.router.navigate(['/mesCommandes']);
     }, error => console.log(error));
   }

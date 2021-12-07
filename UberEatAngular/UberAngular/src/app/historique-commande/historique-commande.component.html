@@ -112,7 +112,7 @@
           
           <div class="col-md-9">
             <div class="card-body">
-              <h5 class="card-title">{{commande.restaurant.nom}}</h5>
+              <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
               <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
               <div>
                 <p class="card-text" >{{commande.client?.prenom}} </p>
@@ -141,7 +141,7 @@
                             <div class="card text-dark bg-light" *ngFor="let article of commande.articles;">
                                 <div class="row g-0">
                                   <div class="col-md-3">
-                                    <img src="{{article.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                                    <img src="{{article?.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
                                   </div>
                                   <div class="col-md-9">
                                     <div class="card-body">
