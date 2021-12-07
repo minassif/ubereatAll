@@ -3,7 +3,7 @@
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index">
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+            <img src="{{commande.restaurant?.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
           </div>
           <div class="col-md-9">
             <div class="card-body">
@@ -54,7 +54,7 @@
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+            <img src="{{commande.restaurant?.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
           </div>
           <div class="col-md-9">
             <div class="card-body">
