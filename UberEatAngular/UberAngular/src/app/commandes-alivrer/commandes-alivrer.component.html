@@ -3,17 +3,17 @@
     <div class="card text-dark bg-light" *ngFor="let commande of list()">
         <div class="row g-0">
             <div class="col-md-3">
-                <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                <img src="{{commande.restaurant?.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
             </div>
             <div class="col-md-9">
                 <div class="card-body">
-                    <h5 class="card-title">{{commande.restaurant.nom}}</h5>
-                    <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
+                    <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
+                    <h5 class="card-title" *ngIf="commande.status">{{commande?.status}}</h5>
                     <div>
-                        <p class="card-text">{{commande.client.prenom}} </p>
-                        <p class="card-text">{{commande.client.nom}} </p>
+                        <p class="card-text">{{commande.client?.prenom}} </p>
+                        <p class="card-text">{{commande.client?.nom}} </p>
                     </div>
-                    <p class="card-text">{{commande.prix}} euros</p>
+                    <p class="card-text">{{commande?.prix}} euros</p>
                     <br>
                     <button (click)="prendreCommande(commande)"> S'occuper de cette commande</button>
                     <div class="accordion" id="accordionExample">

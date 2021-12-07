@@ -16,30 +16,27 @@ export class CarteRestoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
-  listArticleByType(type:string){
-    return this.articleService.findByType(type);
-  }
+
 
   list(): Array<Article> {
     return this.articleService.findAll();
   }
 
-  listentree(): Array<Article> {
-    return this.articleService.findAll();
+  listEntrees(): Array<Article> {
+    return this.articleService.findEntrees();
   }
 
-  // listplat(): Array<Article> {
-  //   return this.articleService.findAll();
-  // }
+  listPlats(): Array<Article> {
+    return this.articleService.findPlats();
+  }
 
-  // listdessert(): Array<Article> {
-  //   return this.articleService.findAll();
-  // }
+  listDesserts(): Array<Article> {
+    return this.articleService.findDesserts();
+  }
 
-  // listboisson(): Array<Article> {
-  //   return this.articleService.findAll();
-  // }
+  listBoissons(): Array<Article> {
+    return this.articleService.findBoissons();
+  }
 
   listArticleVege(vege:boolean){
     return this.articleService.findVegetarien(vege);

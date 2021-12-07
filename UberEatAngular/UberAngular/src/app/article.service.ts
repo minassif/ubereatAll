@@ -14,13 +14,20 @@ import { RestaurantService } from './service_restaurant/restaurant.service';
 })
 export class ArticleService {
 
-  
+  entrees : Array<Article> = new Array<Article>();
+  plats : Array<Article> = new Array<Article>();
+  desserts : Array<Article> = new Array<Article>();
+  boissons : Array<Article> = new Array<Article>();
   articles : Array<Article> = new Array<Article>();
   articleUrl : string;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService,private restaurantService:RestaurantService,private rechercheRestoService:RechercheRestoService) {
     this.articleUrl = this.appConfig.backEndUrl + "article/"
     this.load();
+    this.loadEntrees();
+    this.loadPlats();
+    this.loadDesserts();
+    this.loadBoissons();
 
    }
 
@@ -28,17 +35,51 @@ export class ArticleService {
     return this.articles ;
   }
   
+  findEntrees(): Array<Article> {
+    return this.entrees ;
+  }
+  findPlats(): Array<Article> {
+    return this.plats ;
+  }
+  findDesserts(): Array<Article> {
+    return this.desserts ;
+  }
+  findBoissons(): Array<Article> {
+    return this.boissons ;
+  }
+
+
   loadArticle(id:number){
   this.http.get<Array<Article>>(this.appConfig.backEndUrl +"article/restaurantId/" + id).subscribe(resp => {
     this.articles=resp;
   }, error => console.log(error));
   }
 
-  findByType(type:string){
-    this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/' + type).subscribe(resp =>{
-      return resp;
+
+  loadEntrees(){
+    this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/Entree').subscribe(resp =>{
+      this.entrees=resp;
     },err => console.log(err));
   }
+
+  loadPlats(){
+    this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/Plat').subscribe(resp =>{
+      this.plats=resp;
+    },err => console.log(err));
+  }
+
+  loadDesserts(){
+    this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/Dessert').subscribe(resp =>{
+      this.desserts=resp;
+    },err => console.log(err));
+  }
+
+  loadBoissons(){
+    this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/Boisson').subscribe(resp =>{
+      this.boissons=resp;
+    },err => console.log(err));
+  }
+  
 
   findVegetarien(vegetarien:boolean){
     this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/' + vegetarien).subscribe(resp =>{
