@@ -7,11 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import ubereat.model.Commande;
+import ubereat.model.Status;
+
 
 
 public interface ICommande extends JpaRepository<Commande, Long> {
 	@Query("select distinct c from Commande c where c.status = :string")
-	List<Commande> findAllWithStatus(@Param("string") String string);
+	List<Commande> findAllWithStatus(@Param("string") Status string);
 	
 	@Query("select c from Commande c where c.livreur = null")
 	List<Commande> findAllWithoutIdLivreur();
