@@ -21,7 +21,8 @@ export class AcceuilComponent implements OnInit {
 
 
   listBestRates():Array<Restaurant>{
-    this.restaurantService.findAllOrderByRate().splice(2,(this.restaurantService.findAllOrderByRate().length-1));
+    let remove=this.restaurantService.findAllOrderByRate().length-3;
+    this.restaurantService.findAllOrderByRate().splice(3,remove);
     return this.restaurantService.findAllOrderByRate()
   }
 
