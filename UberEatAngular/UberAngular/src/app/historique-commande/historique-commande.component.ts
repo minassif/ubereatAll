@@ -11,8 +11,8 @@ import { HistoriqueCommandeService } from './historique-commande.service';
 })
 export class HistoriqueCommandeComponent implements OnInit {
 
-  commandes:Array<Commande>;
-  articles:Array<Article>;
+  //commandes:Array<Commande>;
+  //articles:Array<Article>;
   statut:String;
 
   constructor(private historiqueCommandeService:HistoriqueCommandeService, private router:Router, public connectService:ConnectService) {
@@ -23,6 +23,7 @@ export class HistoriqueCommandeComponent implements OnInit {
       }
     if (connectService.utilisateur.statut==='restaurateur'){
       this.statut="restaurateur";
+      this.historiqueCommandeService.loadRestaurateur() ;
       }
     if (connectService.utilisateur.statut==='livreur'){
       this.historiqueCommandeService.loadLivreur() ;
@@ -45,9 +46,9 @@ export class HistoriqueCommandeComponent implements OnInit {
     return this.historiqueCommandeService.commandes;
   }
 
-  loadArticleCommande(i:number){
-    this.historiqueCommandeService.loadArticle(i) ;
-    this.articles=this.historiqueCommandeService.articles;
-    return this.articles;
-  }
+  //loadArticleCommande(i:number){
+    //this.historiqueCommandeService.loadArticle(i) ;
+    //this.articles=this.historiqueCommandeService.articles;
+    //return this.articles;
+ // }
 }
