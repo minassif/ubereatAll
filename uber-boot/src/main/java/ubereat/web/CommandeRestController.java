@@ -91,7 +91,7 @@ public class CommandeRestController {
 		}
 		
 		@GetMapping("/livreur/{id}")
-		@JsonView(Views.ViewCommande.class)
+		@JsonView(Views.ViewCommandeDetail.class)
 		public List<Commande> findAllByLivreur(@PathVariable Long id) {
 			List<Commande> commandes = commandeRepo.findAllByLivreurWithArticles(id);
 
