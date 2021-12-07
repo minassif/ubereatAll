@@ -183,7 +183,34 @@ class UberBootApplicationTests {
 		coca.setDescription("Soda de type coca");
 		coca.setPrix(2);
 		coca.setRestaurant(pizzeria);
+		coca.setTypePlat(TypePlat.Boisson);
 		
+		Article gressin =new Article();
+		gressin.setNom("gressin");
+		gressin.setVegetarien(true);
+		gressin.setDescription("Des petits gressins à l'huile d'olive");
+		gressin.setPrix(3);
+		gressin.setRestaurant(pizzeria);
+		gressin.setImg("../assets/img/Restaurants/pizzeria/");
+		gressin.setTypePlat(TypePlat.Entree);
+		
+		Article burata =new Article();
+		burata.setNom("burata");
+		burata.setVegetarien(true);
+		burata.setDescription("Une bonne buratata au bon lait de bufflon");
+		burata.setPrix(4);
+		burata.setRestaurant(pizzeria);
+		burata.setImg("../assets/img/Restaurants/pizzeria/");
+		burata.setTypePlat(TypePlat.Entree);
+		
+		Article pancontomate =new Article();
+		pancontomate.setNom("Pan con tomate");
+		pancontomate.setVegetarien(true);
+		pancontomate.setDescription("Plait-il ? Ce n'est pas Italien ? Coup de boule rien à foutre.");
+		pancontomate.setPrix(4);
+		pancontomate.setRestaurant(pizzeria);
+		pancontomate.setImg("../assets/img/Restaurants/pizzeria/");
+		pancontomate.setTypePlat(TypePlat.Entree);
 		
 		Article marherita =new Article();
 		marherita.setNom("marherita");
@@ -191,6 +218,27 @@ class UberBootApplicationTests {
 		marherita.setDescription("Pizza: marherita");
 		marherita.setPrix(8);
 		marherita.setRestaurant(pizzeria);
+		marherita.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		marherita.setTypePlat(TypePlat.Plat);
+		
+		Article regina =new Article();
+		regina.setNom("regina");
+		regina.setVegetarien(true);
+		regina.setDescription("Pizza: regina");
+		regina.setPrix(9);
+		regina.setRestaurant(pizzeria);
+		regina.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		regina.setTypePlat(TypePlat.Plat);
+		
+		Article calzone =new Article();
+		calzone.setNom("calzone");
+		calzone.setVegetarien(false);
+		calzone.setDescription("Pizza: calzone");
+		calzone.setPrix(12);
+		calzone.setRestaurant(pizzeria);
+		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setTypePlat(TypePlat.Plat);
+		
 		
 		
 		List<Article> macom= new ArrayList<Article>();
@@ -212,6 +260,11 @@ class UberBootApplicationTests {
 		restaurantRepo.save(kebab);
 		restaurantRepo.save(pizzeria);
 		articleRepo.save(marherita);
+		articleRepo.save(regina);
+		articleRepo.save(calzone);
+		articleRepo.save(gressin);
+		articleRepo.save(burata);
+		articleRepo.save(pancontomate);
 		articleRepo.save(coca);
 		commandeRepo.save(macommande);
 		

@@ -27,13 +27,12 @@ export class ArticleService {
    findAll(): Array<Article> {
     return this.articles ;
   }
-
+  
   loadArticle(id:number){
   this.http.get<Array<Article>>(this.appConfig.backEndUrl +"article/restaurantId/" + id).subscribe(resp => {
     this.articles=resp;
   }, error => console.log(error));
   }
-
 
   findByType(type:string){
     this.http.get<Array<Article>>(this.articleUrl+ 'restaurantId/' + this.rechercheRestoService.idRestoVisible + '/' + type).subscribe(resp =>{
