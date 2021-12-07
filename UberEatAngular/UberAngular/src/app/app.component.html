@@ -1,6 +1,6 @@
 
 <!--<header>
- 
+  
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       Dropdown button
@@ -37,27 +37,28 @@
 -->
 
 <head>
-<title>accueil</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="app.component.scss">
+  <title>accueil</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="app.component.scss">
+  
 </head>
-  <div class="container-fluid">
-    <div class="header row justify-content-between">
-      <ul class="nav nav-pills navbartop transi back">
-        <li class="nav-item col-2" id="elemnavbar">
-          <a class="nav-link active" [routerLink]="['/accueil']" routerLinkActive="active"><img src="../assets/img/logo.png"></a>
-        </li>
-        <li class="nav-link disabled col-6" id="elemnavbar"></li>
-        <li class="nav-item col-2">
-          <a class="nav-link bouton" [routerLink]="['/connect']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">Se connecter</a>
-          <a class="nav-link bouton" (click)="deconnexion()" [routerLink]="['']" routerLinkActive="active" *ngIf="ConnectService.utilisateur">Se déconnecter</a>
-        </li>
-        <li class="dropdown col-2">
-          <!--<button class="btn btn-secondary dropdown-toggle" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
-            Menu déroulant</button>-->
+<div class="container-fluid">
+  <div class="header row justify-content-between">
+    <ul class="nav nav-pills navbartop transi back">
+      <li class="nav-item col-2" id="elemnavbar">
+        <a class="nav-link active" [routerLink]="['/accueil']" routerLinkActive="active"><img src="../assets/img/logo.png"></a>
+      </li>
+      <li class="nav-link disabled col-6" id="elemnavbar"></li>
+      <li class="nav-item col-2">
+        <a class="nav-link bouton" [routerLink]="['/connect']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">Se connecter</a>
+        <a class="nav-link bouton" (click)="deconnexion()" [routerLink]="['']" routerLinkActive="active" *ngIf="ConnectService.utilisateur">Se déconnecter</a>
+      </li>
+      <li class="dropdown col-2">
+        <!--<button class="btn btn-secondary dropdown-toggle" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu déroulant</button>-->
           <a class="nav-link bouton" [routerLink]="['/infos']" routerLinkActive="active" *ngIf="!ConnectService.utilisateur">S'inscire</a>
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" *ngIf="ConnectService.utilisateur">>Mon Compte</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="ConnectService.utilisateur">
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngIf="ConnectService.utilisateur">
             <li><a class="dropdown-item" [routerLink]="['/infos']" routerLinkActive="active">Mes infos</a></li>
             <li><a class="dropdown-item"  *ngIf="ConnectService.utilisateur.statut ==='client'" >Mon Panier </a></li>
             <li><a class="dropdown-item" [routerLink]="['/monResto']" routerLinkActive="active" *ngIf="ConnectService.utilisateur.statut ==='restaurateur'" >Mon Restaurant </a></li>
@@ -66,52 +67,172 @@
           </ul>
         </li>
       </ul>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-<router-outlet></router-outlet>
-
-<div class="footer">
-  <div class="row justify-content-around" id="topFoot">
-    <div class="col-1">
-      <a class="nav-link active" [routerLink]="['/accueil']" routerLinkActive="active" ><img src="../assets/img/logo.png" id="logo"></a>
-    </div>
-    <div class="col-7"> </div>
-    <ul class="col-2">
-      <li> coin</li>
-      <li>coin</li>
-      <li>coin</li>
-    </ul>
-    <ul class="col-2">
-      <li>coin</li>
-      <li>coin</li>
-      <li>coin</li>
-    </ul>
-  </div>
-  <div class="row" id="botFoot">
-    <span class="col-10"></span>
-    <span class="col-2"><img src="../assets/img/logo.png" id="logobot"> &nbsp; &nbsp;FeedMe Corporation</span>
   </div>
 </div>
+  
+  
+  
+  
+  
+  
 
-<!-- <footer style="background-color: black;">
-<p style="color: brown;">Vive les footers bien placés</p>
-</footer> -->
+  
+  <router-outlet></router-outlet>
+  
+  <!-- <div class="footer">
+    <div class="row justify-content-around" id="topFoot">
+      <div class="col-1">
+        <a class="nav-link active" [routerLink]="['/accueil']" routerLinkActive="active" ><img src="../assets/img/logo.png" id="logo"></a>
+      </div>
+      <div class="col-7"> </div>
+      <ul class="col-2">
+        <li> coin</li>
+        <li>coin</li>
+        <li>coin</li>
+      </ul>
+      <ul class="col-2">
+        <li>coin</li>
+        <li>coin</li>
+        <li>coin</li>
+      </ul>
+    </div>
+    <div class="row" id="botFoot">
+      <span class="col-10"></span>
+      <span class="col-2"><img src="../assets/img/logo.png" id="logobot"> &nbsp; &nbsp;FeedMe Corporation</span>
+    </div>
+  </div> -->
 
-<script type="text/javascript">
-  $(document).scroll(function() {
-    if($(window).scrollTop() ==0){
-      $(".navbartop").css("backgroundColor","grey");
-    }
-    else {
-      $(".navbartop").css("backgroundColor","#8e8b8a00");
-    }
-  });
+  <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+  >
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Contact
+          </h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+  
+  <!-- <footer style="background-color: black;">
+    <p style="color: brown;">Vive les footers bien placés</p>
+  </footer> -->
+  
+  <script type="text/javascript">
+    $(document).scroll(function() {
+      if($(window).scrollTop() ==0){
+        $(".navbartop").css("backgroundColor","grey");
+      }
+      else {
+        $(".navbartop").css("backgroundColor","#8e8b8a00");
+      }
+    });
   </script>
