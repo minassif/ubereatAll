@@ -21,6 +21,7 @@ import { InfosUserComponent } from './infos-user/infos-user.component';
 import { InfosRestoComponent } from './infos-resto/infos-resto.component';
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 import { NgPipesModule } from 'ng-pipes';
+import { CommandesALivrerComponent } from './commandes-alivrer/commandes-alivrer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgPipesModule } from 'ng-pipes';
     PanierComponent,
     InfosUserComponent,
     InfosRestoComponent,
-    HistoriqueCommandeComponent
+    HistoriqueCommandeComponent,
+    CommandesALivrerComponent
   ],
   imports: [
     BrowserModule,
