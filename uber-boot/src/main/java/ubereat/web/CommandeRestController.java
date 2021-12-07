@@ -47,8 +47,8 @@ public class CommandeRestController {
 		
 		@GetMapping("/aLivrer")
 		@JsonView(Views.ViewCommande.class)
-		public List<Commande> findAllWithoutLivreur() {
-			List<Commande> commandes = commandeRepo.findAll();
+		public List<Commande> findAllWithoutIdLivreur() {
+			List<Commande> commandes = commandeRepo.findAllWithoutIdLivreur();
 
 			return commandes;
 		}
