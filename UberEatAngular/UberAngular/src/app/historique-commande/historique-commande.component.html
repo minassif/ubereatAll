@@ -7,7 +7,7 @@
           </div>
           <div class="col-md-9">
             <div class="card-body">
-              <h5 class="card-title">{{commande.restaurant.nom}}</h5>
+              <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
               <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -19,7 +19,7 @@
                       Detail de la commande 
                     </button>
                   </h2>
-                  <div id="i" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div [id]="i" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <h3>Mon panier :</h3>
                     <div class="accordion-body" *ngFor="let article of commande.articles;">
                         <div class="content">
@@ -31,8 +31,8 @@
                                   </div>
                                   <div class="col-md-9">
                                     <div class="card-body">
-                                      <h5 class="card-title">{{article.nom}}</h5>
-                                      <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                                      <h5 class="card-title">{{article?.nom}}</h5>
+                                      <p class="card-text">{{article?.prix}} euros, c'est le taro mon salop</p>
                                   </div>
                                 </div>
                             </div>
@@ -58,11 +58,11 @@
           </div>
           <div class="col-md-9">
             <div class="card-body">
-              <h5 class="card-title">{{commande.restaurant.nom}}</h5>
+              <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
               <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
               <div>
-                <p class="card-text">{{commande.client.prenom}} </p>
-                <p class="card-text">{{commande.client.nom}} </p>
+                <p class="card-text">{{commande.client?.prenom}} </p>
+                <p class="card-text">{{commande.client?.nom}} </p>
               </div>
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>

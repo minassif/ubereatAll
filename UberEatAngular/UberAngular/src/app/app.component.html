@@ -36,6 +36,17 @@
   </div>
 -->
 
+<script type="text/javascript">
+  $(document).scroll(function() {
+    if($(window).scrollTop() ==0){
+      $(".navbartop").css("backgroundColor","grey");
+    }
+    else {
+      $(".navbartop").css("backgroundColor","#8e8b8a00");
+    }
+  });
+</script>
+
 <head>
   <title>accueil</title>
   <meta charset="utf-8">
@@ -44,7 +55,7 @@
 </head>
 <div class="container-fluid">
   <div class="header row justify-content-between">
-    <ul class="nav nav-pills navbartop transi back">
+    <ul class="nav nav-pills navbartop transi back" [style.background-color]="navbartopColor" >
       <li class="nav-item col-2" id="elemnavbar">
         <a class="nav-link active" [routerLink]="['/accueil']" routerLinkActive="active"><img src="../assets/img/logo.png"></a>
       </li>
@@ -204,13 +215,4 @@
     <p style="color: brown;">Vive les footers bien placés</p>
   </footer> -->
   
-  <script type="text/javascript">
-    $(document).scroll(function() {
-      if($(window).scrollTop() ==0){
-        $(".navbartop").css("backgroundColor","grey");
-      }
-      else {
-        $(".navbartop").css("backgroundColor","#8e8b8a00");
-      }
-    });
-  </script>
+ 
