@@ -79,14 +79,14 @@ public class ArticleRestController {
 
 		return articles;
 	}
-	/*
+	
 	@GetMapping("/restaurantId/{id}/{typePlat}")
 	@JsonView(Views.ViewArticle.class)
-	public List<Article> findByRestaurantIdAndTypesPlats(@PathVariable Long id,@PathVariable TypePlat typePlat) {
-		List<Article> articles = articleRepo.findByRestaurantIdAndTypesPlats(id,typePlat);
+	public List<Article> findByRestaurantIdAndTypesPlats(@PathVariable Long id,@PathVariable String typePlat) {
+		List<Article> articles = articleRepo.findByRestaurantIdAndTypesPlats(id,TypePlat.valueOf(typePlat));
 
 		return articles;
-	}*/
+	}
 	/*
 	@GetMapping("/restaurantId/{id}/{vegetarien}")
 	@JsonView(Views.ViewArticle.class)

@@ -1,113 +1,186 @@
 <div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Recap commande</h3>
-        </div>
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Recap commande</h3>
+    </div>
     
-        <ul class="list-unstyled components" *ngFor="let article of listPanier()">
-            <li>
-                <p>{{article.nom}}</p>
-            </li>
-        </ul>
+    <ul class="list-unstyled components" *ngFor="let article of listPanier()">
+      <li>
+        <p>{{article.nom}}</p>
+      </li>
+    </ul>
     
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a [routerLink]="['/panier']" routerLinkActive="active">Voir le panier</a>
-            </li>
-        </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a [routerLink]="['/panier']" routerLinkActive="active">Voir le panier</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <!-- Page Content  -->
+  <div id="content">
+    
+    <nav id="navbar-example2" class="navbar navbar-light bg-light">
+      <button type="button" class="btn btn-outline-success">Vegetarien</button>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#fat">Entrées</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#mdo">Plats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#mdo">Desserts</a>
+        </li>
+      </ul>
     </nav>
-
-    <!-- Page Content  -->
-    <div id="content">
-
-        <nav id="navbar-example2" class="navbar navbar-light bg-light">
-            <button type="button" class="btn btn-outline-success">Vegetarien</button>
-            <ul class="nav nav-pills">
-              <li class="nav-item">
-                <a class="nav-link" href="#fat">Entrées</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mdo">Plats</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mdo">Desserts</a>
-              </li>
-            </ul>
-          </nav>
-
-        <!-- <table class="product" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-            <tr>
-                <td rowspan="3"><img src="../../assets/img/superbe_soupe.jpg" width="300" height="220"></td>
-                <td colspan="2">SALADE DE SOUPE</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Une magnifique salade aux doux arômes de soupe et en vrai c'est hyper lourd surtout quand tu mets des petits croutons dedans genre au four aller retour 2 minutes à 200 degrès zbré.</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>1000 €       <div class="btn-group btn-group-sm">
-                    <a class="btn btn-primary"><i>+</i></a>
-                    <a class="btn btn-danger"><i>-</i></a>
-                </div></td>
-                <td>
-                    
-                </td>
-            </tr>
-        </table> -->
-
-        <div>
-        <div class="content">
-            <div class="card text-dark bg-light">
-                <div class="row g-0">
-                  <div class="col-md-3">
-                    <img src="../../assets/img/superbe_soupe.jpg" width="320" height="224">
+    
+    <!-- <table class="product" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+      <tr>
+        <td rowspan="3"><img src="../../assets/img/superbe_soupe.jpg" width="300" height="220"></td>
+        <td colspan="2">SALADE DE SOUPE</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Une magnifique salade aux doux arômes de soupe et en vrai c'est hyper lourd surtout quand tu mets des petits croutons dedans genre au four aller retour 2 minutes à 200 degrès zbré.</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>1000 €       <div class="btn-group btn-group-sm">
+          <a class="btn btn-primary"><i>+</i></a>
+          <a class="btn btn-danger"><i>-</i></a>
+        </div></td>
+        <td>
+          
+        </td>
+      </tr>
+    </table> -->
+    
+    <div>
+      <div class="content">
+        <div class="card text-dark bg-light">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <img src="../../assets/img/superbe_soupe.jpg" width="320" height="224">
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h5 class="card-title">SALADE DE SOUPE</h5>
+                <p class="card-text">Une magnifique salade aux doux arômes de soupe et en vrai c'est hyper lourd surtout quand tu mets des petits croutons dedans genre au four aller retour 2 minutes à 200 degrès zbré.</p>
+                <p class="card-text"><small class="text-muted">1000 €</small></p>
+                <div class="row">
+                  <div class="col-1"><a class="btn btn-info" ><i class="bi bi-plus-square"></i></a></div>
+                  <div class="col-1"><a class="btn btn-secondary" ><i class="bi bi-dash-square"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+      
+      <div>
+        <h3>Entrees</h3>
+        <div class="content" *ngFor="let article of listEntrees()">
+          <div class="card text-dark bg-light">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img src={{article.img}} width="300" height="224">
+              </div>
+              <div class="col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title">{{article?.nom}}</h5>
+                  <p class="card-text">{{article?.description}}</p>
+                  <p class="card-text"><small class="text-muted">{{article?.prix}} €</small></p>
+                  <div class="row">
+                    <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                    <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
                   </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <h5 class="card-title">SALADE DE SOUPE</h5>
-                      <p class="card-text">Une magnifique salade aux doux arômes de soupe et en vrai c'est hyper lourd surtout quand tu mets des petits croutons dedans genre au four aller retour 2 minutes à 200 degrès zbré.</p>
-                      <p class="card-text"><small class="text-muted">1000 €</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+        
+        
+        <div>
+          <h3>Plats</h3>
+          <div class="content" *ngFor="let article of listPlats()">
+            <div class="card text-dark bg-light">
+              <div class="row g-0">
+                <div class="col-md-3">
+                  <img src={{article.img}} width="300" height="224">
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <h5 class="card-title">{{article?.nom}}</h5>
+                    <p class="card-text">{{article?.description}}</p>
+                    <p class="card-text"><small class="text-muted">{{article?.prix}} €</small></p>
                     <div class="row">
-                        <div class="col-1"><a class="btn btn-info" ><i class="bi bi-plus-square"></i></a></div>
-                        <div class="col-1"><a class="btn btn-secondary" ><i class="bi bi-dash-square"></i></a></div>
+                      <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                      <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
-        </div>
-        <br>
-        </div>
-
-        <div>
-        <div class="content" *ngFor="let article of listentree()">
-            <div class="card text-dark bg-light">
+            <br>
+          </div>
+          
+          <div>
+            <h3>Desserts</h3>
+            <div class="content" *ngFor="let article of listDesserts()">
+              <div class="card text-dark bg-light">
                 <div class="row g-0">
                   <div class="col-md-3">
                     <img src={{article.img}} width="300" height="224">
                   </div>
                   <div class="col-md-9">
                     <div class="card-body">
-                      <h5 class="card-title">{{article.nom}}</h5>
-                      <p class="card-text">{{article.description}}</p>
-                      <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
-                    <div class="row">
+                      <h5 class="card-title">{{article?.nom}}</h5>
+                      <p class="card-text">{{article?.description}}</p>
+                      <p class="card-text"><small class="text-muted">{{article?.prix}} €</small></p>
+                      <div class="row">
                         <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
                         <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              <br>
             </div>
-        </div>
-        <br>
-        </div>
-
-        <!-- <div>
-            <div class="content" *ngFor="let article of listplat()">
+            
+            <div>
+              <h3>Boissons</h3>
+              <div class="content" *ngFor="let article of listBoissons()">
                 <div class="card text-dark bg-light">
+                  <div class="row g-0">
+                    <div class="col-md-3">
+                      <img src={{article.img}} width="300" height="224">
+                    </div>
+                    <div class="col-md-9">
+                      <div class="card-body">
+                        <h5 class="card-title">{{article?.nom}}</h5>
+                        <p class="card-text">{{article?.description}}</p>
+                        <p class="card-text"><small class="text-muted">{{article?.prix}} €</small></p>
+                        <div class="row">
+                          <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                          <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+              </div>
+              <!-- <div>
+                <div class="content" *ngFor="let article of listplat()">
+                  <div class="card text-dark bg-light">
                     <div class="row g-0">
                       <div class="col-md-3">
                         <img src={{article.img}} width="300" height="224">
@@ -117,20 +190,43 @@
                           <h5 class="card-title">{{article.nom}}</h5>
                           <p class="card-text">{{article.description}}</p>
                           <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
-                        <div class="row">
+                          <div class="row">
                             <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
                             <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <br>
+                  
                 </div>
-            </div>
-            <br>
-
-            </div>
-            <div>
-                <div class="content" *ngFor="let article of listdessert()">
+                <div>
+                  <div class="content" *ngFor="let article of listdessert()">
                     <div class="card text-dark bg-light">
+                      <div class="row g-0">
+                        <div class="col-md-3">
+                          <img src={{article.img}} width="300" height="224">
+                        </div>
+                        <div class="col-md-9">
+                          <div class="card-body">
+                            <h5 class="card-title">{{article.nom}}</h5>
+                            <p class="card-text">{{article.description}}</p>
+                            <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
+                            <div class="row">
+                              <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
+                              <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                  </div>
+                  
+                  <div>
+                    <div class="content" *ngFor="let article of listboisson()">
+                      <div class="card text-dark bg-light">
                         <div class="row g-0">
                           <div class="col-md-3">
                             <img src={{article.img}} width="300" height="224">
@@ -140,38 +236,15 @@
                               <h5 class="card-title">{{article.nom}}</h5>
                               <p class="card-text">{{article.description}}</p>
                               <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
-                            <div class="row">
+                              <div class="row">
                                 <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
                                 <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                    </div>
-                </div>
-                <br>
-                </div>
-
-                <div>
-                    <div class="content" *ngFor="let article of listboisson()">
-                        <div class="card text-dark bg-light">
-                            <div class="row g-0">
-                              <div class="col-md-3">
-                                <img src={{article.img}} width="300" height="224">
-                              </div>
-                              <div class="col-md-9">
-                                <div class="card-body">
-                                  <h5 class="card-title">{{article.nom}}</h5>
-                                  <p class="card-text">{{article.description}}</p>
-                                  <p class="card-text"><small class="text-muted">{{article.prix}} €</small></p>
-                                <div class="row">
-                                    <div class="col-1"><a class="btn btn-info" (click)="addPanier(article)"><i class="bi bi-plus-square"></i></a></div>
-                                    <div class="col-1"><a class="btn btn-secondary" (click)="removePanier(article)"><i class="bi bi-dash-square"></i></a></div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
+                      </div>
+                      <br>
                     </div> -->
-    </div>
-</div>
+                  </div>
+                </div>
