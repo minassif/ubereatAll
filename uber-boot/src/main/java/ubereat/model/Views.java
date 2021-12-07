@@ -31,6 +31,12 @@ public class Views {
 	public static class ViewRestaurantWithCommande extends ViewRestaurant {
 	}
 	
+	public static class ViewRestaurantWithArticle extends ViewRestaurant {
+	}
+	
+	public static class ViewRestaurantWithRestaurateur extends ViewRestaurant {
+	}
+	
 	public static class ViewRestaurateur extends ViewCommon {
 	}
 	
