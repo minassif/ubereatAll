@@ -11,9 +11,9 @@ import { Article, Client, Commande, Restaurant } from '../model';
 export class HistoriqueCommandeService {
   
   url:String;
-  commandes:Array<Commande>;
-  restaurant:Restaurant;
-  articles:Array<Article>;
+  commandes:Array<Commande>=new Array<Commande>();
+  restaurant:Restaurant= new Restaurant;
+  articles:Array<Article>=new Array<Article>();
   
   constructor(private http: HttpClient, private appConfig: AppConfigService,public connectService:ConnectService, private router:Router) {
     
@@ -64,7 +64,7 @@ export class HistoriqueCommandeService {
   }
 
   saveCommande(commande : Commande) {
-    this.http.post<Commande>(this.appConfig.backEndUrl+'commande', commande).subscribe(resp => {
+    this.http.put<Commande>(this.appConfig.backEndUrl+'commande/'+commande.id, commande).subscribe(resp => {
       this.router.navigate(['/mesCommandes']);
     }, error => console.log(error));
   }
