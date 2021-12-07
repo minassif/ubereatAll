@@ -44,7 +44,7 @@ export class HistoriqueCommandeComponent implements OnInit {
   }
 
   list(){
-    return this.historiqueCommandeService.commandes;
+    return this.historiqueCommandeService.findCommandes();
   }
 
   setEnPrep(commande:Commande){

@@ -11,9 +11,9 @@ import { Article, Client, Commande, Restaurant } from '../model';
 export class HistoriqueCommandeService {
   
   url:String;
-  commandes:Array<Commande>;
-  restaurant:Restaurant;
-  articles:Array<Article>;
+  commandes:Array<Commande>=new Array<Commande>();
+  restaurant:Restaurant= new Restaurant;
+  articles:Array<Article>=new Array<Article>();
   
   constructor(private http: HttpClient, private appConfig: AppConfigService,public connectService:ConnectService, private router:Router) {
     
