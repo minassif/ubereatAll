@@ -48,15 +48,11 @@ export class RechercheRestoComponent implements OnInit {
     this.reload();
   }
 
-  list(): Array<Restaurant> {
-    if(this.ouvert){
-      return this.restoService.findOpen();
-    }
-    else{
-    return this.restoService.findAll();
-    }
-  }
 
+  list(): Array<Restaurant> {
+    return this.restoService.findAll();
+  }
+  
   listTypeResto(): Array<string> {
     return this.restoService.findAllType()
   }
