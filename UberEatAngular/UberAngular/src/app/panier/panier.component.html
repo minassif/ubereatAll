@@ -1,81 +1,45 @@
 <div class="wrapper">
+    <!-- Sidebar  -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Bootstrap Sidebar</h3>
-        </div>
-        
-        <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-        
-        <ul class="list-unstyled CTAs">
-            <li>
-                <button (click)='validerCommande()'>Valider mon panier</button>
-            </li>
-            <li>
-                <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-            </li>
-        </ul>
-    </nav>   
+      <div class="sidebar-header">
+        <h3>Recap commande</h3>
+      </div>
+      
+      <ul class="list-unstyled CTAs">
+        <li>
+          <a (click)='validerCommande()'>Valider mon panier</a>
+        </li>
+      </ul>
+    </nav>
+    
+    <!-- Page Content  -->
+    <div id="content">
+      
+
 
     <div>
-    <div class="content">
         <h3>Mon panier :</h3>
-        <div class="card text-dark bg-light" *ngFor="let article of showPanier(); let i =index">
+        <div class="content" *ngFor="let article of showPanier(); let i =index">
+          <div class="card text-dark bg-light">
             <div class="row g-0">
               <div class="col-md-3">
-                <img src="{{article.img}}" width="320" height="224">
+                <img src={{article.img}} width="300" height="224">
               </div>
               <div class="col-md-9">
                 <div class="card-body">
-                  <h5 class="card-title">{{article.nom}}</h5>
-                  <p class="card-text">{{article.prix}} €</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                <div class="row">
-                    <a class="btn btn-warning col-1" ><i class="bi bi-dash-square" (click)='delete(i)'></i></a>
+                  <h5 class="card-title">{{article?.nom}}</h5>
+                  <p class="card-text">{{article?.description}}</p>
+                  <p class="card-text"><small class="text-muted">{{article?.prix}} €</small></p>
+                  <div class="row">
+                    <div class="col-1"><a class="btn btn-secondary" (click)='delete(i)'><i class="bi bi-dash-square"></i></a></div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+          <br>
         </div>
-    </div>
-    <br>
+
     </div>
     
 </div>
