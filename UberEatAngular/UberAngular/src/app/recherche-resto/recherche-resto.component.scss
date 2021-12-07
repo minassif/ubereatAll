@@ -127,7 +127,7 @@ main{
    // background-size: 100% 100%;
   }
 
-
+  
 
   // Stars
   /*
@@ -139,6 +139,7 @@ main{
     float: left;
     height: 46px;
     padding: 0 10px;
+ 
   }
   .rate:not(:checked) > input {
     position:absolute;
@@ -171,3 +172,5 @@ main{
     color: #c59b08;
   }
   
+
+ 

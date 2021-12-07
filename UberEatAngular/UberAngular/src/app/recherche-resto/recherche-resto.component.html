@@ -7,19 +7,32 @@
 
     <div class="middelmain">
         <div class="d-flex justify-content-between" style="height:100%">
-            <div class="d-flex align-items-center" *ngFor="let t of listTypes(); let i =index">
+            <div class="d-flex align-items-center">
                 <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
                     <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button1" (click)="reloadType(i)">
+                        <input type="button" class="button button1" (click)="Alltypes()">
                     </div>
                     <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p>{{t}}</p>
-                        <p id="textstyle" style="text-align: center">{{t}}</p>
+
+                        <p id="textstyle" style="text-align: center">Tous les Restaurant</p>
                     </div>
                 </div>
 
             </div>
-            <!-- <div class="d-flex align-items-center">
+
+            <div class="d-flex align-items-center" *ngFor="let type of listTypeResto()">
+                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
+                    <div class="p-2 w-100 bd-highlight" style="height:80%">
+                        <input type="button" class="button button2" (click)="setType(type)">
+                    </div>
+                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
+                        <p id="textstyle" style="text-align: center">{{type}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <!--
+            <div class="d-flex align-items-center" >
                 <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
                     <div class="p-2 w-100 bd-highlight" style="height:80%">
                         <input type="button" class="button button2" (click)="fastfood()">
@@ -44,7 +57,7 @@
             <div class="d-flex align-items-center">
                 <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
                     <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button4" (click)="asiatique()">
+                        <input type="button" class="button button4" (click)=" asiatique()">
                     </div>
                     <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
                         <p id="textstyle" style="text-align: center">Italian</p>
@@ -85,6 +98,7 @@
                 </div>
 
             </div>
+
             <div class="d-flex align-items-center">
                 <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
                     <div class="p-2 w-100 bd-highlight" style="height:80%">
@@ -96,6 +110,7 @@
                 </div>
 
             </div>
+            
             <div class="d-flex align-items-center">
                 <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
                     <div class="p-2 w-100 bd-highlight" style="height:80%"><button class="button button2"></button>
@@ -105,8 +120,8 @@
                     </div>
                 </div>
 
-            </div> -->
-
+            </div>
+             -->
         </div>
     </div>
 
@@ -119,7 +134,7 @@
 
                 <p>
                     <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                        aria-expanded="false" aria-controls="collapseExample" (click)="resetType()">
+                        aria-expanded="false" aria-controls="collapseExample" (click)="resetRate()">
                         Rate
                     </a>
 
@@ -128,21 +143,25 @@
                     <div class="card card-body">
 
 
-                        <!-- <div class="container">
+                        <div class="container">
                             <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" [(ngModel)]="stars" />
+                                <input type="radio" id="star5" name="rate" value="5" [(ngModel)]="stars"
+                                    (change)="reload()" />
                                 <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" [(ngModel)]="stars" />
+                                <input type="radio" id="star4" name="rate" value="4" [(ngModel)]="stars"
+                                    (change)="reload()" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" [(ngModel)]="stars" />
+                                <input type="radio" id="star3" name="rate" value="3" [(ngModel)]="stars"
+                                    (change)="reload()" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" [(ngModel)]="stars" />
+                                <input type="radio" id="star2" name="rate" value="2" [(ngModel)]="stars"
+                                    (change)="reload()" />
                                 <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" [(ngModel)]="stars" />
+                                <input type="radio" id="star1" name="rate" value="1" [(ngModel)]="stars"
+                                    (change)="reload()" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
-                            <p> number of stars: {{stars}} </p>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <p>
@@ -158,8 +177,8 @@
 
 
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" [(ngModel)]="open" role="switch" (change)="reload()"
-                                id="flexSwitchCheckDefault" checked>
+                            <input class="form-check-input" type="checkbox" [(ngModel)]="open" role="switch"
+                                (change)="reload()" id="flexSwitchCheckDefault" checked>
                             <label class="form-check-label" for="flexSwitchCheckDefault">Actuellement ouvert</label>
                         </div>
                         <div>
@@ -175,8 +194,8 @@
                         </div>
                         <div class="form-check form-switch">
 
-                            <input class="form-check-input" type="checkbox" [(ngModel)]="emporter" role="switch" (change)="reload()"
-                                id="flexSwitchCheckDisabled" checked>
+                            <input class="form-check-input" type="checkbox" [(ngModel)]="emporter" role="switch"
+                                (change)="reload()" id="flexSwitchCheckDisabled" checked>
                             <label class="form-check-label" for="flexSwitchCheckDisabled">Livraison</label>
                         </div>
                         <div>
@@ -200,32 +219,56 @@
                                 <div class="d-flex justify-content-evenly">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="1" [(ngModel)]="price">
+                                            id="inlineRadio1" value="1" [(ngModel)]="price" (change)="reload()">
                                         <label class="form-check-label" for="inlineRadio1">$</label>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-evenly">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="2" [(ngModel)]="price">
+                                            id="inlineRadio1" value="2" [(ngModel)]="price" (change)="reload()">
                                         <label class="form-check-label" for="inlineRadio1">$$</label>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-evenly">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="3" [(ngModel)]="price">
+                                            id="inlineRadio1" value="3" [(ngModel)]="price" (change)="reload()">
                                         <label class="form-check-label" for="inlineRadio1">$$$</label>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-evenly">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="4" [(ngModel)]="price">
+                                            id="inlineRadio1" value="4" [(ngModel)]="price" (change)="reload()">
                                         <label class="form-check-label" for="inlineRadio1">$$$$</label>
                                     </div>
                                 </div>
                                 <p> price: {{price}} </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="collapseExample" (click)="resetRate()">
+                        Price Range
+                    </a>
+
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="nom">Min:</label>
+                                <input type="number" class="form-control" id="nom" [(ngModel)]="prixmin"
+                                    (change)="reload()">
+                            </div>
+                            <div class="form-group">
+                                <label for="nom">Max:</label>
+                                <input type="number" class="form-control" id="nom" [(ngModel)]="prixmax"
+                                    (change)="reload()">
                             </div>
 
                         </div>
@@ -244,13 +287,48 @@
                     <div class="col" *ngFor="let restaurant of list()">
                         <div class="card h-100">
 
-                            <img src="..." class="card-img-top" alt="...">
+                            <img src="{{restaurant.img}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{restaurant.nom}}</h5>
                                 <p class="card-text">{{restaurant.description}}</p>
-                                <p>{{restaurant.open}}</p>
+                                <!-- <p>{{restaurant.open}}</p>
                                 <p>{{restaurant.livraison}}</p>
                                 <p>{{restaurant.emporter}}</p>
+                                <p>{{restaurant.pricerange}}</p>
+                                <p>{{restaurant.rate}}</p>
+                                <p>{{restaurant.typeResto}}</p>
+                                <p>{{restaurant.pricerange}}</p>-->
+
+                                <div class="d-flex flex-row bd-highlight mb-3">
+                                    <div class="d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="20" height="20" fill="currentColor" class="bi bi-star"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                        </svg></div>
+                                    <div class="d-flex align-items-center">{{restaurant.rate}}</div>
+
+                                    <p>{{restaurant.pricerange}}</p>
+
+
+                                    <div class="d-flex align-items-center" *ngIf="superiorAt(restaurant.pricerange,5)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-euro" viewBox="0 0 16 16">
+                                            <path
+                                                d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-currency-euro" viewBox="0 0 16 16">
+                                            <path
+                                                d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z" />
+                                        </svg>
+                                    </div>
+
+
+
+
+                                </div>
+
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
 
