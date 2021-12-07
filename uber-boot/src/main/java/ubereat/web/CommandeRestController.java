@@ -1,8 +1,10 @@
 package ubereat.web;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import ubereat.model.Article;
 import ubereat.model.Commande;
+import ubereat.model.Status;
+import ubereat.model.TypePlat;
+import ubereat.model.TypeResto;
 import ubereat.model.Views;
 import ubereat.repository.IArticle;
 import ubereat.repository.ICommande;
@@ -56,7 +61,8 @@ public class CommandeRestController {
 		@GetMapping("Status/{status}")
 		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllWithStatus(@PathVariable String status) {
-			List<Commande> commandes = commandeRepo.findAllWithStatus(status);
+			
+			List<Commande> commandes = commandeRepo.findAllWithStatus(Status.valueOf(status));
 
 			return commandes;
 		}
