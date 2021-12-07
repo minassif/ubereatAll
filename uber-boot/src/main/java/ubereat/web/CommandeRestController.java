@@ -45,6 +45,14 @@ public class CommandeRestController {
 			return commandes;
 		}
 		
+		@GetMapping("/aLivrer")
+		@JsonView(Views.ViewCommande.class)
+		public List<Commande> findAllWithoutLivreur() {
+			List<Commande> commandes = commandeRepo.findAll();
+
+			return commandes;
+		}
+		
 		@GetMapping("Status/{status}")
 		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllWithStatus(@PathVariable String status) {

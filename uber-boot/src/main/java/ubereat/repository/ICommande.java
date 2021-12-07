@@ -13,19 +13,22 @@ public interface ICommande extends JpaRepository<Commande, Long> {
 	@Query("select distinct c from Commande c where c.status = :string")
 	List<Commande> findAllWithStatus(@Param("string") String string);
 	
+	@Query("select c from Commande c where c.livreur = null")
+	List<Commande> findAllWithoutIdLivreur();
+	
 	@Query("select distinct c from Commande c where c.livreur.id = :idLivreur")
 	List<Commande> findAllByLivreur(@Param("idLivreur") Long idLivreur);
 	
 	@Query("select distinct c from Commande c where c.client.id = :idClient")
 	List<Commande> findAllByClient(@Param("idClient") Long idClient);
 	
-	@Query("select distinct c from Commande c left join fetch c.articles where c.livreur.id = :idLivreur")
+	@Query("select c from Commande c left join fetch c.articles where c.livreur.id = :idLivreur")
 	List<Commande> findAllByLivreurWithArticles(@Param("idLivreur") Long idLivreur);
 	
-	@Query("select distinct c from Commande c left join fetch c.articles where c.client.id = :idClient")
+	@Query("select c from Commande c left join fetch c.articles where c.client.id = :idClient")
 	List<Commande> findAllByClientWithArticles(@Param("idClient") Long idClient);
 	
-	@Query("select distinct c from Commande c left join fetch c.articles where c.restaurant.id = :idRestaurant")
+	@Query("select c from Commande c left join fetch c.articles where c.restaurant.id = :idRestaurant")
 	List<Commande> findAllByRestaurantWithArticles(@Param("idRestaurant") Long idRestaurant);
 	
 //	@Query("select distinct c from Commande c where c.restaurant.id = :idRestaurant")

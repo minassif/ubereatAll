@@ -27,7 +27,7 @@ export class PanierComponent implements OnInit {
   }
 
   validerCommande(){
-    
+    this.panierService.validerCommande(this.panierService.panier)
   }
   
 }

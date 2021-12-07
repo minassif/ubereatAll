@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { CarteRestoComponent } from './carte-resto/carte-resto.component';
+import { CommandesALivrerComponent } from './commandes-alivrer/commandes-alivrer.component';
 import { ConnectComponent } from './connect/connect.component';
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 import { InfosRestoComponent } from './infos-resto/infos-resto.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "infos", component: InfosUserComponent },
   { path: "monResto", component: InfosRestoComponent },
   { path: "mesCommandes", component: HistoriqueCommandeComponent },
+  { path: "aLivrer", component: CommandesALivrerComponent},
   { path: "", redirectTo: '/accueil', pathMatch: 'full' }
 ];
 

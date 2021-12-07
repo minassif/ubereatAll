@@ -1,6 +1,6 @@
 <div class="content" *ngIf="statut ==='client'">
     <h3>Mes commandes :</h3>
-    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
+    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index">
         <div class="row g-0">
           <div class="col-md-3">
             <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
@@ -15,11 +15,11 @@
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Detail de la commande
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i" aria-expanded="false" aria-controls="i">
+                      Detail de la commande 
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="i" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <h3>Mon panier :</h3>
                     <div class="accordion-body" *ngFor="let article of commande.articles;">
                         <div class="content">
@@ -67,6 +67,8 @@
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
+              
+              <button (click)="setLivree(commande)" *ngIf="commande.status=='Livraison'"> Livré</button>
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
@@ -113,16 +115,18 @@
               <h5 class="card-title">{{commande.restaurant.nom}}</h5>
               <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
               <div>
-                <p class="card-text">{{commande.client.prenom}} </p>
-                <p class="card-text">{{commande.client.nom}} </p>
+                <p class="card-text" >{{commande.client?.prenom}} </p>
+                <p class="card-text" >{{commande.client?.nom}} </p>
               </div>
               <div>
-                <p class="card-text">{{commande.livreur.prenom}} </p>
-                <p class="card-text">{{commande.livreur.nom}} </p>
+                <p class="card-text">{{commande.livreur?.prenom}} </p>
+                <p class="card-text">{{commande.livreur?.nom}} </p>
               </div>
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
+              <button (click)="setEnPrep(commande)" *ngIf="commande.status=='Enregistre'"> Envoyer au fourneau </button>
+              <button (click)="setLivraison(commande)" *ngIf="commande.status=='Preparation'"> Envoyer en livraison </button>
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">

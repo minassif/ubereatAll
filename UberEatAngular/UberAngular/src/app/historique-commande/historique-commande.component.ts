@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnectService } from '../connect/connect.service';
 import { Article, Commande } from '../model';
+import { PanierService } from '../panier/panier.service';
 import { HistoriqueCommandeService } from './historique-commande.service';
 
 @Component({
@@ -46,6 +47,21 @@ export class HistoriqueCommandeComponent implements OnInit {
     return this.historiqueCommandeService.commandes;
   }
 
+  setEnPrep(commande:Commande){
+    commande.status='Preparation';
+    this.historiqueCommandeService.saveCommande(commande);
+
+  }
+
+  setLivraison(commande:Commande){
+    commande.status='Livraison';
+    this.historiqueCommandeService.saveCommande(commande);
+  }
+
+  setLivree(commande:Commande){
+    commande.status='livree';
+    this.historiqueCommandeService.saveCommande(commande);
+  }
   //loadArticleCommande(i:number){
     //this.historiqueCommandeService.loadArticle(i) ;
     //this.articles=this.historiqueCommandeService.articles;
