@@ -2,7 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { ConnectService } from './connect/connect.service';
 import { Utilisateur } from './model';
 
-declare const window: any;
+//declare const window: any;
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,15 @@ export class AppComponent {
   title = 'UberAngular';
   navbartopColor:String;
 
+  @HostListener("window:scroll", ['$event'])
+  onWindowScroll(e:Event) {
+    const number = this.getYPosition(e);
+    if (number <20 ) {
+      this.navbartopColor="#8e8b8a00";
+    } else  {
+      this.navbartopColor="#bda8a8";
+    }}
+
   constructor(public ConnectService: ConnectService) {
   }
 
@@ -21,14 +30,10 @@ export class AppComponent {
     this.ConnectService.deconnexion();
   }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    //const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (document.documentElement.scrollTop <10 ) {
-      this.navbartopColor="8e8b8a00";
-    } else  {
-      this.navbartopColor="grey";
-    }
-
+  getYPosition(e: Event): number {
+    return window.pageYOffset;
   }
+
+  
+  
 }
