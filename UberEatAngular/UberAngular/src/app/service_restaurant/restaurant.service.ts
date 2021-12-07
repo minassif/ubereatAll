@@ -29,6 +29,7 @@ export class RestaurantService {
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.restaurantUrl = this.appConfig.backEndUrl + "restaurant/"
     this.load();
+    this.loadByRate();
     this.loadTypes();
 
   }
