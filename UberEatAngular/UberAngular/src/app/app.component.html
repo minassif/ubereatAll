@@ -61,7 +61,7 @@
             <li><a class="dropdown-item" [routerLink]="['/infos']" routerLinkActive="active">Mes infos</a></li>
             <li><a class="dropdown-item"  *ngIf="ConnectService.utilisateur.statut ==='client'" >Mon Panier </a></li>
             <li><a class="dropdown-item" [routerLink]="['/monResto']" routerLinkActive="active" *ngIf="ConnectService.utilisateur.statut ==='restaurateur'" >Mon Restaurant </a></li>
-            <li><a class="dropdown-item" >Mes commandes</a></li>
+            <li><a class="dropdown-item"  [routerLink]="['/mesCommandes']" routerLinkActive="active">Mes commandes</a></li>
             <li><a class="dropdown-item" >J'ai plus d'inspi</a></li>
           </ul>
         </li>

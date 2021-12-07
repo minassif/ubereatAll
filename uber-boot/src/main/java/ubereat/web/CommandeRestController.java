@@ -29,6 +29,7 @@ import ubereat.repository.ICommande;
 @RestController
 @RequestMapping("/commande")
 @CrossOrigin("*")
+
 public class CommandeRestController {
 	
 		@Autowired
@@ -92,15 +93,29 @@ public class CommandeRestController {
 		@GetMapping("/livreur/{id}")
 		@JsonView(Views.ViewCommande.class)
 		public List<Commande> findAllByLivreur(@PathVariable Long id) {
-			List<Commande> commandes = commandeRepo.findAllByLivreur(id);
+			List<Commande> commandes = commandeRepo.findAllByLivreurWithArticles(id);
 
 			return commandes;
 		}
 		
+//		@GetMapping("/client/{id}")
+//		@JsonView(Views.ViewCommande.class)
+//		public List<Commande> findAllByClient(@PathVariable Long id) {
+//			List<Commande> commandes = commandeRepo.findAllByClient(id);
+//
+//			return commandes;
+//		}
 		@GetMapping("/client/{id}")
-		@JsonView(Views.ViewCommande.class)
-		public List<Commande> findAllByClient(@PathVariable Long id) {
-			List<Commande> commandes = commandeRepo.findAllByClient(id);
+		@JsonView(Views.ViewCommandeDetail.class)
+		public List<Commande> findAllByClientWithArticles(@PathVariable Long id) {
+			List<Commande> commandes = commandeRepo.findAllByClientWithArticles(id);
+
+			return commandes;
+		}
+		@GetMapping("/restaurant/{id}")
+		@JsonView(Views.ViewCommandeDetail.class)
+		public List<Commande> findAllByRestaurantWithArticles(@PathVariable Long id) {
+			List<Commande> commandes = commandeRepo.findAllByRestaurantWithArticles(id);
 
 			return commandes;
 		}

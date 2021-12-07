@@ -1,0 +1,159 @@
+<div class="content" *ngIf="statut ==='client'">
+    <h3>Mes commandes :</h3>
+    <div class="card text-dark bg-light" *ngFor="let commande of list();">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">{{commande.restaurant.nom}}</h5>
+              <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
+              <p class="card-text">{{commande.prix}} euros</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <br>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Detail de la commande
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="content">
+                            <h3>Mon panier :</h3>
+                            <div class="card text-dark bg-light" *ngFor="let article of commande.articles;">
+                                <div class="row g-0">
+                                  <div class="col-md-3">
+                                    <img src="{{article.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{article.nom}}</h5>
+                                      <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="content" *ngIf="statut ==='livreur'">
+    <h3>Mes commandes :</h3>
+    <div class="card text-dark bg-light" *ngFor="let commande of list();">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img src="{{commande.restaurant.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">{{commande.restaurant.nom}}</h5>
+              <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
+              <div>
+                <p class="card-text">{{commande.client.prenom}} </p>
+                <p class="card-text">{{commande.client.nom}} </p>
+              </div>
+              <p class="card-text">{{commande.prix}} euros</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <br>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Detail de la commande
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="content">
+                            <h3>Mon panier :</h3>
+                            <div class="card text-dark bg-light" *ngFor="let article of commande.articles;">
+                                <div class="row g-0">
+                                  <div class="col-md-3">
+                                    <img src="{{article.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{article.nom}}</h5>
+                                      <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="content" *ngIf="statut ==='restaurateur'">
+    <h3>Mes commandes :</h3>
+    <div class="card text-dark bg-light" *ngFor="let commande of list();">
+        <div class="row g-0">
+          
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">{{commande.restaurant.nom}}</h5>
+              <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
+              <div>
+                <p class="card-text">{{commande.client.prenom}} </p>
+                <p class="card-text">{{commande.client.nom}} </p>
+              </div>
+              <div>
+                <p class="card-text">{{commande.livreur.prenom}} </p>
+                <p class="card-text">{{commande.livreur.nom}} </p>
+              </div>
+              <p class="card-text">{{commande.prix}} euros</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <br>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Detail de la commande
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="content">
+                            <h3>Mon panier :</h3>
+                            <div class="card text-dark bg-light" *ngFor="let article of commande.articles;">
+                                <div class="row g-0">
+                                  <div class="col-md-3">
+                                    <img src="{{article.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="card-body">
+                                      <h5 class="card-title">{{article.nom}}</h5>
+                                      <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>

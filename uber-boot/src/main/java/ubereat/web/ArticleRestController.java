@@ -71,6 +71,14 @@ public class ArticleRestController {
 
 		return articles;
 	}
+	
+	@GetMapping("/commandeId/{id}")
+	@JsonView(Views.ViewArticle.class)
+	public List<Article> findByCommandeId(@PathVariable Long id) {
+		List<Article> articles = articleRepo.findByCommandeId(id);
+
+		return articles;
+	}
 	/*
 	@GetMapping("/restaurantId/{id}/{typePlat}")
 	@JsonView(Views.ViewArticle.class)

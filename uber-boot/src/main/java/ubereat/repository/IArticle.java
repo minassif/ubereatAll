@@ -24,6 +24,9 @@ public interface IArticle extends JpaRepository<Article, Long> {
 	@Query("select a from Article a where a.restaurant.id = :idRestaurant")
 	List<Article> findByRestaurantId(@Param("idRestaurant") Long id);
 	
+	@Query(value="select a from Article a left join fetch a.commande co where a.commande.id = :idCommande", nativeQuery = true)
+	List<Article> findByCommandeId(@Param("idCommande") Long id);
+	
 	@Query("select a from Article a where a.nom = :nom")
 	Optional<Article> findByNom(@Param("nom") String nom);
 
