@@ -1,3 +1,4 @@
+
 <div class="content" *ngIf="statut ==='client'">
     <h3>Mes commandes :</h3>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
@@ -15,11 +16,11 @@
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i" aria-expanded="false" aria-controls="i">
+                    <button class="accordion-button collapsed" type="button" (click)="detail(i)">
                       Detail de la commande 
                     </button>
                   </h2>
-                  <div id="i" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div [id]="i" class="accordion-collapse collapse " >
                     <h3>Mon panier :</h3>
                     <div class="accordion-body" *ngFor="let article of commande.articles;">
                         <div class="content">
@@ -51,7 +52,7 @@
 
 <div class="content" *ngIf="statut ==='livreur'">
     <h3>Mes commandes :</h3>
-    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
+    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           <div class="col-md-3">
             <img src="{{commande.restaurant?.img}}" class="img-fluid rounded-start" alt="..." width="300" height="220">
@@ -72,11 +73,11 @@
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" (click)="detail(i)">
                       Detail de la commande
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div [id]="i" class="accordion-collapse collapse ">
                     <div class="accordion-body">
                         <div class="content">
                             <h3>Mon panier :</h3>
@@ -107,7 +108,7 @@
 
 <div class="content" *ngIf="statut ==='restaurateur'">
     <h3>Mes commandes :</h3>
-    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse">
+    <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           
           <div class="col-md-9">
@@ -130,11 +131,11 @@
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" (click)="detail(i)">
                       Detail de la commande
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div [id]="i" class="accordion-collapse collapse ">
                     <div class="accordion-body">
                         <div class="content">
                             <h3>Mon panier :</h3>
@@ -162,3 +163,4 @@
 </div>
 </div>
 </div>
+
