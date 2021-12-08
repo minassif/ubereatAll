@@ -225,6 +225,7 @@ class UberBootApplicationTests {
 		kebab.setRate(3.4);
 		kebab.setRestaurateur(andreBabke);
 		kebab.setOpen(true);
+		kebab.setTypeResto(TypeResto.Halal);
 		kebab.setImg("../../assets/img/Restaurants/kebab/kebab.jpg");
 		
 		Restaurant kebaba = new Restaurant();
@@ -236,7 +237,8 @@ class UberBootApplicationTests {
 		kebaba.setRate(3.5);
 		kebaba.setRestaurateur(JeanKebs);
 		kebaba.setOpen(true);
-		kebaba.setImg("../../assets/img/Restaurants/kebab/kebaba.jpg");
+		kebaba.setTypeResto(TypeResto.Halal);
+		kebaba.setImg("../../assets/img/Restaurants/kebab/kebaba.jpeg");
 		
 		Restaurant pizzeria = new Restaurant();
 		pizzeria.setNom("pizzos deliros");
@@ -246,7 +248,8 @@ class UberBootApplicationTests {
 		pizzeria.setPricerange(9);
 		pizzeria.setRate(4.0);
 		pizzeria.setRestaurateur(jeanPizz);
-		pizzeria.setOpen(false);
+		pizzeria.setOpen(true);
+		pizzeria.setTypeResto(TypeResto.Italienne);
 		pizzeria.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
 		
 		Restaurant pizzeriaa = new Restaurant();
@@ -257,7 +260,8 @@ class UberBootApplicationTests {
 		pizzeriaa.setPricerange(9);
 		pizzeriaa.setRate(4.2);
 		pizzeriaa.setRestaurateur(MichMuchPizz);
-		pizzeriaa.setOpen(false);
+		pizzeriaa.setOpen(true);
+		pizzeriaa.setTypeResto(TypeResto.Italienne);
 		pizzeriaa.setImg("../../assets/img/Restaurants/pizzeria/pizzeriaa.jpeg");
 		
 		Restaurant asiatique = new Restaurant();
@@ -268,7 +272,8 @@ class UberBootApplicationTests {
 		asiatique.setPricerange(9);
 		asiatique.setRate(4.8);
 		asiatique.setRestaurateur(WagonLit);
-		asiatique.setOpen(false);
+		asiatique.setOpen(true);
+		asiatique.setTypeResto(TypeResto.Asiatique);
 		asiatique.setImg("../../assets/img/Restaurants/asiat/asiatique.jpg");
 		
 		Restaurant asiatiquea = new Restaurant();
@@ -279,7 +284,8 @@ class UberBootApplicationTests {
 		asiatiquea.setPricerange(9);
 		asiatiquea.setRate(2.9);
 		asiatiquea.setRestaurateur(MarlonBrando);
-		asiatiquea.setOpen(false);
+		asiatiquea.setOpen(true);
+		asiatiquea.setTypeResto(TypeResto.Asiatique);
 		asiatiquea.setImg("../../assets/img/Restaurants/asiat/asiatiquea.jpg");
 		
 		Restaurant Burger = new Restaurant();
@@ -290,7 +296,8 @@ class UberBootApplicationTests {
 		Burger.setPricerange(9);
 		Burger.setRate(3.9);
 		Burger.setRestaurateur(JeanBurger);
-		Burger.setOpen(false);
+		Burger.setOpen(true);
+		Burger.setTypeResto(TypeResto.FastFood);
 		Burger.setImg("../../assets/img/Restaurants/burger/burger.jpg");
 		
 		Restaurant Burgera = new Restaurant();
@@ -302,7 +309,8 @@ class UberBootApplicationTests {
 		Burgera.setRate(0.9);
 		Burgera.setRestaurateur(MonsieurCroc);
 		Burgera.setOpen(false);
-		Burgera.setImg("../../assets/img/Restaurants/burger/burgera.jpg");
+		Burgera.setTypeResto(TypeResto.FastFood);
+		Burgera.setImg("../../assets/img/Restaurants/burger/burgera.jpeg");
 		
 		Restaurant Espana = new Restaurant();
 		Espana.setNom("La andalousia");
@@ -312,8 +320,9 @@ class UberBootApplicationTests {
 		Espana.setPricerange(9);
 		Espana.setRate(2.4);
 		Espana.setRestaurateur(Christina);
-		Espana.setOpen(false);
-		Espana.setImg("../../assets/img/Restaurants/latino/espana.jpg");
+		Espana.setOpen(true);
+		Espana.setTypeResto(TypeResto.Latino);
+		Espana.setImg("../../assets/img/Restaurants/latino/espana.jpeg");
 		
 		Restaurant Espannaa = new Restaurant();
 		Espannaa.setNom("El peru");
@@ -324,6 +333,7 @@ class UberBootApplicationTests {
 		Espannaa.setRate(1.9);
 		Espannaa.setRestaurateur(Christino);
 		Espannaa.setOpen(false);
+		Espannaa.setTypeResto(TypeResto.Latino);
 		Espannaa.setImg("../../assets/img/Restaurants/latino/espannaa.jpg");
 		
 		

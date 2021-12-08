@@ -145,7 +145,7 @@
                     <div class="col" *ngFor="let restaurant of list()">
                         <div class="card h-100">
 
-                            <img src="../../assets/img/superbe_soupe.jpg" class="card-img-top" alt="...">
+                            <img src="{{restaurant.img}}" width="300" height="280" class="card-img-top"  alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{restaurant.nom}}</h5>
                                 <p class="card-text">{{restaurant.description}}</p>
