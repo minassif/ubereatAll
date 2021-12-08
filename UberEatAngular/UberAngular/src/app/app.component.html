@@ -66,7 +66,7 @@
       <div *ngIf="ConnectService.utilisateur.statut ==='client'" class="row">
         <li class="nav-link disabled col-11" id="elemnavbar"></li>
       
-        <div class="col-1" [routerLink]="['/panier']" routerLinkActive="active" style="height: 50px;"><h2 class="bi bi-cart4 "></h2>{{panierService.prixPanier}}</div>
+        <div class="col-1" [routerLink]="['/panier']" routerLinkActive="active" style="height: 50px;font-weight:bold;"><h2 class="bi bi-cart4 "></h2>{{panierService.prixPanier}}€</div>
       </div>
     </div>
       <li class="nav-item col-1">
