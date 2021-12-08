@@ -1,6 +1,6 @@
 
 <div class="content" *ngIf="statut ==='client'">
-    <h3 style="font-weight:bold;">Mes commandes :</h3>
+    <h2 style="font-weight:bold;">Mes commandes :</h2>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           <div class="col-md-3">
@@ -51,7 +51,7 @@
 </div>
 
 <div class="content" *ngIf="statut ==='livreur'">
-    <h3 style="font-weight:bold;">Mes commandes :</h3>
+    <h2 style="font-weight:bold;">Mes commandes :</h2>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           <div class="col-md-3">
@@ -106,7 +106,7 @@
 </div>
 
 <div class="content" *ngIf="statut ==='restaurateur'">
-    <h3 style="font-weight:bold;">Mes commandes :</h3>
+    <h2 style="font-weight:bold;">Mes commandes :</h2>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           
