@@ -22,19 +22,19 @@
   <div id="content">
     
     <nav id="navbar-example2" class="navbar navbar-light bg-light">
-      <button type="button" class="btn btn-outline-success">Vegetarien</button>
+      <button type="button" class="btn btn-outline-success" [routerLink]="['/rechercheResto']" routerLinkActive="active">Retour</button>
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href="#ref_entrees">Entrées</a>
+          <p class="nav-link"><a href="#ref_entrees">Entrées</a></p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#ref_plats">Plats</a>
+          <p class="nav-link"><a  (click)="allerVers('ref_plats')">Plats</a></p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#ref_desserts">Desserts</a>
+          <p class="nav-link"><a (click)="allerVers('ref_desserts')">Desserts</a></p>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#ref_boissons">Boissons</a>
+          <p class="nav-link"><a (click)="allerVers('ref_boissons')">Boissons</a></p>
         </li>
       </ul>
     </nav>
@@ -87,8 +87,7 @@
       
 
       <div>
-        <span id="#ref_entrees">
-        <h3>Entrees</h3></span>
+        <h3 id="ref_entrees">Entrees</h3>
         <div class="content" *ngFor="let article of listEntrees()">
           <div class="card text-dark bg-light">
             <div class="row g-0">
@@ -113,7 +112,6 @@
         
         
         <div>
-          <span id="#ref_entrees">
           <h3 id="ref_plats">Plats</h3>
           <div class="content" *ngFor="let article of listPlats()">
             <div class="card text-dark bg-light">
@@ -138,8 +136,7 @@
           </div>
           
           <div>
-            <span id="#ref_entrees">
-            <h3 id="ref_desserts">Desserts</h3></span>
+            <h3 id="ref_desserts">Desserts</h3>
             <div class="content" *ngFor="let article of listDesserts()">
               <div class="card text-dark bg-light">
                 <div class="row g-0">
@@ -163,8 +160,7 @@
             </div>
             
             <div>
-              <span id="#ref_entrees">
-              <h3 id="ref_desserts">Boissons</h3></span>
+              <h3 id="ref_boissons">Boissons</h3>
               <div class="content" *ngFor="let article of listBoissons()">
                 <div class="card text-dark bg-light">
                   <div class="row g-0">

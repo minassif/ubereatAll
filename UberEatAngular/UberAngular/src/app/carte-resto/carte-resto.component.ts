@@ -17,6 +17,10 @@ export class CarteRestoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  allerVers(idElement: string) {
+    let element = document.querySelector("#"+idElement);
+    element.scrollIntoView({behavior: "smooth", block:"start"});
+  }
 
   list(): Array<Article> {
     return this.articleService.findAll();
