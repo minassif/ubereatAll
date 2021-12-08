@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
 import { ConnectService } from '../connect/connect.service';
 import { Adresse, Article, Restaurant } from '../model';
@@ -16,6 +16,7 @@ export class InfosRestoComponent implements OnInit {
   typePlat: Array<String> = new Array<String>();
   articles: Array<Article>;
   newArticle:Article=new Article();
+  y:String;
   
   idArticles: Array<number> = new Array<number>();
 
@@ -91,10 +92,23 @@ export class InfosRestoComponent implements OnInit {
 
   }
   
+  @HostListener("window:scroll", ['$event'])
+  onWindowScroll(e:Event) {
+   
+    this.y = (this.getYPosition(e)+20).toString();
+    
+  }
+
+  getYPosition(e: Event): number {
+    return window.pageYOffset;
+  }
 
 
   goToBottom(){
     window.scrollTo(0,document.body.scrollHeight);
+  }
+  goToTop(){
+    window.scrollTo(0,0);
   }
 
 }

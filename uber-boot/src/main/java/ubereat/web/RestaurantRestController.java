@@ -95,7 +95,7 @@ public class RestaurantRestController {
 	}
 	
 	@GetMapping("/monResto/{id}")
-	@JsonView(Views.ViewRestaurant.class)
+	@JsonView(Views.ViewRestaurantWithArticle.class)
 	public Restaurant findByRestaurateur(@PathVariable Long id) {
 		Optional<Restaurant> optRestaurant = restaurantRepo.findByRestaurateur(id);
 
