@@ -3,6 +3,7 @@ import { AppConfigService } from '../app-config.service';
 import { ArticleService } from '../article.service';
 import { Article, Restaurant } from '../model';
 import { RestaurantService } from '../service_restaurant/restaurant.service';
+import { RechercheRestoService } from './recherche-resto.service';
 
 @Component({
   selector: 'app-recherche-resto',
@@ -37,10 +38,14 @@ export class RechercheRestoComponent implements OnInit {
   filtre: string;
   ouvert: boolean=true;
 
-  constructor(private restoService: RestaurantService, private appConfigService: AppConfigService) { }
+  constructor(private restoService: RestaurantService, private appConfigService: AppConfigService, private rechercheRestoService:RechercheRestoService) { }
 
 
   ngOnInit(): void {
+  }
+
+  setResto(id:number){
+    this.rechercheRestoService.idRestoVisible=id;
   }
 
   setType(type: string) {
