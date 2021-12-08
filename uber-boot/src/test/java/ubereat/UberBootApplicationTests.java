@@ -236,7 +236,7 @@ class UberBootApplicationTests {
 		kebaba.setRate(3.5);
 		kebaba.setRestaurateur(JeanKebs);
 		kebaba.setOpen(true);
-		kebaba.setImg("../../assets/img/Restaurants/kebab/kebab.jpg");
+		kebaba.setImg("../../assets/img/Restaurants/kebab/kebaba.jpg");
 		
 		Restaurant pizzeria = new Restaurant();
 		pizzeria.setNom("pizzos deliros");
@@ -258,7 +258,7 @@ class UberBootApplicationTests {
 		pizzeriaa.setRate(4.2);
 		pizzeriaa.setRestaurateur(MichMuchPizz);
 		pizzeriaa.setOpen(false);
-		pizzeriaa.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		pizzeriaa.setImg("../../assets/img/Restaurants/pizzeria/pizzeriaa.jpeg");
 		
 		Restaurant asiatique = new Restaurant();
 		asiatique.setNom("Chez monsieut lit");
@@ -269,7 +269,7 @@ class UberBootApplicationTests {
 		asiatique.setRate(4.8);
 		asiatique.setRestaurateur(WagonLit);
 		asiatique.setOpen(false);
-		asiatique.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		asiatique.setImg("../../assets/img/Restaurants/asiat/asiatique.jpg");
 		
 		Restaurant asiatiquea = new Restaurant();
 		asiatiquea.setNom("A pieds par la Chine");
@@ -280,7 +280,7 @@ class UberBootApplicationTests {
 		asiatiquea.setRate(2.9);
 		asiatiquea.setRestaurateur(MarlonBrando);
 		asiatiquea.setOpen(false);
-		asiatiquea.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		asiatiquea.setImg("../../assets/img/Restaurants/asiat/asiatiquea.jpg");
 		
 		Restaurant Burger = new Restaurant();
 		Burger.setNom("Chez Jean Burger");
@@ -291,7 +291,7 @@ class UberBootApplicationTests {
 		Burger.setRate(3.9);
 		Burger.setRestaurateur(JeanBurger);
 		Burger.setOpen(false);
-		Burger.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		Burger.setImg("../../assets/img/Restaurants/burger/burger.jpg");
 		
 		Restaurant Burgera = new Restaurant();
 		Burgera.setNom("Michel Burger");
@@ -302,7 +302,7 @@ class UberBootApplicationTests {
 		Burgera.setRate(0.9);
 		Burgera.setRestaurateur(MonsieurCroc);
 		Burgera.setOpen(false);
-		Burgera.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		Burgera.setImg("../../assets/img/Restaurants/burger/burgera.jpg");
 		
 		Restaurant Espana = new Restaurant();
 		Espana.setNom("La andalousia");
@@ -313,7 +313,7 @@ class UberBootApplicationTests {
 		Espana.setRate(2.4);
 		Espana.setRestaurateur(Christina);
 		Espana.setOpen(false);
-		Espana.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		Espana.setImg("../../assets/img/Restaurants/latino/espana.jpg");
 		
 		Restaurant Espannaa = new Restaurant();
 		Espannaa.setNom("El peru");
@@ -324,7 +324,7 @@ class UberBootApplicationTests {
 		Espannaa.setRate(1.9);
 		Espannaa.setRestaurateur(Christino);
 		Espannaa.setOpen(false);
-		Espannaa.setImg("../../assets/img/Restaurants/pizzeria/pizza.jpg");
+		Espannaa.setImg("../../assets/img/Restaurants/latino/espannaa.jpg");
 		
 		
 		
@@ -338,15 +338,7 @@ class UberBootApplicationTests {
 		benji.setStatut("livreur");
 		
 		
-		
-		
-		Article coca =new Article();
-		coca.setNom("coca");
-		coca.setVegetarien(true);
-		coca.setDescription("Soda de type coca");
-		coca.setPrix(2);
-		coca.setRestaurant(pizzeria);
-		coca.setTypePlat(TypePlat.Boisson);
+		//CARTE PIZZERIA PIZZOS DELIROS
 		
 		Article gressin =new Article();
 		gressin.setNom("gressin");
@@ -354,7 +346,7 @@ class UberBootApplicationTests {
 		gressin.setDescription("Des petits gressins à l'huile d'olive");
 		gressin.setPrix(3);
 		gressin.setRestaurant(pizzeria);
-		gressin.setImg("../assets/img/Restaurants/pizzeria/");
+		gressin.setImg("../assets/img/Restaurants/pizzeria/gressin.jpg");
 		gressin.setTypePlat(TypePlat.Entree);
 		
 		Article burata =new Article();
@@ -363,7 +355,7 @@ class UberBootApplicationTests {
 		burata.setDescription("Une bonne buratata au bon lait de bufflon");
 		burata.setPrix(4);
 		burata.setRestaurant(pizzeria);
-		burata.setImg("../assets/img/Restaurants/pizzeria/");
+		burata.setImg("../assets/img/Restaurants/pizzeria/burata.jpg");
 		burata.setTypePlat(TypePlat.Entree);
 		
 		Article pancontomate =new Article();
@@ -372,7 +364,7 @@ class UberBootApplicationTests {
 		pancontomate.setDescription("Plait-il ? Ce n'est pas Italien ? Coup de boule rien à foutre.");
 		pancontomate.setPrix(4);
 		pancontomate.setRestaurant(pizzeria);
-		pancontomate.setImg("../assets/img/Restaurants/pizzeria/");
+		pancontomate.setImg("../assets/img/Restaurants/pizzeria/pancontomate.jpg");
 		pancontomate.setTypePlat(TypePlat.Entree);
 		
 		Article marherita =new Article();
@@ -381,7 +373,7 @@ class UberBootApplicationTests {
 		marherita.setDescription("Pizza: marherita");
 		marherita.setPrix(8);
 		marherita.setRestaurant(pizzeria);
-		marherita.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		marherita.setImg("../assets/img/Restaurants/pizzeria/marherita.jpg");
 		marherita.setTypePlat(TypePlat.Plat);
 		
 		Article regina =new Article();
@@ -390,7 +382,7 @@ class UberBootApplicationTests {
 		regina.setDescription("Pizza: regina");
 		regina.setPrix(9);
 		regina.setRestaurant(pizzeria);
-		regina.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		regina.setImg("../assets/img/Restaurants/pizzeria/regina.jpg");
 		regina.setTypePlat(TypePlat.Plat);
 		
 		Article calzone =new Article();
@@ -399,7 +391,7 @@ class UberBootApplicationTests {
 		calzone.setDescription("Pizza: calzone");
 		calzone.setPrix(12);
 		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setImg("../assets/img/Restaurants/pizzeria/calzone.jpg");
 		calzone.setTypePlat(TypePlat.Plat);
 		
 		Article tiramisu =new Article();
@@ -408,7 +400,7 @@ class UberBootApplicationTests {
 		calzone.setDescription("Une petite douceur à la crême et au café");
 		calzone.setPrix(5);
 		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
 		calzone.setTypePlat(TypePlat.Dessert);
 		
 		Article fondant =new Article();
@@ -417,7 +409,7 @@ class UberBootApplicationTests {
 		calzone.setDescription("Un gateau au chocolat avec son coeur fondant");
 		calzone.setPrix(6);
 		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
 		calzone.setTypePlat(TypePlat.Dessert);
 		
 		Article cookie =new Article();
@@ -426,9 +418,338 @@ class UberBootApplicationTests {
 		calzone.setDescription("Bah c'est un cookie quoi");
 		calzone.setPrix(4);
 		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/pizza.jpg");
+		calzone.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
 		calzone.setTypePlat(TypePlat.Dessert);
 		
+		Article sprite =new Article();
+		sprite.setNom("sprite");
+		sprite.setVegetarien(true);
+		sprite.setDescription("Soda de type sprite");
+		sprite.setPrix(2);
+		sprite.setRestaurant(pizzeria);
+		sprite.setImg("../assets/img/Restaurants/pizzeria/sprite.jpg");
+		sprite.setTypePlat(TypePlat.Boisson);
+		
+		Article coca =new Article();
+		coca.setNom("coca");
+		coca.setVegetarien(true);
+		coca.setDescription("Soda de type coca");
+		coca.setPrix(2);
+		coca.setRestaurant(pizzeria);
+		coca.setImg("../assets/img/Restaurants/pizzeria/coca.jpg");
+		coca.setTypePlat(TypePlat.Boisson);
+		
+		//CARTE MICHMUCH PIZZA
+		
+		Article gressina =new Article();
+		gressina.setNom("gressin");
+		gressina.setVegetarien(true);
+		gressina.setDescription("Des petits gressins à l'huile d'olive");
+		gressina.setPrix(3);
+		gressina.setRestaurant(pizzeriaa);
+		gressina.setImg("../assets/img/Restaurants/pizzeria/gressin.jpg");
+		gressina.setTypePlat(TypePlat.Entree);
+		
+		Article burataa =new Article();
+		burataa.setNom("burata");
+		burataa.setVegetarien(true);
+		burataa.setDescription("Une bonne buratata au bon lait de bufflon");
+		burataa.setPrix(4);
+		burataa.setRestaurant(pizzeriaa);
+		burataa.setImg("../assets/img/Restaurants/pizzeria/burata.jpg");
+		burataa.setTypePlat(TypePlat.Entree);
+		
+		Article pancontomatea =new Article();
+		pancontomatea.setNom("Pan con tomate");
+		pancontomatea.setVegetarien(true);
+		pancontomatea.setDescription("Plait-il ? Ce n'est pas Italien ? Coup de boule rien à foutre.");
+		pancontomatea.setPrix(4);
+		pancontomatea.setRestaurant(pizzeriaa);
+		pancontomatea.setImg("../assets/img/Restaurants/pizzeria/pancontomate.jpg");
+		pancontomatea.setTypePlat(TypePlat.Entree);
+		
+		Article marheritaa =new Article();
+		marheritaa.setNom("marherita");
+		marheritaa.setVegetarien(true);
+		marheritaa.setDescription("Pizza: marherita");
+		marheritaa.setPrix(8);
+		marheritaa.setRestaurant(pizzeriaa);
+		marheritaa.setImg("../assets/img/Restaurants/pizzeria/marherita.jpg");
+		marheritaa.setTypePlat(TypePlat.Plat);
+		
+		Article reginaa =new Article();
+		reginaa.setNom("regina");
+		reginaa.setVegetarien(true);
+		reginaa.setDescription("Pizza: regina");
+		reginaa.setPrix(9);
+		reginaa.setRestaurant(pizzeriaa);
+		reginaa.setImg("../assets/img/Restaurants/pizzeria/regina.jpg");
+		reginaa.setTypePlat(TypePlat.Plat);
+		
+		Article calzonea =new Article();
+		calzonea.setNom("calzone");
+		calzonea.setVegetarien(false);
+		calzonea.setDescription("Pizza: calzone");
+		calzonea.setPrix(12);
+		calzonea.setRestaurant(pizzeriaa);
+		calzonea.setImg("../assets/img/Restaurants/pizzeria/calzone.jpg");
+		calzonea.setTypePlat(TypePlat.Plat);
+		
+		Article tiramisua =new Article();
+		calzonea.setNom("tiramisu");
+		calzonea.setVegetarien(false);
+		calzonea.setDescription("Une petite douceur à la crême et au café");
+		calzonea.setPrix(5);
+		calzonea.setRestaurant(pizzeriaa);
+		calzonea.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
+		calzonea.setTypePlat(TypePlat.Dessert);
+		
+		Article fondanta =new Article();
+		calzonea.setNom("fondant");
+		calzonea.setVegetarien(false);
+		calzonea.setDescription("Un gateau au chocolat avec son coeur fondant");
+		calzonea.setPrix(6);
+		calzonea.setRestaurant(pizzeriaa);
+		calzonea.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
+		calzonea.setTypePlat(TypePlat.Dessert);
+		
+		Article cookiea =new Article();
+		calzonea.setNom("cookie");
+		calzonea.setVegetarien(false);
+		calzonea.setDescription("Bah c'est un cookie quoi");
+		calzonea.setPrix(4);
+		calzonea.setRestaurant(pizzeriaa);
+		calzonea.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
+		calzonea.setTypePlat(TypePlat.Dessert);
+		
+		Article spritea =new Article();
+		spritea.setNom("sprite");
+		spritea.setVegetarien(true);
+		spritea.setDescription("Soda de type sprite");
+		spritea.setPrix(2);
+		spritea.setRestaurant(pizzeriaa);
+		spritea.setImg("../assets/img/Restaurants/pizzeria/sprite.jpg");
+		spritea.setTypePlat(TypePlat.Boisson);
+		
+		Article cocaa =new Article();
+		cocaa.setNom("coca");
+		cocaa.setVegetarien(true);
+		cocaa.setDescription("Soda de type coca");
+		cocaa.setPrix(2);
+		cocaa.setRestaurant(pizzeriaa);
+		cocaa.setImg("../assets/img/Restaurants/pizzeria/coca.jpg");
+		cocaa.setTypePlat(TypePlat.Boisson);
+		
+		
+		//CARTE KEBAB
+		
+		Article frites =new Article();
+		frites.setNom("gressin");
+		frites.setVegetarien(true);
+		frites.setDescription("Des ptites frites bien sympathiques");
+		frites.setPrix(3);
+		frites.setRestaurant(kebab);
+		frites.setImg("../assets/img/Restaurants/kebab/frites.jpg");
+		frites.setTypePlat(TypePlat.Entree);
+		
+		Article empanada =new Article();
+		empanada.setNom("burata");
+		empanada.setVegetarien(true);
+		empanada.setDescription("Une brioche légère fourée à la viande");
+		empanada.setPrix(4);
+		empanada.setRestaurant(kebab);
+		empanada.setImg("../assets/img/Restaurants/kebab/empanada.jpg");
+		empanada.setTypePlat(TypePlat.Entree);
+		
+		Article taboulet =new Article();
+		taboulet.setNom("Pan con tomate");
+		taboulet.setVegetarien(true);
+		taboulet.setDescription("Parfois t'as pas boulet, parfois taboulet");
+		taboulet.setPrix(4);
+		taboulet.setRestaurant(kebab);
+		taboulet.setImg("../assets/img/Restaurants/kebab/taboulet.jpg");
+		taboulet.setTypePlat(TypePlat.Entree);
+		
+		Article doner =new Article();
+		doner.setNom("marherita");
+		doner.setVegetarien(true);
+		doner.setDescription("Le plus grand des classiques des fins de soirée");
+		doner.setPrix(8);
+		doner.setRestaurant(kebab);
+		doner.setImg("../assets/img/Restaurants/kebab/doner.jpg");
+		doner.setTypePlat(TypePlat.Plat);
+		
+		Article assiette =new Article();
+		assiette.setNom("regina");
+		assiette.setVegetarien(true);
+		assiette.setDescription("Une bonne assiette pleine de viande et de gras");
+		assiette.setPrix(9);
+		assiette.setRestaurant(kebab);
+		assiette.setImg("../assets/img/Restaurants/kebab/assiette.jpg");
+		assiette.setTypePlat(TypePlat.Plat);
+		
+		Article durum =new Article();
+		durum.setNom("calzone");
+		durum.setVegetarien(false);
+		durum.setDescription("Une revisite du plus grand des classiques des fins de soirée (juste une galette à la place du pain)");
+		durum.setPrix(12);
+		durum.setRestaurant(kebab);
+		durum.setImg("../assets/img/Restaurants/kebab/durum.jpg");
+		durum.setTypePlat(TypePlat.Plat);
+		
+		Article tiramisuaa =new Article();
+		tiramisuaa.setNom("tiramisu");
+		tiramisuaa.setVegetarien(false);
+		tiramisuaa.setDescription("Une petite douceur à la crême et au café");
+		tiramisuaa.setPrix(5);
+		tiramisuaa.setRestaurant(kebab);
+		tiramisuaa.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
+		tiramisuaa.setTypePlat(TypePlat.Dessert);
+		
+		Article fondantaa =new Article();
+		fondantaa.setNom("fondant");
+		fondantaa.setVegetarien(false);
+		fondantaa.setDescription("Un gateau au chocolat avec son coeur fondant");
+		fondantaa.setPrix(6);
+		fondantaa.setRestaurant(kebab);
+		fondantaa.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
+		fondantaa.setTypePlat(TypePlat.Dessert);
+		
+		Article cookieaa =new Article();
+		cookieaa.setNom("cookie");
+		cookieaa.setVegetarien(false);
+		cookieaa.setDescription("Bah c'est un cookie quoi");
+		cookieaa.setPrix(4);
+		cookieaa.setRestaurant(kebab);
+		cookieaa.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
+		cookieaa.setTypePlat(TypePlat.Dessert);
+		
+		Article spriteaa =new Article();
+		spriteaa.setNom("sprite");
+		spriteaa.setVegetarien(true);
+		spriteaa.setDescription("Soda de type sprite");
+		spriteaa.setPrix(2);
+		spriteaa.setRestaurant(kebab);
+		spriteaa.setImg("../assets/img/Restaurants/pizzeria/sprite.jpg");
+		spriteaa.setTypePlat(TypePlat.Boisson);
+		
+		Article cocaaa =new Article();
+		cocaaa.setNom("coca");
+		cocaaa.setVegetarien(true);
+		cocaaa.setDescription("Soda de type coca");
+		cocaaa.setPrix(2);
+		cocaaa.setRestaurant(kebab);
+		cocaaa.setImg("../assets/img/Restaurants/pizzeria/coca.jpg");
+		cocaaa.setTypePlat(TypePlat.Boisson);
+		
+		
+		//CARTE KEBABA
+		
+		
+		Article fritesa =new Article();
+		fritesa.setNom("gressin");
+		fritesa.setVegetarien(true);
+		fritesa.setDescription("Des ptites frites bien sympathiques");
+		fritesa.setPrix(3);
+		fritesa.setRestaurant(kebaba);
+		fritesa.setImg("../assets/img/Restaurants/kebab/frites.jpg");
+		fritesa.setTypePlat(TypePlat.Entree);
+		
+		Article empanadaa =new Article();
+		empanadaa.setNom("burata");
+		empanadaa.setVegetarien(true);
+		empanadaa.setDescription("Une brioche légère fourée à la viande");
+		empanadaa.setPrix(4);
+		empanadaa.setRestaurant(kebaba);
+		empanadaa.setImg("../assets/img/Restaurants/kebab/empanada.jpg");
+		empanadaa.setTypePlat(TypePlat.Entree);
+		
+		Article tabouleta =new Article();
+		tabouleta.setNom("Pan con tomate");
+		tabouleta.setVegetarien(true);
+		tabouleta.setDescription("Parfois t'as pas boulet, parfois taboulet");
+		tabouleta.setPrix(4);
+		tabouleta.setRestaurant(kebaba);
+		tabouleta.setImg("../assets/img/Restaurants/kebab/taboulet.jpg");
+		tabouleta.setTypePlat(TypePlat.Entree);
+		
+		Article donera =new Article();
+		donera.setNom("marherita");
+		donera.setVegetarien(true);
+		donera.setDescription("Le plus grand des classiques des fins de soirée");
+		donera.setPrix(8);
+		donera.setRestaurant(kebaba);
+		donera.setImg("../assets/img/Restaurants/kebab/doner.jpg");
+		donera.setTypePlat(TypePlat.Plat);
+		
+		Article assiettea =new Article();
+		assiettea.setNom("regina");
+		assiettea.setVegetarien(true);
+		assiettea.setDescription("Une bonne assiette pleine de viande et de gras");
+		assiettea.setPrix(9);
+		assiettea.setRestaurant(kebaba);
+		assiettea.setImg("../assets/img/Restaurants/kebab/assiette.jpg");
+		assiettea.setTypePlat(TypePlat.Plat);
+		
+		Article duruma =new Article();
+		duruma.setNom("calzone");
+		duruma.setVegetarien(false);
+		duruma.setDescription("Une revisite du plus grand des classiques des fins de soirée (juste une galette à la place du pain)");
+		duruma.setPrix(12);
+		duruma.setRestaurant(kebaba);
+		duruma.setImg("../assets/img/Restaurants/kebab/durum.jpg");
+		duruma.setTypePlat(TypePlat.Plat);
+		
+		Article tiramisuaaa =new Article();
+		tiramisuaaa.setNom("tiramisu");
+		tiramisuaaa.setVegetarien(false);
+		tiramisuaaa.setDescription("Une petite douceur à la crême et au café");
+		tiramisuaaa.setPrix(5);
+		tiramisuaaa.setRestaurant(kebaba);
+		tiramisuaaa.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
+		tiramisuaaa.setTypePlat(TypePlat.Dessert);
+		
+		Article fondantaaa =new Article();
+		fondantaaa.setNom("fondant");
+		fondantaaa.setVegetarien(false);
+		fondantaaa.setDescription("Un gateau au chocolat avec son coeur fondant");
+		fondantaaa.setPrix(6);
+		fondantaaa.setRestaurant(kebaba);
+		fondantaaa.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
+		fondantaaa.setTypePlat(TypePlat.Dessert);
+		
+		Article cookieaaa =new Article();
+		cookieaaa.setNom("cookie");
+		cookieaaa.setVegetarien(false);
+		cookieaaa.setDescription("Bah c'est un cookie quoi");
+		cookieaaa.setPrix(4);
+		cookieaaa.setRestaurant(kebaba);
+		cookieaaa.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
+		cookieaaa.setTypePlat(TypePlat.Dessert);
+		
+		Article spriteaaa =new Article();
+		spriteaaa.setNom("sprite");
+		spriteaaa.setVegetarien(true);
+		spriteaaa.setDescription("Soda de type sprite");
+		spriteaaa.setPrix(2);
+		spriteaaa.setRestaurant(kebaba);
+		spriteaaa.setImg("../assets/img/Restaurants/pizzeria/sprite.jpg");
+		spriteaaa.setTypePlat(TypePlat.Boisson);
+		
+		Article cocaaaa =new Article();
+		cocaaaa.setNom("coca");
+		cocaaaa.setVegetarien(true);
+		cocaaaa.setDescription("Soda de type coca");
+		cocaaaa.setPrix(2);
+		cocaaaa.setRestaurant(kebaba);
+		cocaaaa.setImg("../assets/img/Restaurants/pizzeria/coca.jpg");
+		cocaaaa.setTypePlat(TypePlat.Boisson);
+		
+		
+		//CARTE ASIATQUE
+		
+		
+		//CARTE ASIATIQUEA
 		
 		
 		
@@ -476,6 +797,40 @@ class UberBootApplicationTests {
 		articleRepo.save(fondant);
 		articleRepo.save(cookie);
 		articleRepo.save(coca);
+		articleRepo.save(sprite);
+		articleRepo.save(marheritaa);
+		articleRepo.save(reginaa);
+		articleRepo.save(calzonea);
+		articleRepo.save(gressina);
+		articleRepo.save(burataa);
+		articleRepo.save(pancontomatea);
+		articleRepo.save(tiramisua);
+		articleRepo.save(fondanta);
+		articleRepo.save(cookiea);
+		articleRepo.save(cocaa);
+		articleRepo.save(spritea);
+		articleRepo.save(frites);
+		articleRepo.save(empanada);
+		articleRepo.save(taboulet);
+		articleRepo.save(doner);
+		articleRepo.save(assiette);
+		articleRepo.save(durum);
+		articleRepo.save(tiramisuaa);
+		articleRepo.save(fondantaa);
+		articleRepo.save(cookieaa);
+		articleRepo.save(cocaaa);
+		articleRepo.save(spriteaa);
+		articleRepo.save(fritesa);
+		articleRepo.save(empanadaa);
+		articleRepo.save(tabouleta);
+		articleRepo.save(donera);
+		articleRepo.save(assiettea);
+		articleRepo.save(duruma);
+		articleRepo.save(tiramisuaaa);
+		articleRepo.save(fondantaaa);
+		articleRepo.save(cookieaaa);
+		articleRepo.save(cocaaaa);
+		articleRepo.save(spriteaaa);
 		commandeRepo.save(macommande);
 		
 	}
