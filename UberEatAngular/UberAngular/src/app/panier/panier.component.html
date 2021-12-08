@@ -10,11 +10,11 @@
       <li class="nav-item"><button type="button" class="btn btn-secondary" [routerLink]="['/carteResto']" routerLinkActive="active">
         <i class="bi bi-arrow-left"></i>
       </button></li>
-      <hr *ngIf="connected()">
-      <li *ngIf="connected()"><h4>Adresse de livraison : </h4></li>
-      <li *ngIf="connected()"> {{client.adresse?.voie}} </li>
-      <li *ngIf="connected()"> {{client.adresse?.codePostal}} </li>
-      <li *ngIf="connected()"> {{client.adresse?.ville}} </li>
+      <hr *ngIf="clicli">
+      <li *ngIf="clicli"><h4>Adresse de livraison : </h4></li>
+      <li *ngIf="clicli"> {{client?.adresse?.voie}} </li>
+      <li *ngIf="clicli"> {{client?.adresse?.codePostal}} </li>
+      <li *ngIf="clicli"> {{client?.adresse?.ville}} </li>
       <hr>
       <li> <button type="button" class="btn btn-secondary" (click)="validerCommande()">Valider votre panier</button></li>
     </ul>

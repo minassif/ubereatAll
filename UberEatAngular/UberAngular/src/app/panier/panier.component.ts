@@ -13,8 +13,11 @@ export class PanierComponent implements OnInit {
 
   panier:Array<Article>=new Array<Article>();
   client:Client=new Client();
+  clicli:boolean;
 
-  constructor(private connectService:ConnectService,private articleService:ArticleService,private panierService: PanierService) { }
+  constructor(private connectService:ConnectService,private articleService:ArticleService,private panierService: PanierService) { 
+    this.connected();
+  }
 
   ngOnInit(): void {
   }
@@ -23,14 +26,14 @@ export class PanierComponent implements OnInit {
     return this.client
   }
 
-  connected():boolean{
+  connected(){
     if(this.connectService.utilisateur){
       this.panierService.loadClient();
       this.client=this.panierService.client;
-      return true
+      this.clicli= true
     }
     else{
-      return false
+      this.clicli= false
     }
   }
 

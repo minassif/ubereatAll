@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <!-- Sidebar  -->
+  <!-- Sidebar  
   <nav id="sidebar">
     <div class="sidebar-header">
       <h3>Recap commande</h3>
@@ -16,8 +16,23 @@
         <a [routerLink]="['/panier']" routerLinkActive="active">Voir le panier</a>
       </li>
     </ul>
-  </nav>
+  </nav>-->
   
+  <!-- Sidebar  -->
+  <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px; height:100%"> 
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> 
+      <svg class="bi me-2" width="40" height="32"></svg> 
+      <span class="fs-4">Informations de commande</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column" *ngFor="let article of listPanier()">
+        <li>
+          <p>{{article.nom}}</p>
+        </li>
+        <hr>
+    </ul>
+    <button type="button" class="btn btn-secondary" [routerLink]="['/panier']" routerLinkActive="active">Voir mon panier</button>
+  </div>
   <!-- Page Content  -->
   <div id="content">
     
@@ -38,29 +53,6 @@
         </li>
       </ul>
     </nav>
-    
-    <!-- <table class="product" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-      <tr>
-        <td rowspan="3"><img src="../../assets/img/superbe_soupe.jpg" width="300" height="220"></td>
-        <td colspan="2">SALADE DE SOUPE</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>Une magnifique salade aux doux arômes de soupe et en vrai c'est hyper lourd surtout quand tu mets des petits croutons dedans genre au four aller retour 2 minutes à 200 degrès zbré.</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>1000 €       <div class="btn-group btn-group-sm">
-          <a class="btn btn-primary"><i>+</i></a>
-          <a class="btn btn-danger"><i>-</i></a>
-        </div></td>
-        <td>
-          
-        </td>
-      </tr>
-    </table> -->
     
     <div>
       <!-- <div class="content">
