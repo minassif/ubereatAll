@@ -1,4 +1,5 @@
 import { Component, OnInit, Type } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppConfigService } from '../app-config.service';
 import { ArticleService } from '../article.service';
 import { Article, Restaurant } from '../model';
@@ -38,7 +39,7 @@ export class RechercheRestoComponent implements OnInit {
   filtre: string;
   ouvert: boolean=true;
 
-  constructor(private restoService: RestaurantService, private appConfigService: AppConfigService, private rechercheRestoService:RechercheRestoService) { }
+  constructor(private restoService: RestaurantService, private appConfigService: AppConfigService, private rechercheRestoService:RechercheRestoService, private router:Router) { }
 
 
   ngOnInit(): void {
@@ -46,6 +47,7 @@ export class RechercheRestoComponent implements OnInit {
 
   setResto(id:number){
     this.rechercheRestoService.idRestoVisible=id;
+    this.router.navigate(['/carteResto']);
   }
 
   setType(type: string) {
