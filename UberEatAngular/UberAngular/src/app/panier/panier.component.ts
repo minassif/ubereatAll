@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../article.service';
 import { ConnectService } from '../connect/connect.service';
-import { Article } from '../model';
+import { Article, Client } from '../model';
 import { PanierService } from './panier.service';
 
 @Component({
@@ -12,10 +12,26 @@ import { PanierService } from './panier.service';
 export class PanierComponent implements OnInit {
 
   panier:Array<Article>=new Array<Article>();
+  client:Client=new Client();
 
   constructor(private connectService:ConnectService,private articleService:ArticleService,private panierService: PanierService) { }
 
   ngOnInit(): void {
+  }
+
+  findClient(){
+    return this.client
+  }
+
+  connected():boolean{
+    if(this.connectService.utilisateur){
+      this.panierService.loadClient();
+      this.client=this.panierService.client;
+      return true
+    }
+    else{
+      return false
+    }
   }
 
    showPanier():Array<Article>{
