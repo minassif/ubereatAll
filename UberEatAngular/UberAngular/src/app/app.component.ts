@@ -21,7 +21,8 @@ export class AppComponent {
       this.navbartopColor="#8e8b8a00";
     } else  {
       this.navbartopColor="#bda8a8cf";
-    }}
+    }
+  }
 
   constructor(public ConnectService: ConnectService,public panierService:PanierService) {
   }
