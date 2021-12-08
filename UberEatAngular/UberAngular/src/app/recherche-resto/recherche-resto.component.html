@@ -12,126 +12,36 @@
                     <div class="p-2 w-100 bd-highlight" style="height:80%">
                         <input type="button" class="button button1" (click)="Alltypes()">
                     </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-
-                        <p id="textstyle" style="text-align: center">Tous les Restaurant</p>
+                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%" style="width:100%">
+                        <p id="textstyle" style="text-align: center">Tous les resto</p>
                     </div>
                 </div>
 
             </div>
 
-            <div class="d-flex align-items-center" *ngFor="let type of listTypeResto()">
+            <div class="d-flex align-items-center" *ngFor="let type of listTypeResto();let i= index">
                 <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
                     <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button2" (click)="setType(type)">
+                        <input type="button" class="button button2" (click)="setType(type)"
+                            style="background-image :url({{logoFiltre[i]}}) ">
                     </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
+                    <div class="p-2 flex-shrink-1 bd-highlight" style="height: 2%" style="width:100%">
                         <p id="textstyle" style="text-align: center">{{type}}</p>
                     </div>
                 </div>
 
             </div>
-            <!--
-            <div class="d-flex align-items-center" >
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button2" (click)="fastfood()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
 
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button3" (click)="italian()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button4" (click)=" asiatique()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button5" (click)="latino()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button6" (click)="halal()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button7" (click)="vegetariene()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%">
-                        <input type="button" class="button button7" (click)="francais()">
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="d-flex align-items-center">
-                <div class="d-flex flex-column bd-highlight mb-3" style="height:83%">
-                    <div class="p-2 w-100 bd-highlight" style="height:80%"><button class="button button2"></button>
-                    </div>
-                    <div class="p-2 flex-shrink-1 bd-highlight" style="height:20%">
-                        <p id="textstyle" style="text-align: center">Italian</p>
-                    </div>
-                </div>
-
-            </div>
-             -->
         </div>
     </div>
 
     <div class="lowermain">
         <div class="leftmain">
 
-            <div id="nav" >
+            <div id="nav">
 
                 <p>
-                    <a class="btn btn-primary" id="ratebutton" data-bs-toggle="collapse" href="#collapseExample"
+                    <a class="btn btn-secondary" id="ratebutton" data-bs-toggle="collapse" href="#collapseExample"
                         role="button" aria-expanded="false" aria-controls="collapseExample" (click)="resetRate()">
                         Rate
                     </a>
@@ -164,8 +74,8 @@
                     </div>
                 </div>
                 <p>
-                    <a class="btn btn-primary" id="statusButton" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
+                    <a class="btn btn-secondary" id="statusButton" data-bs-toggle="collapse" href="#collapseExample"
+                        role="button" aria-expanded="false" aria-controls="collapseExample">
                         Status du resto
                     </a>
 
@@ -191,7 +101,7 @@
 
                             <input class="form-check-input" type="checkbox" [(ngModel)]="emporter" role="switch"
                                 (change)="reload()" id="flexSwitchCheckDisabled" checked>
-                            <label class="form-check-label" for="flexSwitchCheckDisabled">A Emporter</label>
+                            <label class="form-check-label"  for="flexSwitchCheckDisabled">A Emporter</label>
                         </div>
 
 
@@ -199,8 +109,8 @@
                 </div>
 
                 <p>
-                    <a class="btn btn-primary" id="pricerangeButton" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                        aria-expanded="false" aria-controls="collapseExample" (click)="resetRate()">
+                    <a class="btn btn-secondary" id="pricerangeButton" data-bs-toggle="collapse" href="#collapseExample"
+                        role="button" aria-expanded="false" aria-controls="collapseExample" (click)="resetRate()">
                         Price Range
                     </a>
 
@@ -226,7 +136,7 @@
             </div>
         </div>
         <div class="rightmain" id="nav1">
-            <h1>les restos</h1>
+        
             <div class="container">
                 <!-- Content here -->
 

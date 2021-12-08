@@ -27,7 +27,7 @@ export class RechercheRestoComponent implements OnInit {
 
   types: Array<string> = new Array<string>();
 
-
+  logoFiltre: Array<string>=['../../assets/img/logofiltre/fastfood.jpg','../../assets/img/logofiltre/italianlogo.jpg','../../assets/img/logofiltre/asianlogo.jpg','../../assets/img/logofiltre/latinologo.jpg','../../assets/img/logofiltre/halallogo.png','../../assets/img/logofiltre/ve.jpg','../../assets/img/logofiltre/frenchlogo.jpg'];
 
 
   /*
@@ -54,6 +54,7 @@ export class RechercheRestoComponent implements OnInit {
     this.type = type;
     this.reload();
   }
+
 
 
   list(): Array<Restaurant> {

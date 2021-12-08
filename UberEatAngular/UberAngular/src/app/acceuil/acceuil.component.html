@@ -6,7 +6,7 @@
       <div class="card-body">
         <h5 class="card-title">Les restaurants près de chez vous</h5>
         <p class="card-text">Trouver votre prochains repas dans l'un de nos nombreux restaurants partenaires</p>
-        <a class="btn btn-primary" [routerLink]="['/rechercheResto']" routerLinkActive="active">Trouver un Restaurant</a>
+        <a class="btn btn-secondary" [routerLink]="['/rechercheResto']" routerLinkActive="active">Trouver un Restaurant</a>
       </div>
     </div>
 
@@ -19,7 +19,7 @@
         </div>
         <div class="carousel-inner" >
           <div class="carousel-item active text-align"  *ngFor="let resto of listBestRates(); let i=index" [ngClass]="{'active':i==0}">
-              <img src="{{resto.img}}" class="d-block w-100" alt="..." (click)="setResto(resto.id)">
+              <img src="{{resto.img}}" class="d-block w-100" style="height: 290px;"  (click)="setResto(resto.id)">
               <div class="carousel-caption row">
                 <div class="col-2"></div>
                 <div class="col-8" style="background-color:#8e8b8ad9;border: solid white 2px;border-radius: 5%;">
@@ -43,7 +43,7 @@
       <div class="card-body">
         <h5 class="card-title">Nos restaurants à succès</h5>
         <p class="card-text">Choisissez parmis nos restaurants partenaires les mieux notés</p>
-        <a class="btn btn-primary" [routerLink]="['/acceuil']" routerLinkActive="active">Voir les restaurants</a>
+        <a class="btn btn-secondary" [routerLink]="['/acceuil']" routerLinkActive="active">Voir les restaurants</a>
       </div>
     </div>
 
@@ -53,8 +53,8 @@
       <div class="card-body">
         <h5 class="card-title">Rejoindre la FeedMe Family</h5>
         <p class="card-text">Rejoignez-nous en inscrivant votre restaurant ou en devenant livreur</p>
-        <a class="btn btn-primary" [routerLink]="['/inscriptionResto']" routerLinkActive="active">Restaurateur</a>&nbsp;&nbsp;
-        <a class="btn btn-primary" [routerLink]="['/inscriptionLivreur']" routerLinkActive="active">Livreur</a>
+        <a class="btn btn-secondary" [routerLink]="['/inscriptionResto']" routerLinkActive="active">Restaurateur</a>&nbsp;&nbsp;
+        <a class="btn btn-secondary" [routerLink]="['/inscriptionLivreur']" routerLinkActive="active">Livreur</a>
       </div>
     </div>
   </div> 

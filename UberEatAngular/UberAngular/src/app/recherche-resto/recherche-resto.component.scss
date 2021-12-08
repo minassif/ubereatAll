@@ -6,6 +6,7 @@ main{
     height:100%;
     width: 100%;
     flex-direction: column;
+    background-color:#f4ebeb;
   
 }
 
@@ -13,7 +14,7 @@ main{
 .uppermain{
     min-height: 5% ;
     width:100%;
-    background-color:#f4ebeb;
+    background-color:white;
 }
 /*
 .middelmain{
@@ -43,108 +44,77 @@ main{
 }
 
 .button1 {border-radius:50%;
-
+  border-color: white;
     height: 80px;
     width: 80px;
-    color: green;
-    //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
+   // color: green;
+    background-image: url("../../assets/img/logofiltre/alltypes.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
+
 .button:hover{
-    background-size: 110% 110%;
+    background-size: 102% 102%;
 }
 
 .button2 {
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
-   //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
-  
-  .button3 {
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-  //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
-  
-  .button4 {
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-   //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
-  
-  .button5 {
-    border-radius: 50%;
+    border-color: white;
     height: 80px;
     width: 80px;
     //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 105% 105%;
   }
-  
-  .button6 {
-    border-radius: 50%;
-  
-    height: 80px;
-    width: 80px;
-  //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
-  .button7 {
-    border-radius: 50%;
-  
-    height: 80px;
-    width: 80px;
-  //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
-  .button8 {
-    border-radius: 50%;
-  
-    height: 80px;
-    width: 80px;
-  //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
-  .button9 {
-    border-radius: 50%;
-  
-    height: 80px;
-    width: 80px;
-  //background-image: url("Capture.JPG");
-   // background-repeat: no-repeat;
-   // background-size: 100% 100%;
-  }
+
 
   #ratebutton{
     height : 40px;
     width : 180px;
+    border-radius: 5%;
+    border:solid #8e8b8a;
+    background-color: #aaaaaa;
   }
+
+
+.colorswitch{
+ background-color:#8e8b8a;
+ border-color: white;
+}
 
 #statusButton{
   height : 40px;
   width : 180px;
+  border-radius: 5%;
+  border:solid #8e8b8a;
+  background-color: #8e8b8a;
+}
+
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e")
+
+}
+
+.form-check-input:checked {
+  background-color: #8e8b8a;;
+  border-color:white;
+}
+.form-check-input:focus {
+  border-color:  white;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #eeeeee;
 }
 #pricerangeButton{
   height : 40px;
   width : 180px;
+  border-radius: 5%;
+  border:solid #8e8b8a;
+  background-color: #8e8b8a;
 }
 
 
 #nav{
-  margin: 2px;
+  margin: 4px;
 }
   // Stars
   /*

@@ -24,6 +24,10 @@ export class PanierService {
     return this.panier
   }
 
+  findClient():Client{
+    return this.client
+  }
+
   add(article:Article){
     this.setPrix(article.prix);
     this.panier.push(article)
