@@ -261,7 +261,7 @@ class UberBootApplicationTests {
 		pizzeriaa.setImg("../../assets/img/Restaurants/pizzeria/pizzeriaa.jpeg");
 		
 		Restaurant asiatique = new Restaurant();
-		asiatique.setNom("Chez monsieut lit");
+		asiatique.setNom("Chez monsieur lit");
 		asiatique.setDescription("Pour ne pas être dans de beaux draps");
 		asiatique.setEmporter(true);
 		asiatique.setLivraison(true);
@@ -368,9 +368,9 @@ class UberBootApplicationTests {
 		pancontomate.setTypePlat(TypePlat.Entree);
 		
 		Article marherita =new Article();
-		marherita.setNom("marherita");
+		marherita.setNom("margherita");
 		marherita.setVegetarien(true);
-		marherita.setDescription("Pizza: marherita");
+		marherita.setDescription("Pizza: margherita");
 		marherita.setPrix(8);
 		marherita.setRestaurant(pizzeria);
 		marherita.setImg("../assets/img/Restaurants/pizzeria/marherita.jpg");
@@ -395,31 +395,31 @@ class UberBootApplicationTests {
 		calzone.setTypePlat(TypePlat.Plat);
 		
 		Article tiramisu =new Article();
-		calzone.setNom("tiramisu");
-		calzone.setVegetarien(false);
-		calzone.setDescription("Une petite douceur à la crême et au café");
-		calzone.setPrix(5);
-		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
-		calzone.setTypePlat(TypePlat.Dessert);
+		tiramisu.setNom("tiramisu");
+		tiramisu.setVegetarien(false);
+		tiramisu.setDescription("Une petite douceur à la crême et au café");
+		tiramisu.setPrix(5);
+		tiramisu.setRestaurant(pizzeria);
+		tiramisu.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
+		tiramisu.setTypePlat(TypePlat.Dessert);
 		
 		Article fondant =new Article();
-		calzone.setNom("fondant");
-		calzone.setVegetarien(false);
-		calzone.setDescription("Un gateau au chocolat avec son coeur fondant");
-		calzone.setPrix(6);
-		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
-		calzone.setTypePlat(TypePlat.Dessert);
+		fondant.setNom("fondant");
+		fondant.setVegetarien(false);
+		fondant.setDescription("Un gateau au chocolat avec son coeur fondant");
+		fondant.setPrix(6);
+		fondant.setRestaurant(pizzeria);
+		fondant.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
+		fondant.setTypePlat(TypePlat.Dessert);
 		
 		Article cookie =new Article();
-		calzone.setNom("cookie");
-		calzone.setVegetarien(false);
-		calzone.setDescription("Bah c'est un cookie quoi");
-		calzone.setPrix(4);
-		calzone.setRestaurant(pizzeria);
-		calzone.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
-		calzone.setTypePlat(TypePlat.Dessert);
+		cookie.setNom("cookie");
+		cookie.setVegetarien(false);
+		cookie.setDescription("Bah c'est un cookie quoi");
+		cookie.setPrix(4);
+		cookie.setRestaurant(pizzeria);
+		cookie.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
+		cookie.setTypePlat(TypePlat.Dessert);
 		
 		Article sprite =new Article();
 		sprite.setNom("sprite");
@@ -469,9 +469,9 @@ class UberBootApplicationTests {
 		pancontomatea.setTypePlat(TypePlat.Entree);
 		
 		Article marheritaa =new Article();
-		marheritaa.setNom("marherita");
+		marheritaa.setNom("margherita");
 		marheritaa.setVegetarien(true);
-		marheritaa.setDescription("Pizza: marherita");
+		marheritaa.setDescription("Pizza: margherita");
 		marheritaa.setPrix(8);
 		marheritaa.setRestaurant(pizzeriaa);
 		marheritaa.setImg("../assets/img/Restaurants/pizzeria/marherita.jpg");
@@ -496,31 +496,31 @@ class UberBootApplicationTests {
 		calzonea.setTypePlat(TypePlat.Plat);
 		
 		Article tiramisua =new Article();
-		calzonea.setNom("tiramisu");
-		calzonea.setVegetarien(false);
-		calzonea.setDescription("Une petite douceur à la crême et au café");
-		calzonea.setPrix(5);
-		calzonea.setRestaurant(pizzeriaa);
-		calzonea.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
-		calzonea.setTypePlat(TypePlat.Dessert);
+		tiramisua.setNom("tiramisu");
+		tiramisua.setVegetarien(false);
+		tiramisua.setDescription("Une petite douceur à la crême et au café");
+		tiramisua.setPrix(5);
+		tiramisua.setRestaurant(pizzeriaa);
+		tiramisua.setImg("../assets/img/Restaurants/pizzeria/tiramisu.jpg");
+		tiramisua.setTypePlat(TypePlat.Dessert);
 		
 		Article fondanta =new Article();
-		calzonea.setNom("fondant");
-		calzonea.setVegetarien(false);
-		calzonea.setDescription("Un gateau au chocolat avec son coeur fondant");
-		calzonea.setPrix(6);
-		calzonea.setRestaurant(pizzeriaa);
-		calzonea.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
-		calzonea.setTypePlat(TypePlat.Dessert);
+		fondanta.setNom("fondant");
+		fondanta.setVegetarien(false);
+		fondanta.setDescription("Un gateau au chocolat avec son coeur fondant");
+		fondanta.setPrix(6);
+		fondanta.setRestaurant(pizzeriaa);
+		fondanta.setImg("../assets/img/Restaurants/pizzeria/fondant.jpg");
+		fondanta.setTypePlat(TypePlat.Dessert);
 		
 		Article cookiea =new Article();
-		calzonea.setNom("cookie");
-		calzonea.setVegetarien(false);
-		calzonea.setDescription("Bah c'est un cookie quoi");
-		calzonea.setPrix(4);
-		calzonea.setRestaurant(pizzeriaa);
-		calzonea.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
-		calzonea.setTypePlat(TypePlat.Dessert);
+		cookiea.setNom("cookie");
+		cookiea.setVegetarien(false);
+		cookiea.setDescription("Bah c'est un cookie quoi");
+		cookiea.setPrix(4);
+		cookiea.setRestaurant(pizzeriaa);
+		cookiea.setImg("../assets/img/Restaurants/pizzeria/cookie.jpg");
+		cookiea.setTypePlat(TypePlat.Dessert);
 		
 		Article spritea =new Article();
 		spritea.setNom("sprite");
@@ -585,7 +585,7 @@ class UberBootApplicationTests {
 		assiette.setDescription("Une bonne assiette pleine de viande et de gras");
 		assiette.setPrix(9);
 		assiette.setRestaurant(kebab);
-		assiette.setImg("../assets/img/Restaurants/kebab/assiette.jpg");
+		assiette.setImg("../assets/img/Restaurants/kebab/asiet.jpg");
 		assiette.setTypePlat(TypePlat.Plat);
 		
 		Article durum =new Article();
@@ -688,7 +688,7 @@ class UberBootApplicationTests {
 		assiettea.setDescription("Une bonne assiette pleine de viande et de gras");
 		assiettea.setPrix(9);
 		assiettea.setRestaurant(kebaba);
-		assiettea.setImg("../assets/img/Restaurants/kebab/assiette.jpg");
+		assiettea.setImg("../assets/img/Restaurants/kebab/asiet.jpg");
 		assiettea.setTypePlat(TypePlat.Plat);
 		
 		Article duruma =new Article();
