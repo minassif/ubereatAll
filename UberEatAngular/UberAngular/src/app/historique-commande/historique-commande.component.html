@@ -9,7 +9,10 @@
           <div class="col-md-9">
             <div class="card-body">
               <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
-              <h5 class="card-title" *ngIf="commande.status">Statut: {{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Enregistre'" style="color:orange">Statut: {{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Preparation'" style="color:#e9e900">Statut: {{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Livraison'" style="color:#e9e900">Statut: {{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Livree'" style="color:green">Statut: {{commande.status}}</h5>
               <p class="card-text">Total de la commande: {{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
@@ -59,16 +62,23 @@
           </div>
           <div class="col-md-9">
             <div class="card-body">
-              <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
-              <h5 class="card-title" *ngIf="commande.status">Statut: {{commande.status}}</h5>
-              <div>
-                <p class="card-text">Client: {{commande.client?.prenom}} {{commande.client?.nom}}</p>
+              <div class="row g-0">
+                <div class="col-md-8">
+                  <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
+                  <h5 class="card-title" *ngIf="commande.status=='Enregistre'" style="color:orange">Statut: {{commande.status}}</h5>
+                  <h5 class="card-title" *ngIf="commande.status=='Preparation'" style="color:orange">Statut: {{commande.status}}</h5>
+                  <h5 class="card-title" *ngIf="commande.status=='Livraison'" style="color:#e9e900">Statut: {{commande.status}}</h5>
+                  <h5 class="card-title" *ngIf="commande.status=='Livree'" style="color:green">Statut: {{commande.status}}</h5>
+                  <div>
+                    <p class="card-text">Client: {{commande.client?.prenom}} {{commande.client?.nom}}</p>
+                  </div>
+                  <p class="card-text">Total de la commande: {{commande.prix}} euros</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <br></div>
+                <div class="col-md-3">
+                  <button (click)="setLivree(commande)" *ngIf="commande.status=='Livraison'"> Livré</button>
+                </div>
               </div>
-              <p class="card-text">Total de la commande: {{commande.prix}} euros</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <br>
-              
-              <button (click)="setLivree(commande)" *ngIf="commande.status=='Livraison'"> Livré</button>
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
@@ -109,11 +119,15 @@
     <h2 style="font-weight:bold;">Mes commandes :</h2>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
-          
-          <div class="col-md-9">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
             <div class="card-body">
+              <div class="row g-0">
+              <div class="col-md-8">
               <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
-              <h5 class="card-title" *ngIf="commande.status">Statut:{{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Enregistre'" style="color:orange">Statut: {{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Preparation'" style="color:#e9e900">Statut: {{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status=='Livraison'" style="color:green">Statut: {{commande.status}}</h5>
               <div>
                 <p class="card-text" >Client: {{commande.client?.prenom}} {{commande.client?.nom}} </p>
             
@@ -123,9 +137,12 @@
               </div>
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <br>
-              <button (click)="setEnPrep(commande)" *ngIf="commande.status=='Enregistre'"> Envoyer au fourneau </button>
-              <button (click)="setLivraison(commande)" *ngIf="commande.status=='Preparation'"> Envoyer en livraison </button>
+              <br></div>
+              <div class="col-md-3">
+                <button (click)="setEnPrep(commande)" *ngIf="commande.status=='Enregistre'"> Envoyer au fourneau </button>
+                <button (click)="setLivraison(commande)" *ngIf="commande.status=='Preparation'"> Envoyer en livraison </button>
+              </div>
+            </div>
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">

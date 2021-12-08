@@ -14,6 +14,7 @@ import ubereat.model.Commande;
 import ubereat.model.Livreur;
 import ubereat.model.Restaurant;
 import ubereat.model.Restaurateur;
+import ubereat.model.Status;
 import ubereat.model.TypePlat;
 import ubereat.model.TypeResto;
 import ubereat.repository.IArticle;
@@ -761,6 +762,9 @@ class UberBootApplicationTests {
 		macommande.setArticles(macom);
 		macommande.setClient(michel);
 		macommande.setLivreur(benji);
+		macommande.setStatus(Status.Enregistre);
+		macommande.setRestaurant(pizzeria);
+		macommande.setPrix(10);
 		
 		clientRepo.save(michel);
 		clientRepo.save(daniel);
