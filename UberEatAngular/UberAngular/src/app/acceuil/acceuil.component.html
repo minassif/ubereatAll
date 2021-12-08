@@ -20,10 +20,13 @@
         <div class="carousel-inner" >
           <div class="carousel-item active text-align"  *ngFor="let resto of listBestRates(); let i=index" [ngClass]="{'active':i==0}">
               <img src="{{resto.img}}" class="d-block w-100" alt="..." [routerLink]="['/carteResto']" routerLinkActive="active">
-              <div class="carousel-caption">
-                <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                <p style="font-size: 20px;">{{resto?.nom}}</p>
-                <p>Noté à {{resto?.rate}} /5</p>
+              <div class="carousel-caption row">
+                <div class="col-2"></div>
+                <div class="col-8" style="background-color:#8e8b8ad9;border: solid white 2px;border-radius: 5%;">
+                    <div style="font-size: 20px;">{{resto?.nom}}</div>
+                    <div>Noté à {{resto?.rate}} /5</div>
+                </div>
+                <div class="col-2"></div>
               </div>
           </div>
         </div>

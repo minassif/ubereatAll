@@ -1,6 +1,6 @@
 
 <div class="content" *ngIf="statut ==='client'">
-    <h3>Mes commandes :</h3>
+    <h3 style="font-weight:bold;">Mes commandes :</h3>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           <div class="col-md-3">
@@ -9,8 +9,8 @@
           <div class="col-md-9">
             <div class="card-body">
               <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
-              <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
-              <p class="card-text">{{commande.prix}} euros</p>
+              <h5 class="card-title" *ngIf="commande.status">Statut: {{commande.status}}</h5>
+              <p class="card-text">Total de la commande: {{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
               <div class="accordion" id="accordionExample">
@@ -33,7 +33,7 @@
                                   <div class="col-md-9">
                                     <div class="card-body">
                                       <h5 class="card-title">{{article?.nom}}</h5>
-                                      <p class="card-text">{{article?.prix}} euros, c'est le taro mon salop</p>
+                                      <p class="card-text">Prix: {{article?.prix}} euros, c'est le taro mon salop</p>
                                   </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
 </div>
 
 <div class="content" *ngIf="statut ==='livreur'">
-    <h3>Mes commandes :</h3>
+    <h3 style="font-weight:bold;">Mes commandes :</h3>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           <div class="col-md-3">
@@ -60,12 +60,11 @@
           <div class="col-md-9">
             <div class="card-body">
               <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
-              <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status">Statut: {{commande.status}}</h5>
               <div>
-                <p class="card-text">{{commande.client?.prenom}} </p>
-                <p class="card-text">{{commande.client?.nom}} </p>
+                <p class="card-text">Client: {{commande.client?.prenom}} {{commande.client?.nom}}</p>
               </div>
-              <p class="card-text">{{commande.prix}} euros</p>
+              <p class="card-text">Total de la commande: {{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               <br>
               
@@ -89,7 +88,7 @@
                                   <div class="col-md-9">
                                     <div class="card-body">
                                       <h5 class="card-title">{{article.nom}}</h5>
-                                      <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                                      <p class="card-text">Prix: {{article.prix}} euros, c'est le taro mon salop</p>
                                   </div>
                                 </div>
                             </div>
@@ -107,21 +106,20 @@
 </div>
 
 <div class="content" *ngIf="statut ==='restaurateur'">
-    <h3>Mes commandes :</h3>
+    <h3 style="font-weight:bold;">Mes commandes :</h3>
     <div class="card text-dark bg-light" *ngFor="let commande of list() | reverse; let i=index;">
         <div class="row g-0">
           
           <div class="col-md-9">
             <div class="card-body">
               <h5 class="card-title">{{commande.restaurant?.nom}}</h5>
-              <h5 class="card-title" *ngIf="commande.status">{{commande.status}}</h5>
+              <h5 class="card-title" *ngIf="commande.status">Statut:{{commande.status}}</h5>
               <div>
-                <p class="card-text" >{{commande.client?.prenom}} </p>
-                <p class="card-text" >{{commande.client?.nom}} </p>
+                <p class="card-text" >Client: {{commande.client?.prenom}} {{commande.client?.nom}} </p>
+            
               </div>
               <div>
-                <p class="card-text">{{commande.livreur?.prenom}} </p>
-                <p class="card-text">{{commande.livreur?.nom}} </p>
+                <p class="card-text">Livreur: {{commande.livreur?.prenom}} {{commande.livreur?.nom}}</p>
               </div>
               <p class="card-text">{{commande.prix}} euros</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -147,7 +145,7 @@
                                   <div class="col-md-9">
                                     <div class="card-body">
                                       <h5 class="card-title">{{article.nom}}</h5>
-                                      <p class="card-text">{{article.prix}} euros, c'est le taro mon salop</p>
+                                      <p class="card-text">Prix: {{article.prix}} euros, c'est le taro mon salop</p>
                                   </div>
                                 </div>
                             </div>

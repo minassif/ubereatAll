@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { ConnectService } from './connect/connect.service';
 import { Utilisateur } from './model';
+import { PanierService } from './panier/panier.service';
 
 //declare const window: any;
 
@@ -22,7 +23,7 @@ export class AppComponent {
       this.navbartopColor="#bda8a8cf";
     }}
 
-  constructor(public ConnectService: ConnectService) {
+  constructor(public ConnectService: ConnectService,public panierService:PanierService) {
   }
 
 
