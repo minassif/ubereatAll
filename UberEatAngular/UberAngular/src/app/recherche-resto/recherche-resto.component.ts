@@ -39,7 +39,9 @@ export class RechercheRestoComponent implements OnInit {
   filtre: string;
   ouvert: boolean=true;
 
-  constructor(private restoService: RestaurantService, private appConfigService: AppConfigService, private rechercheRestoService:RechercheRestoService, private router:Router) { }
+  constructor(private restoService: RestaurantService, private appConfigService: AppConfigService, private rechercheRestoService:RechercheRestoService, private router:Router) {
+    this.rechercheRestoService.idRestoVisible=null;
+   }
 
 
   ngOnInit(): void {

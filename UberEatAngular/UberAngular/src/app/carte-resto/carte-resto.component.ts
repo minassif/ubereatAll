@@ -12,7 +12,12 @@ export class CarteRestoComponent implements OnInit {
 
   articles: Array<Article> = new Array<Article>();
 
-  constructor(private articleService:ArticleService,private panierService:PanierService) { }
+  constructor(private articleService:ArticleService,private panierService:PanierService) {
+    this.articleService.loadBoissons();
+    this.articleService.loadEntrees();
+    this.articleService.loadDesserts();
+    this.articleService.loadPlats();
+   }
 
   ngOnInit(): void {
   }
