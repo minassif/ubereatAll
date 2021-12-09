@@ -246,7 +246,7 @@ class UberBootApplicationTests {
 		pizzeria.setDescription("La pizza hmmm");
 		pizzeria.setEmporter(true);
 		pizzeria.setLivraison(true);
-		pizzeria.setPricerange(9);
+		pizzeria.setPricerange(26);
 		pizzeria.setRate(4.0);
 		pizzeria.setRestaurateur(jeanPizz);
 		pizzeria.setOpen(true);
@@ -258,7 +258,7 @@ class UberBootApplicationTests {
 		pizzeriaa.setDescription("La pizza aaaaaaah !");
 		pizzeriaa.setEmporter(true);
 		pizzeriaa.setLivraison(true);
-		pizzeriaa.setPricerange(9);
+		pizzeriaa.setPricerange(51);
 		pizzeriaa.setRate(4.2);
 		pizzeriaa.setRestaurateur(MichMuchPizz);
 		pizzeriaa.setOpen(true);
@@ -266,11 +266,11 @@ class UberBootApplicationTests {
 		pizzeriaa.setImg("../../assets/img/Restaurants/pizzeria/pizzeriaa.jpeg");
 		
 		Restaurant asiatique = new Restaurant();
-		asiatique.setNom("Chez monsieur lit");
+		asiatique.setNom("Chez monsieur lee");
 		asiatique.setDescription("Pour ne pas être dans de beaux draps");
 		asiatique.setEmporter(true);
 		asiatique.setLivraison(true);
-		asiatique.setPricerange(9);
+		asiatique.setPricerange(51);
 		asiatique.setRate(4.8);
 		asiatique.setRestaurateur(WagonLit);
 		asiatique.setOpen(true);
@@ -282,7 +282,7 @@ class UberBootApplicationTests {
 		asiatiquea.setDescription("En vous laissant le choix dans la date");
 		asiatiquea.setEmporter(true);
 		asiatiquea.setLivraison(true);
-		asiatiquea.setPricerange(9);
+		asiatiquea.setPricerange(40);
 		asiatiquea.setRate(2.9);
 		asiatiquea.setRestaurateur(MarlonBrando);
 		asiatiquea.setOpen(true);
@@ -294,7 +294,7 @@ class UberBootApplicationTests {
 		Burger.setDescription("Pour ceux qui n'ont pas peur du cholestérol");
 		Burger.setEmporter(true);
 		Burger.setLivraison(true);
-		Burger.setPricerange(9);
+		Burger.setPricerange(26);
 		Burger.setRate(3.9);
 		Burger.setRestaurateur(JeanBurger);
 		Burger.setOpen(true);
@@ -306,7 +306,7 @@ class UberBootApplicationTests {
 		Burgera.setDescription("Des sandwichs pour ceux qui sont loin de chez eux");
 		Burgera.setEmporter(true);
 		Burgera.setLivraison(true);
-		Burgera.setPricerange(9);
+		Burgera.setPricerange(26);
 		Burgera.setRate(0.9);
 		Burgera.setRestaurateur(MonsieurCroc);
 		Burgera.setOpen(false);
@@ -318,7 +318,7 @@ class UberBootApplicationTests {
 		Espana.setDescription("Ici on ne vend pas que de la sauce");
 		Espana.setEmporter(true);
 		Espana.setLivraison(true);
-		Espana.setPricerange(9);
+		Espana.setPricerange(51);
 		Espana.setRate(2.4);
 		Espana.setRestaurateur(Christina);
 		Espana.setOpen(true);
@@ -330,7 +330,7 @@ class UberBootApplicationTests {
 		Espannaa.setDescription("Si vous vous demandez c'est peru, c'est par ici");
 		Espannaa.setEmporter(true);
 		Espannaa.setLivraison(true);
-		Espannaa.setPricerange(9);
+		Espannaa.setPricerange(51);
 		Espannaa.setRate(1.9);
 		Espannaa.setRestaurateur(Christino);
 		Espannaa.setOpen(false);
@@ -555,7 +555,7 @@ class UberBootApplicationTests {
 		//CARTE KEBAB
 		
 		Article frites =new Article();
-		frites.setNom("gressin");
+		frites.setNom("frites");
 		frites.setVegetarien(true);
 		frites.setDescription("Des ptites frites bien sympathiques");
 		frites.setPrix(3);
@@ -564,7 +564,7 @@ class UberBootApplicationTests {
 		frites.setTypePlat(TypePlat.Entree);
 		
 		Article empanada =new Article();
-		empanada.setNom("burata");
+		empanada.setNom("empanada");
 		empanada.setVegetarien(true);
 		empanada.setDescription("Une brioche légère fourée à la viande");
 		empanada.setPrix(4);
@@ -573,7 +573,7 @@ class UberBootApplicationTests {
 		empanada.setTypePlat(TypePlat.Entree);
 		
 		Article taboulet =new Article();
-		taboulet.setNom("Pan con tomate");
+		taboulet.setNom("taboulet");
 		taboulet.setVegetarien(true);
 		taboulet.setDescription("Parfois t'as pas boulet, parfois taboulet");
 		taboulet.setPrix(4);
@@ -582,7 +582,7 @@ class UberBootApplicationTests {
 		taboulet.setTypePlat(TypePlat.Entree);
 		
 		Article doner =new Article();
-		doner.setNom("marherita");
+		doner.setNom("doner Kebab");
 		doner.setVegetarien(true);
 		doner.setDescription("Le plus grand des classiques des fins de soirée");
 		doner.setPrix(8);
@@ -591,7 +591,7 @@ class UberBootApplicationTests {
 		doner.setTypePlat(TypePlat.Plat);
 		
 		Article assiette =new Article();
-		assiette.setNom("regina");
+		assiette.setNom("Assiette Kebab");
 		assiette.setVegetarien(true);
 		assiette.setDescription("Une bonne assiette pleine de viande et de gras");
 		assiette.setPrix(9);
@@ -600,7 +600,7 @@ class UberBootApplicationTests {
 		assiette.setTypePlat(TypePlat.Plat);
 		
 		Article durum =new Article();
-		durum.setNom("calzone");
+		durum.setNom("Durum kebab");
 		durum.setVegetarien(false);
 		durum.setDescription("Une revisite du plus grand des classiques des fins de soirée (juste une galette à la place du pain)");
 		durum.setPrix(12);
@@ -658,7 +658,7 @@ class UberBootApplicationTests {
 		
 		
 		Article fritesa =new Article();
-		fritesa.setNom("gressin");
+		fritesa.setNom("Frites");
 		fritesa.setVegetarien(true);
 		fritesa.setDescription("Des ptites frites bien sympathiques");
 		fritesa.setPrix(3);
@@ -667,7 +667,7 @@ class UberBootApplicationTests {
 		fritesa.setTypePlat(TypePlat.Entree);
 		
 		Article empanadaa =new Article();
-		empanadaa.setNom("burata");
+		empanadaa.setNom("Empanada");
 		empanadaa.setVegetarien(true);
 		empanadaa.setDescription("Une brioche légère fourée à la viande");
 		empanadaa.setPrix(4);
@@ -676,7 +676,7 @@ class UberBootApplicationTests {
 		empanadaa.setTypePlat(TypePlat.Entree);
 		
 		Article tabouleta =new Article();
-		tabouleta.setNom("Pan con tomate");
+		tabouleta.setNom("Taboulet");
 		tabouleta.setVegetarien(true);
 		tabouleta.setDescription("Parfois t'as pas boulet, parfois taboulet");
 		tabouleta.setPrix(4);
@@ -685,7 +685,7 @@ class UberBootApplicationTests {
 		tabouleta.setTypePlat(TypePlat.Entree);
 		
 		Article donera =new Article();
-		donera.setNom("marherita");
+		donera.setNom("Doner Kebab");
 		donera.setVegetarien(true);
 		donera.setDescription("Le plus grand des classiques des fins de soirée");
 		donera.setPrix(8);
@@ -694,7 +694,7 @@ class UberBootApplicationTests {
 		donera.setTypePlat(TypePlat.Plat);
 		
 		Article assiettea =new Article();
-		assiettea.setNom("regina");
+		assiettea.setNom("Assiette de Kebab");
 		assiettea.setVegetarien(true);
 		assiettea.setDescription("Une bonne assiette pleine de viande et de gras");
 		assiettea.setPrix(9);
@@ -703,7 +703,7 @@ class UberBootApplicationTests {
 		assiettea.setTypePlat(TypePlat.Plat);
 		
 		Article duruma =new Article();
-		duruma.setNom("calzone");
+		duruma.setNom("Durum Kebab");
 		duruma.setVegetarien(false);
 		duruma.setDescription("Une revisite du plus grand des classiques des fins de soirée (juste une galette à la place du pain)");
 		duruma.setPrix(12);
@@ -712,7 +712,7 @@ class UberBootApplicationTests {
 		duruma.setTypePlat(TypePlat.Plat);
 		
 		Article tiramisuaaa =new Article();
-		tiramisuaaa.setNom("tiramisu");
+		tiramisuaaa.setNom("Tiramisu");
 		tiramisuaaa.setVegetarien(false);
 		tiramisuaaa.setDescription("Une petite douceur à la crême et au café");
 		tiramisuaaa.setPrix(5);
@@ -721,7 +721,7 @@ class UberBootApplicationTests {
 		tiramisuaaa.setTypePlat(TypePlat.Dessert);
 		
 		Article fondantaaa =new Article();
-		fondantaaa.setNom("fondant");
+		fondantaaa.setNom("Fondant");
 		fondantaaa.setVegetarien(false);
 		fondantaaa.setDescription("Un gateau au chocolat avec son coeur fondant");
 		fondantaaa.setPrix(6);
@@ -730,7 +730,7 @@ class UberBootApplicationTests {
 		fondantaaa.setTypePlat(TypePlat.Dessert);
 		
 		Article cookieaaa =new Article();
-		cookieaaa.setNom("cookie");
+		cookieaaa.setNom("Cookie");
 		cookieaaa.setVegetarien(false);
 		cookieaaa.setDescription("Bah c'est un cookie quoi");
 		cookieaaa.setPrix(4);
@@ -739,7 +739,7 @@ class UberBootApplicationTests {
 		cookieaaa.setTypePlat(TypePlat.Dessert);
 		
 		Article spriteaaa =new Article();
-		spriteaaa.setNom("sprite");
+		spriteaaa.setNom("Sprite");
 		spriteaaa.setVegetarien(true);
 		spriteaaa.setDescription("Soda de type sprite");
 		spriteaaa.setPrix(2);
@@ -748,7 +748,7 @@ class UberBootApplicationTests {
 		spriteaaa.setTypePlat(TypePlat.Boisson);
 		
 		Article cocaaaa =new Article();
-		cocaaaa.setNom("coca");
+		cocaaaa.setNom("Coca");
 		cocaaaa.setVegetarien(true);
 		cocaaaa.setDescription("Soda de type coca");
 		cocaaaa.setPrix(2);
